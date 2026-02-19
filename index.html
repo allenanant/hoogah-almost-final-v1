@@ -1,0 +1,1884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoogah | Intentional Networking, Designed for Belonging</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lucide-static@latest/font/lucide.min.css">
+    <style>
+        /* Icon base styles */
+        .icon { display: inline-flex; align-items: center; justify-content: center; }
+        .icon svg { width: 1em; height: 1em; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+        /* ========== RESET & BASE ========== */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --navy: #1a0a5e;
+            --magenta: #a8198b;
+            --magenta-light: #c94daa;
+            --cream: #faf8f5;
+            --white: #ffffff;
+            --black: #0a0a0a;
+            --gray-100: #f5f3f0;
+            --gray-200: #e8e5e0;
+            --gray-400: #9a9590;
+            --gray-600: #5a5550;
+            --lime: #c8ff00;
+            --yellow: #ffe14d;
+            --border: 3px solid var(--black);
+            --shadow: 6px 6px 0px var(--black);
+            --shadow-sm: 4px 4px 0px var(--black);
+            --shadow-lg: 8px 8px 0px var(--black);
+            --radius: 0px;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--cream);
+            color: var(--black);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            line-height: 1.1;
+        }
+
+        a { text-decoration: none; color: inherit; }
+        img { max-width: 100%; display: block; }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ========== NEO BRUTALIST COMPONENTS ========== */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 32px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            border: var(--border);
+            cursor: pointer;
+            transition: all 0.15s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 8px 8px 0px var(--black);
+        }
+
+        .btn:active {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px var(--black);
+        }
+
+        .btn-primary {
+            background: var(--lime);
+            color: var(--black);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-secondary {
+            background: var(--white);
+            color: var(--black);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-navy {
+            background: var(--navy);
+            color: var(--white);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-magenta {
+            background: var(--magenta);
+            color: var(--white);
+            box-shadow: var(--shadow);
+        }
+
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 2px solid var(--black);
+            background: var(--yellow);
+            box-shadow: 3px 3px 0px var(--black);
+        }
+
+        .card {
+            border: var(--border);
+            background: var(--white);
+            box-shadow: var(--shadow);
+            padding: 32px;
+            transition: all 0.15s ease;
+        }
+
+        .card:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* ========== NAVBAR ========== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: var(--white);
+            border-bottom: var(--border);
+            padding: 0;
+        }
+
+        .navbar-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 72px;
+        }
+
+        .navbar-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .navbar-logo img {
+            height: 52px;
+            width: auto;
+        }
+
+        .navbar-links {
+            display: flex;
+            align-items: center;
+            gap: 0;
+        }
+
+        .navbar-links a {
+            padding: 24px 20px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            font-size: 15px;
+            border-left: 2px solid var(--black);
+            transition: background 0.15s;
+        }
+
+        .navbar-links a:hover {
+            background: var(--lime);
+        }
+
+        .navbar-cta {
+            padding: 24px 28px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 15px;
+            background: var(--navy);
+            color: var(--white) !important;
+            border-left: 2px solid var(--black);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: background 0.15s;
+        }
+
+        .navbar-cta:hover {
+            background: var(--magenta) !important;
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            z-index: 1001;
+        }
+
+        .mobile-toggle span {
+            display: block;
+            width: 28px;
+            height: 3px;
+            background: var(--black);
+            margin: 6px 0;
+            transition: 0.3s;
+        }
+
+        .mobile-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .mobile-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 72px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--white);
+            z-index: 999;
+            padding: 40px 24px;
+            flex-direction: column;
+            gap: 8px;
+            border-top: var(--border);
+        }
+
+        .mobile-menu.active {
+            display: flex;
+        }
+
+        .mobile-menu a {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            font-size: 24px;
+            padding: 16px 0;
+            border-bottom: 2px solid var(--gray-200);
+            color: var(--black);
+        }
+
+        .mobile-menu .navbar-cta {
+            margin-top: 16px;
+            padding: 20px;
+            text-align: center;
+            background: var(--navy);
+            color: var(--white) !important;
+            border: var(--border);
+            box-shadow: var(--shadow);
+            font-size: 18px;
+        }
+
+        /* ========== HERO ========== */
+        .hero {
+            margin-top: 72px;
+            padding: 80px 0 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-content { position: relative; z-index: 2; }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: var(--navy);
+            color: var(--white);
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            border: 2px solid var(--black);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 28px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-badge .pulse {
+            width: 8px;
+            height: 8px;
+            background: var(--lime);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.5); }
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 5vw, 64px);
+            margin-bottom: 24px;
+            color: var(--black);
+        }
+
+        .hero h1 .highlight {
+            background: var(--lime);
+            padding: 0 8px;
+            border: 2px solid var(--black);
+            display: inline;
+            box-decoration-break: clone;
+            -webkit-box-decoration-break: clone;
+        }
+
+        .hero h1 .text-magenta {
+            color: var(--magenta);
+        }
+
+        .hero-desc {
+            font-size: 18px;
+            color: var(--gray-600);
+            margin-bottom: 36px;
+            max-width: 520px;
+            line-height: 1.7;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 48px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            padding-top: 32px;
+            border-top: 2px dashed var(--gray-200);
+        }
+
+        .hero-stat-number {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .hero-stat-label {
+            font-size: 14px;
+            color: var(--gray-600);
+            font-weight: 500;
+        }
+
+        /* Hero Visual */
+        .hero-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-visual-card {
+            background: var(--white);
+            border: var(--border);
+            box-shadow: var(--shadow-lg);
+            padding: 40px;
+            width: 100%;
+            max-width: 480px;
+            position: relative;
+        }
+
+        .hero-visual-card::before {
+            content: '';
+            position: absolute;
+            top: -12px;
+            right: -12px;
+            width: 100%;
+            height: 100%;
+            border: var(--border);
+            background: var(--lime);
+            z-index: -1;
+        }
+
+        .pairing-demo {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .pairing-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 16px;
+            border-bottom: 2px solid var(--black);
+        }
+
+        .pairing-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .ai-badge {
+            padding: 4px 12px;
+            background: var(--magenta);
+            color: var(--white);
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            border: 2px solid var(--black);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .pairing-person {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 16px;
+            border: 2px solid var(--black);
+            background: var(--gray-100);
+        }
+
+        .person-avatar {
+            width: 48px;
+            height: 48px;
+            border: 2px solid var(--black);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .person-avatar.navy { background: var(--navy); color: var(--white); }
+        .person-avatar.magenta { background: var(--magenta); color: var(--white); }
+
+        .person-info h4 {
+            font-size: 15px;
+            margin-bottom: 2px;
+        }
+
+        .person-info p {
+            font-size: 13px;
+            color: var(--gray-600);
+        }
+
+        .pairing-connector {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 8px 0;
+        }
+
+        .connector-line {
+            flex: 1;
+            height: 2px;
+            background: repeating-linear-gradient(90deg, var(--black) 0, var(--black) 8px, transparent 8px, transparent 14px);
+        }
+
+        .connector-icon {
+            width: 44px;
+            height: 44px;
+            background: var(--lime);
+            border: 2px solid var(--black);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            flex-shrink: 0;
+            animation: connectorPulse 3s ease-in-out infinite;
+        }
+
+        @keyframes connectorPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .pairing-icebreaker {
+            padding: 20px;
+            background: var(--yellow);
+            border: 2px solid var(--black);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .pairing-icebreaker strong {
+            font-family: 'Space Grotesk', sans-serif;
+            display: block;
+            margin-bottom: 6px;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ========== MARQUEE ========== */
+        .marquee-section {
+            border-top: var(--border);
+            border-bottom: var(--border);
+            background: var(--navy);
+            padding: 16px 0;
+            overflow: hidden;
+        }
+
+        .marquee-track {
+            display: flex;
+            animation: marquee 30s linear infinite;
+            white-space: nowrap;
+        }
+
+        .marquee-item {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            color: var(--white);
+            padding: 0 40px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-shrink: 0;
+        }
+
+        .marquee-item .dot {
+            width: 8px;
+            height: 8px;
+            background: var(--lime);
+            flex-shrink: 0;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* ========== PROBLEM SECTION ========== */
+        .problem-section {
+            padding: 100px 0;
+            background: var(--white);
+            border-bottom: var(--border);
+        }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--magenta);
+            margin-bottom: 20px;
+        }
+
+        .section-label::before {
+            content: '';
+            width: 32px;
+            height: 3px;
+            background: var(--magenta);
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .problem-content h2 {
+            font-size: clamp(32px, 3.5vw, 48px);
+            margin-bottom: 24px;
+        }
+
+        .problem-content p {
+            font-size: 17px;
+            color: var(--gray-600);
+            line-height: 1.8;
+            margin-bottom: 32px;
+        }
+
+        .problem-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .problem-stat {
+            padding: 28px;
+            border: var(--border);
+            background: var(--cream);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .problem-stat .number {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--magenta);
+            margin-bottom: 8px;
+        }
+
+        .problem-stat .label {
+            font-size: 14px;
+            color: var(--gray-600);
+            line-height: 1.5;
+        }
+
+        /* ========== HOW IT WORKS ========== */
+        .how-section {
+            padding: 100px 0;
+            background: var(--cream);
+            border-bottom: var(--border);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .section-header h2 {
+            font-size: clamp(32px, 3.5vw, 48px);
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            font-size: 18px;
+            color: var(--gray-600);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .step-card {
+            border: var(--border);
+            background: var(--white);
+            box-shadow: var(--shadow);
+            padding: 0;
+            overflow: hidden;
+            transition: all 0.15s ease;
+        }
+
+        .step-card:hover {
+            transform: translate(-3px, -3px);
+            box-shadow: 10px 10px 0px var(--black);
+        }
+
+        .step-number {
+            padding: 16px 28px;
+            border-bottom: var(--border);
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 48px;
+            color: var(--white);
+        }
+
+        .step-card:nth-child(1) .step-number { background: var(--navy); }
+        .step-card:nth-child(2) .step-number { background: var(--magenta); }
+        .step-card:nth-child(3) .step-number { background: var(--navy); }
+
+        .step-body {
+            padding: 28px;
+        }
+
+        .step-icon {
+            width: 56px;
+            height: 56px;
+            border: 2px solid var(--black);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-bottom: 20px;
+            background: var(--lime);
+        }
+
+        .step-body h3 {
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .step-body p {
+            font-size: 15px;
+            color: var(--gray-600);
+            line-height: 1.7;
+        }
+
+        .step-tag {
+            display: inline-block;
+            margin-top: 16px;
+            padding: 6px 14px;
+            border: 2px solid var(--black);
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background: var(--yellow);
+        }
+
+        /* ========== OUR BELIEF SECTION ========== */
+        .ai-section {
+            padding: 100px 0;
+            background: var(--navy);
+            color: var(--white);
+            border-bottom: var(--border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ai-section::before {
+            content: '';
+            position: absolute;
+            right: -60px;
+            top: -40px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 400px;
+            font-weight: 700;
+            opacity: 0.04;
+            color: var(--white);
+            line-height: 1;
+        }
+
+        .ai-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .ai-content .section-label {
+            color: var(--lime);
+        }
+
+        .ai-content .section-label::before {
+            background: var(--lime);
+        }
+
+        .ai-content h2 {
+            font-size: clamp(32px, 3.5vw, 48px);
+            margin-bottom: 24px;
+            color: var(--white);
+        }
+
+        .ai-content p {
+            font-size: 17px;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.8;
+            margin-bottom: 32px;
+        }
+
+        .ai-features {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .ai-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 20px;
+            border: 2px solid rgba(255,255,255,0.15);
+            background: rgba(255,255,255,0.05);
+            transition: all 0.2s;
+        }
+
+        .ai-feature:hover {
+            border-color: var(--lime);
+            background: rgba(200,255,0,0.05);
+        }
+
+        .ai-feature-icon {
+            width: 44px;
+            height: 44px;
+            border: 2px solid var(--lime);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+            background: rgba(200,255,0,0.1);
+        }
+
+        .ai-feature h4 {
+            font-size: 16px;
+            margin-bottom: 4px;
+            color: var(--white);
+        }
+
+        .ai-feature p {
+            font-size: 14px;
+            color: rgba(255,255,255,0.6);
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .ai-visual {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .ai-terminal {
+            border: 2px solid rgba(255,255,255,0.2);
+            background: rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        .terminal-bar {
+            padding: 12px 16px;
+            background: rgba(255,255,255,0.08);
+            border-bottom: 2px solid rgba(255,255,255,0.2);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .terminal-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .terminal-dot.red { background: #ff5f57; }
+        .terminal-dot.yellow { background: #febc2e; }
+        .terminal-dot.green { background: #28c840; }
+
+        .terminal-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 13px;
+            color: rgba(255,255,255,0.5);
+            margin-left: 8px;
+        }
+
+        .terminal-body {
+            padding: 24px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 2;
+        }
+
+        .terminal-line {
+            color: rgba(255,255,255,0.5);
+        }
+
+        .terminal-line .cmd { color: var(--lime); }
+        .terminal-line .str { color: var(--yellow); }
+        .terminal-line .key { color: var(--magenta-light); }
+        .terminal-line .comment { color: rgba(255,255,255,0.3); }
+
+        .typing-cursor {
+            display: inline-block;
+            width: 8px;
+            height: 16px;
+            background: var(--lime);
+            animation: blink 1s infinite;
+            vertical-align: middle;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* ========== USE CASES / FOR WHO ========== */
+        .usecases-section {
+            padding: 100px 0;
+            background: var(--white);
+            border-bottom: var(--border);
+        }
+
+        .usecases-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .usecase-card {
+            border: var(--border);
+            background: var(--white);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: all 0.15s ease;
+        }
+
+        .usecase-card:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .usecase-color {
+            height: 8px;
+        }
+
+        .usecase-card:nth-child(1) .usecase-color { background: var(--lime); }
+        .usecase-card:nth-child(2) .usecase-color { background: var(--magenta); }
+        .usecase-card:nth-child(3) .usecase-color { background: var(--yellow); }
+
+        .usecase-body {
+            padding: 32px;
+        }
+
+        .usecase-icon {
+            width: 64px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            background: var(--cream);
+            border: 2px solid var(--black);
+        }
+
+        .usecase-body h3 {
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .usecase-body p {
+            font-size: 15px;
+            color: var(--gray-600);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .usecase-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .usecase-list li {
+            font-size: 14px;
+            color: var(--gray-600);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .usecase-list li::before {
+            content: '→';
+            font-weight: 700;
+            color: var(--magenta);
+        }
+
+        /* ========== PRICING ========== */
+        .pricing-section {
+            padding: 100px 0;
+            background: var(--cream);
+            border-bottom: var(--border);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            border: var(--border);
+            background: var(--white);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: all 0.15s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .pricing-card.featured {
+            position: relative;
+        }
+
+        .pricing-card.featured::before {
+            content: 'MOST POPULAR';
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 8px 16px;
+            background: var(--lime);
+            border-left: 2px solid var(--black);
+            border-bottom: 2px solid var(--black);
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .pricing-header {
+            padding: 32px 32px 24px;
+            border-bottom: 2px dashed var(--gray-200);
+        }
+
+        .pricing-type {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--magenta);
+            margin-bottom: 12px;
+        }
+
+        .pricing-amount {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .pricing-unit {
+            font-size: 16px;
+            color: var(--gray-400);
+            font-weight: 500;
+        }
+
+        .pricing-desc {
+            font-size: 14px;
+            color: var(--gray-600);
+            margin-top: 8px;
+        }
+
+        .pricing-body {
+            padding: 24px 32px 32px;
+        }
+
+        .pricing-features {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 28px;
+        }
+
+        .pricing-features li {
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .pricing-features li::before {
+            content: '✓';
+            width: 24px;
+            height: 24px;
+            background: var(--lime);
+            border: 2px solid var(--black);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        /* ========== SOCIAL PROOF ========== */
+        .proof-section {
+            padding: 100px 0;
+            background: var(--white);
+            border-bottom: var(--border);
+        }
+
+        .proof-quote {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .proof-quote blockquote {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(24px, 3vw, 36px);
+            font-weight: 600;
+            line-height: 1.4;
+            margin-bottom: 32px;
+            color: var(--navy);
+        }
+
+        .proof-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        .proof-avatar {
+            width: 56px;
+            height: 56px;
+            background: var(--magenta);
+            border: 2px solid var(--black);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        .proof-author-info h4 {
+            font-size: 16px;
+        }
+
+        .proof-author-info p {
+            font-size: 14px;
+            color: var(--gray-600);
+        }
+
+        /* ========== CTA ========== */
+        .cta-section {
+            padding: 100px 0;
+            background: var(--navy);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(
+                -45deg,
+                transparent,
+                transparent 20px,
+                rgba(255,255,255,0.02) 20px,
+                rgba(255,255,255,0.02) 40px
+            );
+        }
+
+        .cta-inner {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-inner h2 {
+            font-size: clamp(32px, 4vw, 52px);
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .cta-inner p {
+            font-size: 18px;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 40px;
+            line-height: 1.7;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-note {
+            margin-top: 24px;
+            font-size: 14px;
+            color: rgba(255,255,255,0.4);
+        }
+
+        /* ========== FOOTER ========== */
+        .footer {
+            padding: 60px 0 32px;
+            background: var(--black);
+            color: var(--white);
+            border-top: var(--border);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 48px;
+        }
+
+        .footer-brand p {
+            font-size: 14px;
+            color: rgba(255,255,255,0.5);
+            line-height: 1.7;
+            margin-top: 16px;
+            max-width: 300px;
+        }
+
+        .footer-col h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 20px;
+            color: var(--lime);
+        }
+
+        .footer-col a {
+            display: block;
+            font-size: 14px;
+            color: rgba(255,255,255,0.5);
+            padding: 6px 0;
+            transition: color 0.2s;
+        }
+
+        .footer-col a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            padding-top: 32px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .footer-bottom p {
+            font-size: 13px;
+            color: rgba(255,255,255,0.3);
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 12px;
+        }
+
+        .footer-socials a {
+            width: 40px;
+            height: 40px;
+            border: 2px solid rgba(255,255,255,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            transition: all 0.2s;
+        }
+
+        .footer-socials a:hover {
+            background: var(--lime);
+            color: var(--black);
+            border-color: var(--lime);
+        }
+
+        /* ========== ILLUSTRATIONS ========== */
+        .hero-visual {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .cta-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-illo-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cta-illo-wrap img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+        }
+
+        .cta-inner {
+            max-width: none;
+            text-align: left;
+        }
+
+        .cta-buttons {
+            justify-content: flex-start;
+        }
+
+        .cta-note {
+            text-align: left;
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 1024px) {
+            .hero-grid,
+            .problem-grid,
+            .ai-grid,
+            .cta-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hero-visual { order: -1; }
+
+            .cta-inner {
+                text-align: center;
+            }
+
+            .cta-buttons {
+                justify-content: center;
+            }
+
+            .cta-note {
+                text-align: center;
+            }
+
+            .cta-illo-wrap img,
+            .ai-visual img {
+                max-width: 260px;
+            }
+
+            .steps-grid,
+            .usecases-grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+                margin: 0 auto;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 32px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar-links { display: none; }
+            .mobile-toggle { display: block; }
+
+            .cta-illo-wrap img,
+            .ai-visual img {
+                max-width: 220px;
+            }
+
+            .hero { padding: 60px 0 40px; }
+            .hero h1 { font-size: 36px; }
+            .hero-stats { flex-direction: column; gap: 20px; }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 16px;
+                text-align: center;
+            }
+
+            .btn { padding: 14px 24px; font-size: 14px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ========== NAVBAR ========== -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-inner">
+                <a href="#" class="navbar-logo">
+                    <img src="logo.png" alt="Hoogah">
+                </a>
+                <div class="navbar-links">
+                    <a href="#how-it-works">How It Works</a>
+                    <a href="#our-belief">Our Belief</a>
+                    <a href="#use-cases">Use Cases</a>
+                    <a href="#pricing">Pricing</a>
+                    <a href="#book-demo" class="navbar-cta">Book a Demo →</a>
+                </div>
+                <button class="mobile-toggle" aria-label="Menu" onclick="toggleMobileMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="#how-it-works" onclick="closeMobileMenu()">How It Works</a>
+            <a href="#our-belief" onclick="closeMobileMenu()">Our Belief</a>
+            <a href="#use-cases" onclick="closeMobileMenu()">Use Cases</a>
+            <a href="#pricing" onclick="closeMobileMenu()">Pricing</a>
+            <a href="#book-demo" class="navbar-cta" onclick="closeMobileMenu()">Book a Demo →</a>
+        </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <span class="pulse"></span>
+                        Connection by Design
+                    </div>
+                    <h1>
+                        Networking Sucks.<br>We <span class="highlight">Fixed It.</span>
+                    </h1>
+                    <p class="hero-desc">
+                        No more random mingling. Hoogah pairs your attendees for real, intentional conversations—powered by AI that actually understands what makes people click.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#book-demo" class="btn btn-primary">Book a Demo →</a>
+                        <a href="#how-it-works" class="btn btn-secondary">See How It Works</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div>
+                            <div class="hero-stat-number">93%</div>
+                            <div class="hero-stat-label">Attendee satisfaction</div>
+                        </div>
+                        <div>
+                            <div class="hero-stat-number">2x</div>
+                            <div class="hero-stat-label">Event return rate</div>
+                        </div>
+                        <div>
+                            <div class="hero-stat-number">&lt;60s</div>
+                            <div class="hero-stat-label">Time to first pairing</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="hero-visual-card">
+                        <div class="pairing-demo">
+                            <div class="pairing-header">
+                                <span class="pairing-title">Live Pairing</span>
+                                <span class="ai-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg> Intentional Pairing</span>
+                            </div>
+                            <div class="pairing-person">
+                                <div class="person-avatar navy">S</div>
+                                <div class="person-info">
+                                    <h4>Sarah Chen</h4>
+                                    <p>VP of Events, TechCorp</p>
+                                </div>
+                            </div>
+                            <div class="pairing-connector">
+                                <div class="connector-line"></div>
+                                <div class="connector-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--black)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></div>
+                                <div class="connector-line"></div>
+                            </div>
+                            <div class="pairing-person">
+                                <div class="person-avatar magenta">M</div>
+                                <div class="person-info">
+                                    <h4>Marcus Rivera</h4>
+                                    <p>Community Lead, StartupHub</p>
+                                </div>
+                            </div>
+                            <div class="pairing-icebreaker">
+                                <strong><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -2px; margin-right: 4px;"><path d="M12 8V4H8"></path><rect width="16" height="12" x="4" y="8" rx="2"></rect><path d="M2 14h2"></path><path d="M20 14h2"></path><path d="M15 13v2"></path><path d="M9 13v2"></path></svg> Personalized Icebreaker</strong>
+                                You both believe community is the most undervalued growth lever. What's one community moment that changed your career trajectory?
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== MARQUEE ========== -->
+    <div class="marquee-section">
+        <div class="marquee-track">
+            <span class="marquee-item"><span class="dot"></span>Designed for Belonging</span>
+            <span class="marquee-item"><span class="dot"></span>Intentional Networking</span>
+            <span class="marquee-item"><span class="dot"></span>Connection is Infrastructure</span>
+            <span class="marquee-item"><span class="dot"></span>One Conversation at a Time</span>
+            <span class="marquee-item"><span class="dot"></span>Not Left to Chance</span>
+            <span class="marquee-item"><span class="dot"></span>Built for Everyone</span>
+            <span class="marquee-item"><span class="dot"></span>Designed for Belonging</span>
+            <span class="marquee-item"><span class="dot"></span>Intentional Networking</span>
+            <span class="marquee-item"><span class="dot"></span>Connection is Infrastructure</span>
+            <span class="marquee-item"><span class="dot"></span>One Conversation at a Time</span>
+            <span class="marquee-item"><span class="dot"></span>Not Left to Chance</span>
+            <span class="marquee-item"><span class="dot"></span>Built for Everyone</span>
+        </div>
+    </div>
+
+    <!-- ========== PROBLEM ========== -->
+    <section class="problem-section">
+        <div class="container">
+            <div class="problem-grid">
+                <div class="problem-content">
+                    <div class="section-label">The Problem</div>
+                    <h2>Connection Is Left to Chance. And It's Failing.</h2>
+                    <p>
+                        You fill the room with great speakers and great people. Then you hope they'll figure out the networking part on their own. Extroverts work the room. Introverts hover near the edges. Most people leave without a single real conversation.
+                    </p>
+                    <p>
+                        That's not bad luck. That's bad design. And it's why your attendees aren't coming back.
+                    </p>
+                    <img src="undraw_pointer.svg" alt="" style="width: 50px; height: auto; margin-top: 16px; transform: rotate(-15deg);">
+                </div>
+                <div class="problem-stats">
+                    <div class="problem-stat">
+                        <div class="number">76%</div>
+                        <div class="label">of attendees say networking is their #1 reason for attending events</div>
+                    </div>
+                    <div class="problem-stat">
+                        <div class="number">68%</div>
+                        <div class="label">leave without making a meaningful connection</div>
+                    </div>
+                    <div class="problem-stat">
+                        <div class="number">52%</div>
+                        <div class="label">don't return to the same event the following year</div>
+                    </div>
+                    <div class="problem-stat">
+                        <div class="number">$0</div>
+                        <div class="label">spent by most organizers on networking infrastructure</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- ========== HOW IT WORKS ========== -->
+    <section class="how-section" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">How It Works</div>
+                <h2>Three Steps. Real Conversations.</h2>
+                <p>Hoogah integrates into your event in minutes. No app downloads, no friction. Just intentional connection, designed for everyone in the room.</p>
+                <img src="undraw_chat-text.svg" alt="Chat and messaging" style="width: 80px; height: auto; margin-top: 24px; opacity: 0.8;">
+
+            </div>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">01</div>
+                    <div class="step-body">
+                        <div class="step-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--black)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><path d="M12 11h4"></path><path d="M12 16h4"></path><path d="M8 11h.01"></path><path d="M8 16h.01"></path></svg></div>
+                        <h3>Attendees Answer Questions</h3>
+                        <p>4-5 custom questions tailored to your event theme. Scanned via QR code, takes 90 seconds. You control the questions through your admin dashboard.</p>
+                        <span class="step-tag">Fully Customizable</span>
+                    </div>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">02</div>
+                    <div class="step-body">
+                        <div class="step-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--black)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 0-4 4v2H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2h-2V6a4 4 0 0 0-4-4z"></path><circle cx="9" cy="14" r="1"></circle><circle cx="15" cy="14" r="1"></circle><path d="M9 18h6"></path></svg></div>
+                        <h3>Hoogah Creates Intentional Pairings</h3>
+                        <p>Our algorithm reads between the lines and creates purposeful pairings: 1-on-1 or huddles of 3-6 people, based on shared interests, goals, and complementary perspectives.</p>
+                        <span class="step-tag">Intentional, Not Random</span>
+                    </div>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">03</div>
+                    <div class="step-body">
+                        <div class="step-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--black)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path><path d="M8 10h.01"></path><path d="M12 10h.01"></path><path d="M16 10h.01"></path></svg></div>
+                        <h3>Real Conversations Start</h3>
+                        <p>Each pair receives a personalized conversation starter and a meeting location. No more "what do you do?" Just real, intentional dialogue from minute one.</p>
+                        <span class="step-tag">Meaningful Icebreakers</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== OUR BELIEF ========== -->
+    <section class="ai-section" id="our-belief">
+        <div class="container">
+            <div class="ai-grid">
+                <div class="ai-content">
+                    <div class="section-label">Our Belief</div>
+                    <h2>Connection Is<br>Infrastructure.<br><span style="color: var(--lime);">Not a Perk.</span></h2>
+                    <p>
+                        Most events leave connection to chance. People stand in crowded rooms and hope for the best. The extroverts work the room. Everyone else wonders why they came. We believe belonging can be designed. One real conversation at a time.
+                    </p>
+                    <div class="ai-features">
+                        <div class="ai-feature">
+                            <div class="ai-feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--lime)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
+                            <div>
+                                <h4>Built for Everyone, Not Just Extroverts</h4>
+                                <p>Introverts, the socially anxious, the quiet ones. Hoogah gives every person in the room a way in.</p>
+                            </div>
+                        </div>
+                        <div class="ai-feature">
+                            <div class="ai-feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--lime)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"></path><path d="M9 18h6"></path><path d="M10 22h4"></path></svg></div>
+                            <div>
+                                <h4>Conversations That Actually Matter</h4>
+                                <p>Personalized icebreakers crafted from real responses. Not small talk. Not "what do you do?" Real dialogue.</p>
+                            </div>
+                        </div>
+                        <div class="ai-feature">
+                            <div class="ai-feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--lime)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path><circle cx="12" cy="12" r="3"></circle></svg></div>
+                            <div>
+                                <h4>Flexible Formats for Every Room</h4>
+                                <p>1-on-1 pairings for deep conversation. Huddles of 3-6 for energy. Community stations for large groups. You choose.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ai-visual" style="display: flex; justify-content: center; align-items: center;">
+                    <img src="undraw_person.svg" alt="Person connecting" style="width: 100%; max-width: 400px; height: auto; filter: brightness(0) invert(1);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== USE CASES ========== -->
+    <section class="usecases-section" id="use-cases">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Built For</div>
+                <h2>Designed for People Who Bring People Together</h2>
+                <p>If you put people in a room and want them to walk out connected, Hoogah was built for you.</p>
+            </div>
+            <div class="usecases-grid">
+                <div class="usecase-card">
+                    <div class="usecase-color"></div>
+                    <div class="usecase-body">
+                        <div class="usecase-icon"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path><path d="M2 8c0-3.3 2.7-6 6-6"></path><path d="M22 8a6 6 0 0 0-6-6"></path></svg></div>
+                        <h3>Event Organizers</h3>
+                        <p>Your attendees remember the people they met, not the panels they sat through. Give them connections worth coming back for.</p>
+                        <ul class="usecase-list">
+                            <li>Conferences & summits</li>
+                            <li>Industry meetups</li>
+                            <li>Multi-day events</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="usecase-card">
+                    <div class="usecase-color"></div>
+                    <div class="usecase-body">
+                        <div class="usecase-icon"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"></rect><path d="M9 22v-4h6v4"></path><path d="M8 6h.01"></path><path d="M16 6h.01"></path><path d="M12 6h.01"></path><path d="M12 10h.01"></path><path d="M12 14h.01"></path><path d="M16 10h.01"></path><path d="M16 14h.01"></path><path d="M8 10h.01"></path><path d="M8 14h.01"></path></svg></div>
+                        <h3>Corporate Training</h3>
+                        <p>Learning is a social experience. Build real bonds between employees during offsites, training programs, and team retreats. Nobody gets left out.</p>
+                        <ul class="usecase-list">
+                            <li>Team building retreats</li>
+                            <li>Onboarding programs</li>
+                            <li>Leadership training</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="usecase-card">
+                    <div class="usecase-color"></div>
+                    <div class="usecase-body">
+                        <div class="usecase-icon"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg></div>
+                        <h3>Community Builders</h3>
+                        <p>Whether you're building a founder community or an entrepreneur network, give your members a reason to keep showing up.</p>
+                        <ul class="usecase-list">
+                            <li>Entrepreneur networks</li>
+                            <li>Non-profit gatherings</li>
+                            <li>Alumni events</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PRICING ========== -->
+    <section class="pricing-section" id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Pricing</div>
+                <h2>Simple. Transparent. No Surprises.</h2>
+                <p>Add $10 to your ticket price. Your attendees won't even notice, but they'll remember the connections forever.</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card featured">
+                    <div class="pricing-header">
+                        <div class="pricing-type">Events</div>
+                        <div class="pricing-amount">$10 <span class="pricing-unit">/ seat</span></div>
+                        <div class="pricing-desc">Per attendee, per event</div>
+                    </div>
+                    <div class="pricing-body">
+                        <ul class="pricing-features">
+                            <li>Intentional attendee pairing</li>
+                            <li>Custom questions per event</li>
+                            <li>Personalized conversation starters</li>
+                            <li>1-on-1 + huddle formats</li>
+                            <li>Admin dashboard access</li>
+                            <li>Dedicated onboarding support</li>
+                        </ul>
+                        <a href="#book-demo" class="btn btn-primary" style="width: 100%; justify-content: center;">Book a Demo →</a>
+                    </div>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <div class="pricing-type">Training Programs</div>
+                        <div class="pricing-amount">$750 <span class="pricing-unit">/ flat</span></div>
+                        <div class="pricing-desc">Per training program</div>
+                    </div>
+                    <div class="pricing-body">
+                        <ul class="pricing-features">
+                            <li>Everything in Events</li>
+                            <li>Multi-session support</li>
+                            <li>Community building mode</li>
+                            <li>Group station assignments</li>
+                            <li>Custom branding</li>
+                            <li>Priority support</li>
+                        </ul>
+                        <a href="#book-demo" class="btn btn-navy" style="width: 100%; justify-content: center;">Book a Demo →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SOCIAL PROOF ========== -->
+    <section class="proof-section">
+        <div class="container">
+            <div class="proof-quote">
+                <img src="undraw_smiley-face.svg" alt="Happy attendees" style="width: 80px; height: auto; margin-bottom: 24px;">
+                <blockquote>
+                    We ran Hoogah at our women entrepreneur event with 50 attendees. The pairs connected so deeply that people were emotional. They finally felt seen. Our return rate doubled for the next event.
+                </blockquote>
+                <div class="proof-author">
+                    <div class="proof-avatar">E</div>
+                    <div class="proof-author-info">
+                        <h4>Event Organizer</h4>
+                        <p>Women Entrepreneur Network</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CTA ========== -->
+    <section class="cta-section" id="book-demo">
+        <div class="container">
+            <div class="cta-grid">
+                <div class="cta-illo-wrap">
+                    <img src="undraw_rocket.svg" alt="Launch your event success" style="width: 100%; max-width: 300px; height: auto; filter: brightness(0) invert(1);">
+                </div>
+                <div class="cta-inner">
+                    <div class="tag" style="margin-bottom: 24px;">Limited Beta Access</div>
+                    <h2>Ready to Design an Event People <span style="color: var(--lime);">Actually Come Back To?</span></h2>
+                    <p>Book a 15-minute demo. We'll show you what happens when you stop leaving connection to chance and start designing for belonging.</p>
+                    <div class="cta-buttons">
+                        <a href="https://calendly.com" class="btn btn-primary">Book a Free Demo →</a>
+                        <a href="mailto:hello@hoogah.com" class="btn btn-secondary">Contact Sales</a>
+                    </div>
+                    <p class="cta-note">No credit card required. Setup takes less than 10 minutes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="logo.png" alt="Hoogah" style="height: 44px; filter: brightness(10);">
+                    <p>Intentional networking designed for belonging. Because connection isn't a perk. It's infrastructure. Built for people who bring people together.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <a href="#how-it-works">How It Works</a>
+                    <a href="#our-belief">Our Belief</a>
+                    <a href="#use-cases">Use Cases</a>
+                    <a href="#pricing">Pricing</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <a href="#">About Us</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Contact</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <a href="#">Case Studies</a>
+                    <a href="#">Documentation</a>
+                    <a href="#">Help Center</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Hoogah. All rights reserved.</p>
+                <div class="footer-socials">
+                    <a href="#" aria-label="LinkedIn">in</a>
+                    <a href="#" aria-label="Twitter">𝕏</a>
+                    <a href="#" aria-label="Instagram">ig</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const toggleBtn = document.querySelector('.mobile-toggle');
+            mobileMenu.classList.toggle('active');
+            toggleBtn.classList.toggle('active');
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        }
+
+        function closeMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const toggleBtn = document.querySelector('.mobile-toggle');
+            mobileMenu.classList.remove('active');
+            toggleBtn.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const toggleBtn = document.querySelector('.mobile-toggle');
+            if (mobileMenu.classList.contains('active') && 
+                !mobileMenu.contains(event.target) && 
+                !toggleBtn.contains(event.target)) {
+                closeMobileMenu();
+            }
+        });
+
+        // Close menu on escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeMobileMenu();
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
