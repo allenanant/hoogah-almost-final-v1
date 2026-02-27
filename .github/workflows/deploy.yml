@@ -1,0 +1,22 @@
+name: Deploy to WordPress
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Deploy to WordPress SFTP
+      uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+      with:
+        username: khushiy.wordpress.com
+        server: sftp.wp.com
+        port: 22
+        local_path: './*'
+        remote_path: '/wp-content/themes/hoogah/'
+        sftp_only: true
+        password: ${{ secrets.SFTP_PASSWORD }}
