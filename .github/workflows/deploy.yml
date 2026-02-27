@@ -17,6 +17,6 @@ jobs:
         server: sftp.wp.com
         port: 22
         local_path: './*'
-        remote_path: '/wp-content/themes/hoogah/'
+        remote_path: 'wp-content/themes/hoogah/'
         sftp_only: true
         password: ${{ secrets.SFTP_PASSWORD }}
