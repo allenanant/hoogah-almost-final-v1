@@ -1356,6 +1356,31 @@
                 grid-template-columns: 1fr 1fr;
                 gap: 32px;
             }
+
+            /* Sub-page grids → single column */
+            .content-section .content-grid,
+            .demo-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            /* Reduce section padding */
+            .content-section,
+            .problem-section,
+            .how-section,
+            .usecases-section,
+            .pricing-section,
+            .proof-section {
+                padding: 80px 0;
+            }
+
+            .section-header {
+                margin-bottom: 48px;
+            }
+
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 768px) {
@@ -1367,30 +1392,35 @@
                 max-width: 220px;
             }
 
+            /* Hero */
             .hero { padding: 60px 0 40px; }
             .hero h1 { font-size: 36px; }
             .hero-stats { flex-direction: column; gap: 20px; }
+            .hero-desc { font-size: 16px; }
+            .hero-visual-card { padding: 24px; }
+            .hero-visual-card::before { top: -8px; right: -8px; }
 
-            .pricing-grid {
-                grid-template-columns: 1fr;
-                max-width: 400px;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-                gap: 16px;
-                text-align: center;
-            }
-
-            .btn { padding: 14px 24px; font-size: 14px; }
-
+            /* Sub-page hero */
+            .page-hero { padding: 50px 0 30px; }
             .page-hero h1 { font-size: 36px; }
             .page-hero p { font-size: 16px; }
 
+            /* Section padding reductions */
+            .content-section,
+            .problem-section,
+            .how-section,
+            .ai-section,
+            .usecases-section,
+            .pricing-section,
+            .proof-section,
+            .cta-section {
+                padding: 60px 0;
+            }
+
+            .section-header { margin-bottom: 40px; }
+            .section-header p { font-size: 16px; }
+
+            /* Grids → single column */
             .content-section .content-grid {
                 grid-template-columns: 1fr;
                 gap: 40px;
@@ -1400,8 +1430,13 @@
                 grid-template-columns: 1fr;
             }
 
-            .comparison-table {
-                overflow-x: auto;
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+            }
+
+            .problem-stats {
+                grid-template-columns: 1fr;
             }
 
             .blog-grid {
@@ -1409,6 +1444,65 @@
                 max-width: 500px;
                 margin: 0 auto;
             }
+
+            /* Demo page */
+            .demo-content { padding: 50px 0; }
+            .demo-grid { grid-template-columns: 1fr; }
+            .demo-cta-box { padding: 28px; }
+
+            /* Blog empty state */
+            .blog-empty { padding: 60px 0; }
+            .blog-empty-card { padding: 40px 24px; }
+            .subscribe-form { flex-direction: column; }
+
+            /* Feature detail cards */
+            .feature-detail { padding: 20px; gap: 16px; }
+            .feature-detail-icon { width: 44px; height: 44px; font-size: 20px; }
+
+            /* FAQ items */
+            .faq-item { padding: 20px; }
+            .faq-item h3 { font-size: 16px; }
+
+            /* Step cards */
+            .step-number { font-size: 36px; padding: 12px 20px; }
+            .step-body { padding: 20px; }
+            .step-body h3 { font-size: 18px; }
+
+            /* Pricing */
+            .pricing-amount { font-size: 36px; }
+            .pricing-header { padding: 24px 24px 20px; }
+            .pricing-body { padding: 20px 24px 24px; }
+
+            /* Comparison table */
+            .comparison-table { overflow-x: auto; }
+            .comparison-table th,
+            .comparison-table td { padding: 12px 16px; font-size: 14px; }
+
+            /* CTA section */
+            .cta-inner h2 { font-size: 28px; }
+            .cta-inner p { font-size: 16px; }
+
+            /* Social proof */
+            .proof-quote blockquote { font-size: 22px; }
+
+            /* Problem stats */
+            .problem-stat .number { font-size: 32px; }
+            .problem-stat { padding: 20px; }
+
+            /* AI terminal */
+            .ai-terminal .terminal-body { padding: 16px; font-size: 12px; }
+
+            /* Footer */
+            .footer-grid { grid-template-columns: 1fr; }
+            .footer-bottom {
+                flex-direction: column;
+                gap: 16px;
+                text-align: center;
+            }
+
+            /* Buttons */
+            .btn { padding: 14px 24px; font-size: 14px; }
+            .card { padding: 24px; }
         }
 
         /* ========== SUB-PAGE HERO ========== */
@@ -1738,12 +1832,68 @@
             line-height: 1.6;
         }
 
-        @media (max-width: 768px) {
-            .demo-grid {
-                grid-template-columns: 1fr;
+        /* ========== SMALL PHONES ========== */
+        @media (max-width: 480px) {
+            .container { padding: 0 16px; }
+
+            /* Hero */
+            .hero { padding: 40px 0 30px; }
+            .hero h1 { font-size: 28px; }
+            .hero-stat-number { font-size: 28px; }
+            .hero-buttons {
+                flex-direction: column;
+                align-items: stretch;
             }
 
-            .subscribe-form {
-                flex-direction: column;
+            /* Sub-page hero */
+            .page-hero { padding: 40px 0 24px; }
+            .page-hero h1 { font-size: 28px; }
+
+            /* Section padding */
+            .content-section,
+            .problem-section,
+            .how-section,
+            .ai-section,
+            .usecases-section,
+            .pricing-section,
+            .proof-section,
+            .cta-section {
+                padding: 48px 0;
             }
+
+            /* CTA buttons stack */
+            .cta-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .btn {
+                padding: 12px 20px;
+                font-size: 13px;
+                width: 100%;
+                justify-content: center;
+            }
+
+            /* Cards & detail components */
+            .card { padding: 20px; }
+            .demo-cta-box { padding: 20px; }
+            .demo-content { padding: 40px 0; }
+            .blog-empty { padding: 48px 0; }
+            .blog-empty-card { padding: 32px 16px; }
+            .blog-empty-card h2 { font-size: 24px; }
+            .faq-item { padding: 16px; }
+
+            .feature-detail {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            /* Proof quote */
+            .proof-quote blockquote { font-size: 20px; }
+
+            /* Footer */
+            .footer { padding: 40px 0 24px; }
+
+            /* Mobile menu */
+            .mobile-menu a { font-size: 20px; padding: 12px 0; }
         }
