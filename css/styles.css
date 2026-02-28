@@ -1832,6 +1832,55 @@
             line-height: 1.6;
         }
 
+        /* ========== SUB-PAGE RESPONSIVE OVERRIDES ========== */
+        /* These must come AFTER the sub-page base styles above */
+        @media (max-width: 1024px) {
+            .content-section .content-grid,
+            .demo-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+            .blog-grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .content-section .content-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+            .demo-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-visual {
+                order: 0;
+            }
+            .comparison-table th,
+            .comparison-table td {
+                padding: 10px 12px;
+                font-size: 13px;
+                letter-spacing: 0;
+            }
+            .comparison-table th {
+                font-size: 11px;
+            }
+            .page-hero h1 { font-size: 32px; }
+            .page-hero p { font-size: 15px; }
+        }
+
         /* ========== SMALL PHONES ========== */
         @media (max-width: 480px) {
             .container { padding: 0 16px; }
@@ -1848,6 +1897,17 @@
             /* Sub-page hero */
             .page-hero { padding: 40px 0 24px; }
             .page-hero h1 { font-size: 28px; }
+
+            /* Sub-page grids must stack */
+            .content-section .content-grid,
+            .demo-grid,
+            .faq-grid,
+            .blog-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .hero-visual { order: 0; }
 
             /* Section padding */
             .content-section,
