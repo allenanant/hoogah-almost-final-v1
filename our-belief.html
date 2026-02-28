@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Belief | Hoogah</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lucide-static@latest/font/lucide.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- ========== NAVBAR ========== -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-inner">
+                <a href="index.html" class="navbar-logo"><img src="logo.png" alt="Hoogah"></a>
+                <div class="navbar-links">
+                    <a href="how-it-works.html">How It Works</a>
+                    <a href="our-belief.html" class="active">Our Belief</a>
+                    <a href="use-cases.html">Use Cases</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="book-demo.html" class="navbar-cta">Book a Demo &rarr;</a>
+                </div>
+                <button class="mobile-toggle" aria-label="Menu" onclick="toggleMobileMenu()">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="how-it-works.html" onclick="closeMobileMenu()">How It Works</a>
+            <a href="our-belief.html" onclick="closeMobileMenu()">Our Belief</a>
+            <a href="use-cases.html" onclick="closeMobileMenu()">Use Cases</a>
+            <a href="pricing.html" onclick="closeMobileMenu()">Pricing</a>
+            <a href="book-demo.html" class="navbar-cta" onclick="closeMobileMenu()">Book a Demo &rarr;</a>
+        </div>
+    </nav>
+
+    <!-- ========== PAGE HERO ========== -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="section-label">Our Belief</div>
+            <h1>Connection Is Infrastructure.<br>Not a Perk.</h1>
+            <p>We started Hoogah because we believe that the most important thing that happens at any event isn't on the agenda. It's the moment two people discover they were meant to meet. That moment shouldn't be left to luck.</p>
+        </div>
+    </section>
+
+    <!-- ========== MANIFESTO ========== -->
+    <section class="content-section bg-white">
+        <div class="container">
+            <div class="content-grid">
+                <div class="content-text">
+                    <div class="section-label">The Manifesto</div>
+                    <h2>We Believe Belonging Can Be <span style="color: var(--navy);">Designed</span></h2>
+                    <p>Most events leave connection to chance. People stand in crowded rooms and hope for the best. The extroverts circle the room collecting business cards. The introverts hover near the edges, checking their phones, counting down until they can leave. And somewhere in between, dozens of people who could have had life-changing conversations never even meet.</p>
+                    <p>That's not a people problem. That's a design problem.</p>
+                    <p>We founded Hoogah on a simple conviction: if you can design a stage, curate a speaker lineup, and plan a catering menu, you can design connection too. Belonging doesn't happen by accident at scale. It happens when someone takes the time to build the infrastructure for it.</p>
+                    <p>Every event organizer knows that the hallway conversations matter more than the keynote. Yet the industry spends millions on stages and speakers, and exactly zero on making sure the right people find each other. We think that's backwards. And we built Hoogah to fix it.</p>
+                </div>
+                <div style="display: flex; justify-content: center; align-items: center;">
+                    <img src="undraw_person.svg" alt="Person connecting" style="width: 100%; max-width: 360px; height: auto; opacity: 0.9;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FEATURE: BUILT FOR EVERYONE ========== -->
+    <section class="content-section bg-cream">
+        <div class="container">
+            <div class="content-grid">
+                <div style="display: flex; flex-direction: column; justify-content: center;">
+                    <div class="feature-detail">
+                        <div class="feature-detail-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--black)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        </div>
+                        <div>
+                            <h3>No One Gets Left Behind</h3>
+                            <p>Every person in the room gets paired. Every single one. No wallflowers, no outsiders, no one standing alone wondering if they belong.</p>
+                        </div>
+                    </div>
+                    <div class="feature-detail">
+                        <div class="feature-detail-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--black)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                        </div>
+                        <div>
+                            <h3>Designed with Empathy</h3>
+                            <p>We build for the person who almost didn't come. The one who finds networking draining. The one who needs a reason to stay. Hoogah is that reason.</p>
+                        </div>
+                    </div>
+                    <div class="feature-detail">
+                        <div class="feature-detail-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--black)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        </div>
+                        <div>
+                            <h3>Safe Space by Default</h3>
+                            <p>Structured conversations remove the pressure of cold approaches. People open up when they feel the environment was designed to include them.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-text">
+                    <div class="section-label">Principle 01</div>
+                    <h2>Built for Everyone, Not Just Extroverts</h2>
+                    <p>The events industry has an unspoken bias. Networking is designed for people who are already good at it. The confident ones. The outgoing ones. The people who can walk up to a stranger and start a conversation without breaking a sweat.</p>
+                    <p>But what about everyone else? The introvert who has brilliant ideas but freezes in a room full of strangers. The first-time attendee who doesn't know a single person. The junior professional who feels too intimidated to approach a senior leader. The neurodivergent attendee who finds unstructured social environments overwhelming.</p>
+                    <p>Hoogah was built for all of them. Our structured pairing system removes the anxiety of the cold approach. Every person is matched. Every person gets a conversation partner. Every person receives a personalized icebreaker that makes the first thirty seconds feel natural instead of painful.</p>
+                    <p>When you design for the person who almost didn't come, you build something that works for everyone.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FEATURE: CONVERSATIONS THAT MATTER ========== -->
+    <section class="content-section bg-white">
+        <div class="container">
+            <div class="content-grid">
+                <div class="content-text">
+                    <div class="section-label">Principle 02</div>
+                    <h2>Conversations That Actually Matter</h2>
+                    <p>There's a reason people dread the words "networking session." It's because most networking feels hollow. You exchange names, job titles, and business cards. You make small talk about the weather or the keynote speaker. You promise to "connect on LinkedIn" and never do. Thirty minutes pass and you haven't had a single real conversation.</p>
+                    <p>We think conversations deserve better architecture. Hoogah doesn't just pair people randomly and hope for the best. Our algorithm reads between the lines of attendee responses to find genuine points of connection: shared challenges, complementary expertise, aligned values, overlapping ambitions.</p>
+                    <p>Then we craft a personalized icebreaker for each pair. Not "what do you do?" but something that sparks a real exchange. Something that makes two strangers realize they were supposed to meet. The kind of opening that leads to a conversation people remember months later.</p>
+                    <p>Great connections don't start with small talk. They start with the right question, asked at the right moment, between the right people.</p>
+                </div>
+                <div style="display: flex; flex-direction: column; justify-content: center;">
+                    <div class="feature-detail">
+                        <div class="feature-detail-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--black)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path><path d="M8 10h.01"></path><path d="M12 10h.01"></path><path d="M16 10h.01"></path></svg>
+                        </div>
+                        <div>
+                            <h3>Beyond Small Talk</h3>
+                            <p>Our AI-crafted icebreakers are built from real attendee responses. Every conversation starts with depth, not formalities.</p>
+                        </div>
+                    </div>
+                    <div class="feature-detail">
+                        <div class="feature-detail-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--black)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                        </div>
+                        <div>
+                            <h3>Intentional Matching</h3>
+                            <p>We don't match randomly. We find shared challenges, complementary skills, and aligned values that make conversations click.</p>
+                        </div>
+                    </div>
+                    <div class="feature-detail">
+                        <div class="feature-detail-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--black)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"></path><path d="M9 18h6"></path><path d="M10 22h4"></path></svg>
+                        </div>
+                        <div>
+                            <h3>Memorable Moments</h3>
+                            <p>People don't remember panels. They remember the person they met who changed their perspective. Hoogah creates those moments on purpose.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FEATURE: FLEXIBLE FORMATS ========== -->
+    <section class="content-section bg-cream">
+        <div class="container">
+            <div class="content-grid">
+                <div style="display: flex; flex-direction: column; justify-content: center;">
+                    <div class="feature-detail">
+                        <div class="feature-detail-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--black)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        </div>
+                        <div>
+                            <h3>1-on-1 Pairings</h3>
+                            <p>Deep, focused conversations between two people. Ideal for mentorship moments, founder introductions, and meaningful professional connections.</p>
+                        </div>
+                    </div>
+                    <div class="feature-detail">
+                        <div class="feature-detail-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--black)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg>
+                        </div>
+                        <div>
+                            <h3>Huddles (3-6 People)</h3>
+                            <p>Small group energy with guided discussion prompts. Perfect for brainstorming, peer learning, and building micro-communities within your event.</p>
+                        </div>
+                    </div>
+                    <div class="feature-detail">
+                        <div class="feature-detail-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--black)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+                        </div>
+                        <div>
+                            <h3>Community Stations</h3>
+                            <p>Themed stations for larger groups organized around shared interests. Attendees flow between stations, creating organic connections within a structured framework.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-text">
+                    <div class="section-label">Principle 03</div>
+                    <h2>Flexible Formats for Every Room</h2>
+                    <p>Not every event is the same. A 50-person leadership retreat needs a different approach than a 500-person industry conference. A corporate training program has different goals than a founder meetup. A community gathering needs different energy than a sales kickoff.</p>
+                    <p>That's why Hoogah offers three distinct networking formats that you can mix and match within a single event. Use 1-on-1 pairings when you want depth and intimacy. Deploy huddles of 3-6 people when you want the energy of a small group and the diversity of multiple perspectives. Set up community stations when you want attendees to self-select into topics they care about while still being guided by structure.</p>
+                    <p>You know your audience better than anyone. Hoogah gives you the tools to design the right networking experience for the room you're building. Every format comes with intentional pairings, personalized prompts, and a clear structure that makes sure nobody is left standing on the sidelines.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== WHY HOOGAH EXISTS ========== -->
+    <section class="content-section bg-navy">
+        <div class="container">
+            <div class="content-grid">
+                <div class="content-text">
+                    <div class="section-label" style="color: var(--lime);">The Origin</div>
+                    <h2 style="color: var(--white);">Why Hoogah Exists</h2>
+                    <p>We've all been there. You walk into an event with high expectations. The speakers are incredible. The venue is beautiful. The agenda is packed with value. And then the organizer says, "Now let's take twenty minutes for networking."</p>
+                    <p>The room shifts. Some people light up. Most people freeze. You watch as the same confident few dominate every conversation while dozens of brilliant, talented, interesting people stand around the edges, unsure where to go or what to say. Twenty minutes later, the networking session ends, and most people leave without having a single meaningful exchange.</p>
+                    <p>We watched this happen over and over again at events across industries. Tech conferences, leadership summits, entrepreneur meetups, corporate offsites. The pattern was always the same: incredible people, terrible infrastructure for helping them connect.</p>
+                    <p>So we asked a simple question: what if connection wasn't left to chance? What if the same intentionality that goes into curating speakers and designing stages went into designing how people meet each other?</p>
+                    <p>That question became Hoogah. A platform that treats connection as infrastructure, not an afterthought. Because the most valuable thing at any event isn't what's on the stage. It's what happens between two people who were meant to meet, and finally do.</p>
+                </div>
+                <div style="display: flex; justify-content: center; align-items: center;">
+                    <img src="undraw_chat-text.svg" alt="Meaningful conversations" style="width: 100%; max-width: 320px; height: auto; filter: brightness(0) invert(1); opacity: 0.85;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CTA ========== -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-grid">
+                <div class="cta-illo-wrap">
+                    <img src="undraw_rocket.svg" alt="Launch your event success" style="width: 100%; max-width: 300px; height: auto; filter: brightness(0) invert(1);">
+                </div>
+                <div class="cta-inner">
+                    <div class="tag" style="margin-bottom: 24px;">Limited Beta Access</div>
+                    <h2>Ready to Design an Event People <span style="color: var(--lime);">Actually Come Back To?</span></h2>
+                    <p>Book a 15-minute demo. We'll show you what happens when you stop leaving connection to chance and start designing for belonging.</p>
+                    <div class="cta-buttons">
+                        <a href="https://calendly.com" class="btn btn-primary">Book a Free Demo &rarr;</a>
+                        <a href="mailto:hello@hoogah.com" class="btn btn-secondary">Contact Sales</a>
+                    </div>
+                    <p class="cta-note">No credit card required. Setup takes less than 10 minutes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="logo.png" alt="Hoogah" style="height: 44px; filter: brightness(10);">
+                    <p>Intentional networking designed for belonging. Because connection isn't a perk. It's infrastructure. Built for people who bring people together.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <a href="how-it-works.html">How It Works</a>
+                    <a href="our-belief.html">Our Belief</a>
+                    <a href="use-cases.html">Use Cases</a>
+                    <a href="pricing.html">Pricing</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <a href="#">About Us</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Contact</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <a href="#">Case Studies</a>
+                    <a href="#">Documentation</a>
+                    <a href="#">Help Center</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Hoogah. All rights reserved.</p>
+                <div class="footer-socials">
+                    <a href="#" aria-label="LinkedIn">in</a>
+                    <a href="#" aria-label="Twitter">&#x1D54F;</a>
+                    <a href="#" aria-label="Instagram">ig</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+
+</body>
+</html>

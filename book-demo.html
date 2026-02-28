@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Demo | Hoogah</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-inner">
+                <a href="index.html" class="navbar-logo"><img src="logo.png" alt="Hoogah"></a>
+                <div class="navbar-links">
+                    <a href="how-it-works.html">How It Works</a>
+                    <a href="our-belief.html">Our Belief</a>
+                    <a href="use-cases.html">Use Cases</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="book-demo.html" class="navbar-cta">Book a Demo &rarr;</a>
+                </div>
+                <button class="mobile-toggle" aria-label="Menu" onclick="toggleMobileMenu()">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="how-it-works.html" onclick="closeMobileMenu()">How It Works</a>
+            <a href="our-belief.html" onclick="closeMobileMenu()">Our Belief</a>
+            <a href="use-cases.html" onclick="closeMobileMenu()">Use Cases</a>
+            <a href="pricing.html" onclick="closeMobileMenu()">Pricing</a>
+            <a href="book-demo.html" class="navbar-cta" onclick="closeMobileMenu()">Book a Demo &rarr;</a>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Book a Demo</h1>
+            <p>See what happens when you stop leaving connection to chance and start designing for belonging.</p>
+        </div>
+    </section>
+
+    <!-- Demo Content -->
+    <section class="demo-content">
+        <div class="container">
+            <div class="demo-grid">
+
+                <!-- Left Column: What to Expect -->
+                <div class="demo-info">
+                    <h2>What to Expect</h2>
+                    <p>We keep it short, focused, and genuinely useful. No slides. No filler. Just a real conversation about how Hoogah can transform your next event.</p>
+
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <div class="step-body">
+                            <h3>Tell Us About Your Event</h3>
+                            <p>We start with a quick 15-minute conversation to understand your audience, goals, and what meaningful connection looks like for your community. Whether it's a 50-person offsite or a 5,000-person conference, we tailor everything to you.</p>
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <div class="step-body">
+                            <h3>See Live AI Pairing in Action</h3>
+                            <p>Watch our AI matching engine work in real time. We'll show you how attendee profiles get paired based on shared interests, complementary expertise, and genuine compatibility -- not random chance.</p>
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <div class="step-body">
+                            <h3>Get a Custom Setup Plan</h3>
+                            <p>Walk away with a clear, actionable plan for integrating Hoogah into your next event. We'll map out the timeline, onboarding steps, and everything your team needs to launch with confidence.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: CTA Box -->
+                <div>
+                    <div class="demo-cta-box">
+                        <h2>Ready to See It Live?</h2>
+                        <p>Pick a time that works for you. Our team will walk you through everything -- no pressure, no hard sell. Just a chance to see if Hoogah is the right fit for your community.</p>
+                        <a href="https://calendly.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width: 100%; text-align: center; font-size: 1.1rem; padding: 18px 32px;">Schedule Your Demo &rarr;</a>
+                        <p style="margin-top: 16px; font-size: 0.9rem; opacity: 0.7; text-align: center;">Free 15-minute call &middot; No commitment required</p>
+                    </div>
+
+                    <!-- Contact Section -->
+                    <div class="demo-cta-box" style="margin-top: 24px;">
+                        <h3>Prefer Email?</h3>
+                        <p>No problem. Reach out directly and we'll get back to you within 24 hours.</p>
+                        <a href="mailto:hello@hoogah.com" class="btn btn-secondary" style="width: 100%; text-align: center;">hello@hoogah.com</a>
+                        <p style="margin-top: 12px; font-size: 0.85rem; opacity: 0.6; text-align: center;">We typically respond within a few hours during business days.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="proof-section">
+        <div class="container">
+            <blockquote>
+                <p>"We used to dread the networking portion of our conferences. Now it's the thing attendees talk about most. Hoogah turned awkward mingling into genuine connection."</p>
+                <cite>-- Head of Events, Series B SaaS Company</cite>
+            </blockquote>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="logo.png" alt="Hoogah" style="height: 44px; filter: brightness(10);">
+                    <p>Intentional networking designed for belonging. Because connection isn't a perk. It's infrastructure. Built for people who bring people together.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <a href="how-it-works.html">How It Works</a>
+                    <a href="our-belief.html">Our Belief</a>
+                    <a href="use-cases.html">Use Cases</a>
+                    <a href="pricing.html">Pricing</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <a href="#">About Us</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Contact</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <a href="#">Case Studies</a>
+                    <a href="#">Documentation</a>
+                    <a href="#">Help Center</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Hoogah. All rights reserved.</p>
+                <div class="footer-socials">
+                    <a href="#" aria-label="LinkedIn">in</a>
+                    <a href="#" aria-label="Twitter">&#x1D54F;</a>
+                    <a href="#" aria-label="Instagram">ig</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+
+</body>
+</html>

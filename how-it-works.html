@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How It Works | Hoogah</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lucide-static@latest/font/lucide.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- ========== NAVBAR ========== -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-inner">
+                <a href="index.html" class="navbar-logo"><img src="logo.png" alt="Hoogah"></a>
+                <div class="navbar-links">
+                    <a href="how-it-works.html" class="active">How It Works</a>
+                    <a href="our-belief.html">Our Belief</a>
+                    <a href="use-cases.html">Use Cases</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="book-demo.html" class="navbar-cta">Book a Demo &rarr;</a>
+                </div>
+                <button class="mobile-toggle" aria-label="Menu" onclick="toggleMobileMenu()">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="how-it-works.html" onclick="closeMobileMenu()">How It Works</a>
+            <a href="our-belief.html" onclick="closeMobileMenu()">Our Belief</a>
+            <a href="use-cases.html" onclick="closeMobileMenu()">Use Cases</a>
+            <a href="pricing.html" onclick="closeMobileMenu()">Pricing</a>
+            <a href="book-demo.html" class="navbar-cta" onclick="closeMobileMenu()">Book a Demo &rarr;</a>
+        </div>
+    </nav>
+
+    <!-- ========== PAGE HERO ========== -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="section-label">The Process</div>
+            <h1>How Hoogah Works</h1>
+            <p>Three simple steps turn a room full of strangers into a network of meaningful connections. No app downloads. No friction. Just intentional design that makes every attendee feel like they belong.</p>
+        </div>
+    </section>
+
+    <!-- ========== THREE STEPS (EXPANDED) ========== -->
+    <section class="how-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Step by Step</div>
+                <h2>From Arrival to Authentic Connection</h2>
+                <p>Hoogah integrates into your event workflow in minutes. Here is exactly what happens from the moment your attendees walk through the door.</p>
+            </div>
+            <div class="steps-grid">
+
+                <!-- Step 1 -->
+                <div class="step-card">
+                    <div class="step-number">01</div>
+                    <div class="step-body">
+                        <div class="step-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--black)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect>
+                                <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+                                <path d="M12 11h4"></path>
+                                <path d="M12 16h4"></path>
+                                <path d="M8 11h.01"></path>
+                                <path d="M8 16h.01"></path>
+                            </svg>
+                        </div>
+                        <h3>Attendees Answer Questions</h3>
+                        <p>When attendees arrive, they scan a QR code displayed at your venue. In under 90 seconds they answer 4-5 thoughtful questions that you have crafted through your admin dashboard. These are not generic icebreakers. They are tailored to your event's theme, industry, and goals. Questions might explore what attendees hope to learn, the challenges they are facing, or the ideas they are most excited about. The answers paint a rich picture of who each person is and what they need from the room.</p>
+                        <span class="step-tag">Fully Customizable</span>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="step-card">
+                    <div class="step-number">02</div>
+                    <div class="step-body">
+                        <div class="step-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--black)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                            </svg>
+                        </div>
+                        <h3>Hoogah Creates Intentional Pairings</h3>
+                        <p>Our algorithm reads between the lines. It does not just match keywords. It identifies complementary perspectives, shared values, and the kind of overlapping curiosity that leads to real dialogue. Pairings can be 1-on-1 for deep connection, or huddles of 3-6 people for collaborative energy. The system accounts for diverse backgrounds, avoids repeat pairings across rounds, and ensures every single person in the room is matched, including the quiet ones who might otherwise be left standing alone.</p>
+                        <span class="step-tag">Intentional, Not Random</span>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="step-card">
+                    <div class="step-number">03</div>
+                    <div class="step-body">
+                        <div class="step-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--black)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                                <path d="M8 10h.01"></path>
+                                <path d="M12 10h.01"></path>
+                                <path d="M16 10h.01"></path>
+                            </svg>
+                        </div>
+                        <h3>Real Conversations Start</h3>
+                        <p>Each pair receives a personalized conversation starter drawn directly from their responses, along with a designated meeting spot at your venue. No more awkward introductions. No more "so, what do you do?" From minute one, attendees step into conversations that feel relevant, human, and worth having. The result is that people leave your event remembering who they talked to, not just what they heard from the stage.</p>
+                        <span class="step-tag">Meaningful Icebreakers</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== HOW THE ALGORITHM WORKS ========== -->
+    <section class="content-section bg-navy">
+        <div class="container">
+            <div class="content-grid">
+                <div class="content-text">
+                    <div class="section-label" style="color: var(--lime);">Under the Hood</div>
+                    <h2 style="color: var(--white);">The Engine Behind<br>Every Pairing</h2>
+                    <p style="color: rgba(255,255,255,0.7);">
+                        Hoogah is not a random name generator. Our matching engine processes attendee responses through multiple layers of analysis to find the pairings that will spark the most meaningful conversations.
+                    </p>
+                    <p style="color: rgba(255,255,255,0.7);">
+                        It evaluates semantic similarity, complementary expertise, shared goals, and diversity of perspective. The result is that every pairing feels intentional because it is.
+                    </p>
+                    <p style="color: rgba(255,255,255,0.7);">
+                        For multi-round events, the system tracks previous pairings so attendees never get matched with the same person twice. Each round surfaces new connections, new ideas, and new reasons to come back.
+                    </p>
+                </div>
+                <div>
+                    <div class="ai-terminal">
+                        <div class="terminal-bar">
+                            <span class="terminal-dot red"></span>
+                            <span class="terminal-dot yellow"></span>
+                            <span class="terminal-dot green"></span>
+                            <span class="terminal-title">hoogah_engine.py</span>
+                        </div>
+                        <div class="terminal-body">
+                            <div class="terminal-line"><span class="comment"># Hoogah Pairing Engine</span></div>
+                            <div class="terminal-line"><span class="cmd">def</span> <span class="str">create_pairings</span>(attendees):</div>
+                            <div class="terminal-line">&nbsp;&nbsp;<span class="key">responses</span> = parse_answers(attendees)</div>
+                            <div class="terminal-line">&nbsp;&nbsp;<span class="key">vectors</span> = embed_interests(responses)</div>
+                            <div class="terminal-line">&nbsp;&nbsp;<span class="key">graph</span> = build_affinity_matrix(vectors)</div>
+                            <div class="terminal-line">&nbsp;&nbsp;<span class="key">pairs</span> = optimize_matching(graph)</div>
+                            <div class="terminal-line">&nbsp;&nbsp;<span class="comment"># Generate icebreakers</span></div>
+                            <div class="terminal-line">&nbsp;&nbsp;<span class="cmd">for</span> pair <span class="cmd">in</span> pairs:</div>
+                            <div class="terminal-line">&nbsp;&nbsp;&nbsp;&nbsp;pair.<span class="key">starter</span> = craft_icebreaker(</div>
+                            <div class="terminal-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;shared = pair.<span class="str">common_threads</span>,</div>
+                            <div class="terminal-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;contrast = pair.<span class="str">unique_angles</span>,</div>
+                            <div class="terminal-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tone = <span class="str">"warm_and_curious"</span></div>
+                            <div class="terminal-line">&nbsp;&nbsp;&nbsp;&nbsp;)</div>
+                            <div class="terminal-line">&nbsp;&nbsp;<span class="cmd">return</span> <span class="key">pairs</span></div>
+                            <div class="terminal-line"></div>
+                            <div class="terminal-line"><span class="comment"># Result: 47 pairings created</span></div>
+                            <div class="terminal-line"><span class="comment"># Avg affinity score: 0.89</span></div>
+                            <div class="terminal-line"><span class="comment"># Coverage: 100% of attendees</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== WHAT ORGANIZERS CONTROL ========== -->
+    <section class="content-section bg-cream">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Your Dashboard</div>
+                <h2>Full Control. Zero Complexity.</h2>
+                <p>Your admin dashboard gives you everything you need to run networking sessions that feel effortless to attendees and powerful for your brand.</p>
+            </div>
+            <div class="steps-grid" style="margin-top: 48px;">
+                <div class="step-card">
+                    <div class="step-body">
+                        <div class="step-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--black)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                        </div>
+                        <h3>Custom Questions</h3>
+                        <p>Write your own questions or choose from proven templates. Tailor every prompt to your event theme, audience, and industry.</p>
+                    </div>
+                </div>
+                <div class="step-card">
+                    <div class="step-body">
+                        <div class="step-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--black)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </div>
+                        <h3>Flexible Formats</h3>
+                        <p>Choose 1-on-1 pairings for intimate conversation, huddles of 3-6 for collaborative energy, or community stations for larger groups.</p>
+                    </div>
+                </div>
+                <div class="step-card">
+                    <div class="step-body">
+                        <div class="step-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--black)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M3 3v18h18"></path>
+                                <path d="m19 9-5 5-4-4-3 3"></path>
+                            </svg>
+                        </div>
+                        <h3>Live Analytics</h3>
+                        <p>Track participation rates, satisfaction scores, and connection quality in real time. Export reports to show stakeholders the ROI of intentional networking.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FAQ ========== -->
+    <section class="content-section bg-white">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">FAQ</div>
+                <h2>Common Questions, Straight Answers</h2>
+                <p>Everything you need to know before you bring Hoogah to your next event.</p>
+            </div>
+            <div class="faq-grid" style="margin-top: 48px;">
+                <div class="faq-item">
+                    <h3>Do my attendees need to download an app?</h3>
+                    <p>No. Hoogah is entirely browser-based. Attendees scan a QR code with their phone camera and answer the questions right in their mobile browser. No downloads, no logins, no friction.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How long does the questionnaire take?</h3>
+                    <p>Most attendees complete it in 60 to 90 seconds. The questions are short, engaging, and designed to feel more like a conversation than a form. We have seen completion rates above 95%.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Can I run multiple pairing rounds at one event?</h3>
+                    <p>Absolutely. Many organizers run 2 to 3 rounds during an event. The algorithm ensures no one gets paired with the same person twice and each round introduces fresh connections.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What size events does Hoogah work for?</h3>
+                    <p>Hoogah works for intimate gatherings of 20 people all the way up to conferences with 500+ attendees. The matching engine scales automatically and maintains quality at any size.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How do attendees find their match?</h3>
+                    <p>After pairing, each attendee receives a notification on their phone with their match's name, a personalized conversation starter, and a suggested meeting spot at your venue. Simple and seamless.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How long does it take to set up Hoogah for my event?</h3>
+                    <p>Most organizers are fully set up in under 10 minutes. You create your event, customize your questions, and generate a QR code. Our onboarding team is available to help if you need it.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CTA ========== -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-grid">
+                <div class="cta-illo-wrap">
+                    <img src="undraw_rocket.svg" alt="Launch your event success" style="width: 100%; max-width: 300px; height: auto; filter: brightness(0) invert(1);">
+                </div>
+                <div class="cta-inner">
+                    <div class="tag" style="margin-bottom: 24px;">Limited Beta Access</div>
+                    <h2>Ready to Design an Event People <span style="color: var(--lime);">Actually Come Back To?</span></h2>
+                    <p>Book a 15-minute demo. We'll show you what happens when you stop leaving connection to chance and start designing for belonging.</p>
+                    <div class="cta-buttons">
+                        <a href="https://calendly.com" class="btn btn-primary">Book a Free Demo &rarr;</a>
+                        <a href="mailto:hello@hoogah.com" class="btn btn-secondary">Contact Sales</a>
+                    </div>
+                    <p class="cta-note">No credit card required. Setup takes less than 10 minutes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="logo.png" alt="Hoogah" style="height: 44px; filter: brightness(10);">
+                    <p>Intentional networking designed for belonging. Because connection isn't a perk. It's infrastructure. Built for people who bring people together.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <a href="how-it-works.html">How It Works</a>
+                    <a href="our-belief.html">Our Belief</a>
+                    <a href="use-cases.html">Use Cases</a>
+                    <a href="pricing.html">Pricing</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <a href="#">About Us</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Contact</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <a href="#">Case Studies</a>
+                    <a href="#">Documentation</a>
+                    <a href="#">Help Center</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Hoogah. All rights reserved.</p>
+                <div class="footer-socials">
+                    <a href="#" aria-label="LinkedIn">in</a>
+                    <a href="#" aria-label="Twitter">&#x1D54F;</a>
+                    <a href="#" aria-label="Instagram">ig</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+
+</body>
+</html>
