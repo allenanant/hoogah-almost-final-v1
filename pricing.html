@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing | Hoogah</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lucide-static@latest/font/lucide.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- ========== NAVBAR ========== -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-inner">
+                <a href="index.html" class="navbar-logo"><img src="logo.png" alt="Hoogah"></a>
+                <div class="navbar-links">
+                    <a href="how-it-works.html">How It Works</a>
+                    <a href="our-belief.html">Our Belief</a>
+                    <a href="use-cases.html">Use Cases</a>
+                    <a href="pricing.html" class="active">Pricing</a>
+                    <a href="book-demo.html" class="navbar-cta">Book a Demo &rarr;</a>
+                </div>
+                <button class="mobile-toggle" aria-label="Menu" onclick="toggleMobileMenu()">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="how-it-works.html" onclick="closeMobileMenu()">How It Works</a>
+            <a href="our-belief.html" onclick="closeMobileMenu()">Our Belief</a>
+            <a href="use-cases.html" onclick="closeMobileMenu()">Use Cases</a>
+            <a href="pricing.html" onclick="closeMobileMenu()">Pricing</a>
+            <a href="book-demo.html" class="navbar-cta" onclick="closeMobileMenu()">Book a Demo &rarr;</a>
+        </div>
+    </nav>
+
+    <!-- ========== PAGE HERO ========== -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="section-label">Pricing</div>
+            <h1>Simple, Transparent Pricing</h1>
+            <p>Add $10 to your ticket price. Your attendees won't notice, but they'll remember the connections.</p>
+        </div>
+    </section>
+
+    <!-- ========== PRICING CARDS ========== -->
+    <section class="pricing-section" style="border-bottom: var(--border);">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Choose Your Plan</div>
+                <h2>One Price. Everything Included.</h2>
+                <p>No hidden fees, no surprise add-ons, no per-feature upsells. Every plan includes full access to the Hoogah platform so your attendees get the experience they deserve.</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card featured">
+                    <div class="pricing-header">
+                        <div class="pricing-type">Events</div>
+                        <div class="pricing-amount">$10 <span class="pricing-unit">/ seat</span></div>
+                        <div class="pricing-desc">Per attendee, per event</div>
+                    </div>
+                    <div class="pricing-body">
+                        <ul class="pricing-features">
+                            <li>Intentional attendee pairing</li>
+                            <li>Custom questions per event</li>
+                            <li>Personalized conversation starters</li>
+                            <li>1-on-1 + huddle formats</li>
+                            <li>Admin dashboard access</li>
+                            <li>Dedicated onboarding support</li>
+                        </ul>
+                        <a href="book-demo.html" class="btn btn-primary" style="width: 100%; justify-content: center;">Book a Demo &rarr;</a>
+                    </div>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <div class="pricing-type">Training Programs</div>
+                        <div class="pricing-amount">$750 <span class="pricing-unit">/ flat</span></div>
+                        <div class="pricing-desc">Per training program</div>
+                    </div>
+                    <div class="pricing-body">
+                        <ul class="pricing-features">
+                            <li>Everything in Events</li>
+                            <li>Multi-session support</li>
+                            <li>Community building mode</li>
+                            <li>Group station assignments</li>
+                            <li>Custom branding</li>
+                            <li>Priority support</li>
+                        </ul>
+                        <a href="book-demo.html" class="btn btn-navy" style="width: 100%; justify-content: center;">Book a Demo &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FEATURE COMPARISON TABLE ========== -->
+    <section class="content-section bg-white">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Feature Comparison</div>
+                <h2>Everything You Get, Side by Side</h2>
+                <p>Both plans are designed to make connection effortless. Here's a detailed look at what's included.</p>
+            </div>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Events</th>
+                        <th>Training Programs</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>AI-Powered Attendee Pairing</td>
+                        <td class="check">&check;</td>
+                        <td class="check">&check;</td>
+                    </tr>
+                    <tr>
+                        <td>Custom Event Questions</td>
+                        <td class="check">&check;</td>
+                        <td class="check">&check;</td>
+                    </tr>
+                    <tr>
+                        <td>Personalized Conversation Starters</td>
+                        <td class="check">&check;</td>
+                        <td class="check">&check;</td>
+                    </tr>
+                    <tr>
+                        <td>1-on-1 Pairing Format</td>
+                        <td class="check">&check;</td>
+                        <td class="check">&check;</td>
+                    </tr>
+                    <tr>
+                        <td>Huddle Format (3-6 People)</td>
+                        <td class="check">&check;</td>
+                        <td class="check">&check;</td>
+                    </tr>
+                    <tr>
+                        <td>QR Code Check-In</td>
+                        <td class="check">&check;</td>
+                        <td class="check">&check;</td>
+                    </tr>
+                    <tr>
+                        <td>Admin Dashboard</td>
+                        <td class="check">&check;</td>
+                        <td class="check">&check;</td>
+                    </tr>
+                    <tr>
+                        <td>Real-Time Pairing Analytics</td>
+                        <td class="check">&check;</td>
+                        <td class="check">&check;</td>
+                    </tr>
+                    <tr>
+                        <td>Onboarding Support</td>
+                        <td class="check">&check;</td>
+                        <td class="check">&check;</td>
+                    </tr>
+                    <tr>
+                        <td>Multi-Session Support</td>
+                        <td class="check">&mdash;</td>
+                        <td class="check">&check;</td>
+                    </tr>
+                    <tr>
+                        <td>Community Building Mode</td>
+                        <td class="check">&mdash;</td>
+                        <td class="check">&check;</td>
+                    </tr>
+                    <tr>
+                        <td>Group Station Assignments</td>
+                        <td class="check">&mdash;</td>
+                        <td class="check">&check;</td>
+                    </tr>
+                    <tr>
+                        <td>Custom Branding</td>
+                        <td class="check">&mdash;</td>
+                        <td class="check">&check;</td>
+                    </tr>
+                    <tr>
+                        <td>Priority Support</td>
+                        <td class="check">&mdash;</td>
+                        <td class="check">&check;</td>
+                    </tr>
+                    <tr>
+                        <td>Dedicated Account Manager</td>
+                        <td class="check">&mdash;</td>
+                        <td class="check">&check;</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- ========== FAQ SECTION ========== -->
+    <section class="content-section bg-cream">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">FAQ</div>
+                <h2>Questions? We've Got Answers.</h2>
+                <p>Everything you need to know about pricing, billing, and getting started with Hoogah.</p>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>How does the $10/seat pricing work?</h3>
+                    <p>You're charged $10 for each attendee who participates in the Hoogah networking experience at your event. Most organizers simply add this to their ticket price -- attendees never see it as a separate line item. If your event has 200 attendees, the total cost is $2,000. No setup fees, no platform fees, no hidden charges.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What's included in every plan?</h3>
+                    <p>Every Hoogah plan includes AI-powered attendee pairing, custom event questions, personalized conversation starters, 1-on-1 and huddle formats, QR code check-in, a full admin dashboard, real-time pairing analytics, and dedicated onboarding support. You get the complete experience from day one.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How does billing work?</h3>
+                    <p>We invoice after your event based on actual attendee participation -- not registrations. You only pay for people who actually scanned in and used Hoogah. For Training Programs, the $750 flat fee is invoiced at the start of the program. We accept all major payment methods.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What's your refund policy?</h3>
+                    <p>If your event is cancelled, you owe nothing. If Hoogah doesn't perform as expected due to a platform issue on our end, we'll refund you in full -- no questions asked. We stand behind our product because we've seen what it does for events.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Is there a minimum number of attendees?</h3>
+                    <p>Hoogah works best with groups of 20 or more, but there's no hard minimum. We've seen great results with intimate groups of 15 and massive conferences of 2,000+. The AI pairing algorithm adapts to your group size to ensure every attendee gets matched meaningfully.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How long does setup take?</h3>
+                    <p>Less than 10 minutes. You create your event in the admin dashboard, customize your 4-5 questions, and generate a QR code. That's it. Our onboarding team walks you through the entire process and is available on event day for live support if you need it.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CTA ========== -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-grid">
+                <div class="cta-illo-wrap">
+                    <img src="undraw_rocket.svg" alt="Launch your event success" style="width: 100%; max-width: 300px; height: auto; filter: brightness(0) invert(1);">
+                </div>
+                <div class="cta-inner">
+                    <div class="tag" style="margin-bottom: 24px;">Limited Beta Access</div>
+                    <h2>Ready to Design an Event People <span style="color: var(--lime);">Actually Come Back To?</span></h2>
+                    <p>Book a 15-minute demo. We'll show you what happens when you stop leaving connection to chance and start designing for belonging.</p>
+                    <div class="cta-buttons">
+                        <a href="https://calendly.com" class="btn btn-primary">Book a Free Demo &rarr;</a>
+                        <a href="mailto:hello@hoogah.com" class="btn btn-secondary">Contact Sales</a>
+                    </div>
+                    <p class="cta-note">No credit card required. Setup takes less than 10 minutes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="logo.png" alt="Hoogah" style="height: 44px; filter: brightness(10);">
+                    <p>Intentional networking designed for belonging. Because connection isn't a perk. It's infrastructure. Built for people who bring people together.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <a href="how-it-works.html">How It Works</a>
+                    <a href="our-belief.html">Our Belief</a>
+                    <a href="use-cases.html">Use Cases</a>
+                    <a href="pricing.html">Pricing</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <a href="#">About Us</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Contact</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <a href="#">Case Studies</a>
+                    <a href="#">Documentation</a>
+                    <a href="#">Help Center</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Hoogah. All rights reserved.</p>
+                <div class="footer-socials">
+                    <a href="#" aria-label="LinkedIn">in</a>
+                    <a href="#" aria-label="Twitter">&Xopf;</a>
+                    <a href="#" aria-label="Instagram">ig</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+
+</body>
+</html>

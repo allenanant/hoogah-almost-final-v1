@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Use Cases | Hoogah</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lucide-static@latest/font/lucide.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- ========== NAVBAR ========== -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-inner">
+                <a href="index.html" class="navbar-logo"><img src="logo.png" alt="Hoogah"></a>
+                <div class="navbar-links">
+                    <a href="how-it-works.html">How It Works</a>
+                    <a href="our-belief.html">Our Belief</a>
+                    <a href="use-cases.html" class="active">Use Cases</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="book-demo.html" class="navbar-cta">Book a Demo &rarr;</a>
+                </div>
+                <button class="mobile-toggle" aria-label="Menu" onclick="toggleMobileMenu()">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="how-it-works.html" onclick="closeMobileMenu()">How It Works</a>
+            <a href="our-belief.html" onclick="closeMobileMenu()">Our Belief</a>
+            <a href="use-cases.html" onclick="closeMobileMenu()">Use Cases</a>
+            <a href="pricing.html" onclick="closeMobileMenu()">Pricing</a>
+            <a href="book-demo.html" class="navbar-cta" onclick="closeMobileMenu()">Book a Demo &rarr;</a>
+        </div>
+    </nav>
+
+    <!-- ========== PAGE HERO ========== -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="section-label">Use Cases</div>
+            <h1>Built for People Who Bring People Together</h1>
+            <p>Whether you run conferences, lead corporate training, or build communities from the ground up, Hoogah transforms every gathering into a place where people actually connect. Here's how.</p>
+        </div>
+    </section>
+
+    <!-- ========== EVENT ORGANIZERS ========== -->
+    <section class="content-section bg-cream">
+        <div class="container">
+            <div class="content-grid">
+                <div class="content-text">
+                    <div class="section-label">Event Organizers</div>
+                    <h2>Conferences, Summits & Industry Meetups</h2>
+                    <p>
+                        You spend months curating speakers, securing venues, and marketing your event. But when attendees walk into the networking break, they stand around awkwardly, check their phones, or cluster with people they already know. The most valuable part of your event is the one you design the least.
+                    </p>
+                    <p>
+                        Hoogah changes that. By giving every attendee an intentional pairing and a personalized conversation starter, you turn dead air into the highlight of your event. Attendees stop hovering at the edges and start having conversations that matter.
+                    </p>
+                    <div style="margin-top: 32px;">
+                        <div class="feature-detail">
+                            <div class="feature-detail-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--black)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+                            </div>
+                            <div>
+                                <h3>Multi-Day Conferences</h3>
+                                <p>Run fresh pairings each day. Attendees meet different people in every round, building a network across the entire event instead of talking to the same three people.</p>
+                            </div>
+                        </div>
+                        <div class="feature-detail">
+                            <div class="feature-detail-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--black)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                            </div>
+                            <div>
+                                <h3>Industry Meetups</h3>
+                                <p>Pair founders with investors, mentors with mentees, or peers with complementary expertise. Your meetup stops being a room full of business cards and starts being a launchpad for real relationships.</p>
+                            </div>
+                        </div>
+                        <div class="feature-detail">
+                            <div class="feature-detail-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--black)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+                            </div>
+                            <div>
+                                <h3>Trade Shows & Summits</h3>
+                                <p>Booth fatigue is real. Use Hoogah to create structured networking sessions that give attendees curated introductions to the people and companies most relevant to their goals.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="problem-stats">
+                        <div class="problem-stat">
+                            <div class="number">76%</div>
+                            <div class="label">of attendees say networking is their #1 reason for attending events</div>
+                        </div>
+                        <div class="problem-stat">
+                            <div class="number">68%</div>
+                            <div class="label">leave without making a single meaningful connection</div>
+                        </div>
+                        <div class="problem-stat">
+                            <div class="number">2x</div>
+                            <div class="label">higher return rate when attendees make real connections</div>
+                        </div>
+                        <div class="problem-stat">
+                            <div class="number">93%</div>
+                            <div class="label">satisfaction rate reported by Hoogah-powered event attendees</div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 32px; padding: 28px; border: 3px solid var(--black); background: var(--white); box-shadow: var(--shadow-sm);">
+                        <h4 style="font-size: 16px; margin-bottom: 12px; color: var(--navy);">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--magenta)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -3px; margin-right: 6px;"><path d="M12 8V4H8"></path><rect width="16" height="12" x="4" y="8" rx="2"></rect><path d="M2 14h2"></path><path d="M20 14h2"></path><path d="M15 13v2"></path><path d="M9 13v2"></path></svg>
+                            Example Scenario
+                        </h4>
+                        <p style="font-size: 15px; color: var(--gray-600); line-height: 1.7;">
+                            A 500-person tech conference uses Hoogah during lunch breaks. Attendees scan a QR code, answer 4 quick questions about their role, interests, and what they're looking for. Within 60 seconds, each person is paired with someone who complements their goals and handed a conversation starter that skips the small talk entirely.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CORPORATE TRAINING ========== -->
+    <section class="content-section bg-white">
+        <div class="container">
+            <div class="content-grid">
+                <div>
+                    <div style="padding: 40px; border: 3px solid var(--black); background: var(--navy); box-shadow: var(--shadow-lg); color: var(--white); margin-bottom: 32px;">
+                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 24px;">
+                            <div style="width: 48px; height: 48px; background: var(--lime); border: 2px solid var(--black); display: flex; align-items: center; justify-content: center;">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--black)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                            </div>
+                            <h3 style="font-size: 20px; color: var(--white);">The Trust Accelerator</h3>
+                        </div>
+                        <p style="font-size: 15px; color: rgba(255,255,255,0.7); line-height: 1.7; margin-bottom: 16px;">
+                            Research shows that psychological safety is the single biggest predictor of high-performing teams. But you can't mandate trust. You have to design for it.
+                        </p>
+                        <p style="font-size: 15px; color: rgba(255,255,255,0.7); line-height: 1.7;">
+                            Hoogah creates the conditions for trust by pairing teammates with personalized prompts that go deeper than surface-level introductions. One meaningful conversation can do more for team cohesion than a full day of icebreaker games.
+                        </p>
+                    </div>
+                    <div class="problem-stats">
+                        <div class="problem-stat">
+                            <div class="number">85%</div>
+                            <div class="label">of employees say they feel disconnected from colleagues after remote work</div>
+                        </div>
+                        <div class="problem-stat">
+                            <div class="number">40%</div>
+                            <div class="label">higher retention in teams with strong interpersonal bonds</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-text">
+                    <div class="section-label">Corporate Training</div>
+                    <h2>Team Building, Onboarding & Leadership Development</h2>
+                    <p>
+                        Your company invests heavily in training programs, offsites, and retreats. But the real learning doesn't happen in the slide deck. It happens in the conversations between sessions, during meals, and in the hallways. The problem is that most people default to the colleagues they already know.
+                    </p>
+                    <p>
+                        Hoogah breaks those silos. By intentionally pairing team members across departments, seniority levels, and locations, you create the cross-functional connections that drive collaboration long after the offsite ends.
+                    </p>
+                    <div style="margin-top: 32px;">
+                        <div class="feature-detail">
+                            <div class="feature-detail-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--black)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                            </div>
+                            <div>
+                                <h3>New Hire Onboarding</h3>
+                                <p>Pair new employees with veterans across the organization. Give them conversation prompts that surface shared values and complementary skills, not just job titles. New hires integrate faster when they feel like they belong from day one.</p>
+                            </div>
+                        </div>
+                        <div class="feature-detail">
+                            <div class="feature-detail-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--black)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"></path><path d="M9 18h6"></path><path d="M10 22h4"></path></svg>
+                            </div>
+                            <div>
+                                <h3>Leadership Retreats</h3>
+                                <p>Senior leaders need real conversations, not more panels. Hoogah pairs executives with prompts designed to surface strategic thinking, shared challenges, and opportunities for cross-team alignment.</p>
+                            </div>
+                        </div>
+                        <div class="feature-detail">
+                            <div class="feature-detail-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--black)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"></rect><path d="M3 9h18"></path><path d="M3 15h18"></path><path d="M9 3v18"></path><path d="M15 3v18"></path></svg>
+                            </div>
+                            <div>
+                                <h3>Team Building Retreats</h3>
+                                <p>Replace awkward trust falls with real human connection. Hoogah structures networking into your retreat agenda so every team member, including the quiet ones, walks away with at least one meaningful new relationship.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== COMMUNITY BUILDERS ========== -->
+    <section class="content-section bg-cream">
+        <div class="container">
+            <div class="content-grid">
+                <div class="content-text">
+                    <div class="section-label">Community Builders</div>
+                    <h2>Entrepreneur Networks, Non-Profits & Alumni Events</h2>
+                    <p>
+                        Communities live and die by engagement. You can attract members with great content and big-name speakers, but they stay because of the people they meet. The challenge is that most communities leave connection to chance. Regulars form cliques. Newcomers feel invisible. Attendance drops off after the second or third event.
+                    </p>
+                    <p>
+                        Hoogah solves retention by designing belonging into every gathering. When members consistently have meaningful conversations, they stop seeing your community as an event on their calendar and start seeing it as a place they belong.
+                    </p>
+                    <div style="margin-top: 32px;">
+                        <div class="feature-detail">
+                            <div class="feature-detail-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--black)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+                            </div>
+                            <div>
+                                <h3>Entrepreneur & Founder Networks</h3>
+                                <p>Match founders at similar stages, pair technical talent with business minds, or connect first-time entrepreneurs with seasoned mentors. Every gathering becomes a catalyst for collaboration and co-creation.</p>
+                            </div>
+                        </div>
+                        <div class="feature-detail">
+                            <div class="feature-detail-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--black)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg>
+                            </div>
+                            <div>
+                                <h3>Non-Profit Gatherings</h3>
+                                <p>Your volunteers and supporters share a mission, but they rarely get to share a real conversation. Hoogah helps non-profits deepen engagement by connecting people around shared values, not just shared causes.</p>
+                            </div>
+                        </div>
+                        <div class="feature-detail">
+                            <div class="feature-detail-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--black)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c0 1 4 3 6 3s6-2 6-3v-5"></path></svg>
+                            </div>
+                            <div>
+                                <h3>Alumni Events</h3>
+                                <p>Alumni mixers shouldn't feel like class reunions where nobody knows anyone. Pair alumni by graduation decade, industry, or shared interests so every attendee walks away with a relevant new connection.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="problem-stats">
+                        <div class="problem-stat">
+                            <div class="number">52%</div>
+                            <div class="label">of community members stop attending after the first 3 events</div>
+                        </div>
+                        <div class="problem-stat">
+                            <div class="number">3x</div>
+                            <div class="label">higher retention when members form genuine connections early</div>
+                        </div>
+                        <div class="problem-stat">
+                            <div class="number">71%</div>
+                            <div class="label">of newcomers say they felt excluded at their first community event</div>
+                        </div>
+                        <div class="problem-stat">
+                            <div class="number">89%</div>
+                            <div class="label">of Hoogah-paired community members return for the next gathering</div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 32px; padding: 28px; border: 3px solid var(--black); background: var(--white); box-shadow: var(--shadow-sm);">
+                        <h4 style="font-size: 16px; margin-bottom: 12px; color: var(--navy);">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--magenta)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -3px; margin-right: 6px;"><path d="M12 8V4H8"></path><rect width="16" height="12" x="4" y="8" rx="2"></rect><path d="M2 14h2"></path><path d="M20 14h2"></path><path d="M15 13v2"></path><path d="M9 13v2"></path></svg>
+                            Example Scenario
+                        </h4>
+                        <p style="font-size: 15px; color: var(--gray-600); line-height: 1.7;">
+                            A women entrepreneur network runs monthly events for 80 members. Before Hoogah, the same 15 people talked to each other every month while newcomers drifted to the exits. After implementing Hoogah, first-time attendees reported feeling "seen and welcomed" within minutes. The community's return rate jumped from 38% to 82% in three months.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== ADDITIONAL USE CASES ========== -->
+    <section class="content-section bg-white">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">And More</div>
+                <h2>Wherever People Gather, Hoogah Works</h2>
+                <p>Hoogah isn't just for conferences and corporate events. Any time you put people in a room and want them to leave connected, we've got you covered.</p>
+            </div>
+            <div class="usecases-grid">
+                <div class="usecase-card">
+                    <div class="usecase-color"></div>
+                    <div class="usecase-body">
+                        <div class="usecase-icon">
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c0 1 4 3 6 3s6-2 6-3v-5"></path></svg>
+                        </div>
+                        <h3>University Orientations</h3>
+                        <p>The first week of university shapes the next four years. Don't leave it to chance. Pair incoming students by major, interests, and background so they find their people on day one, not semester two.</p>
+                        <ul class="usecase-list">
+                            <li>Freshman orientation programs</li>
+                            <li>Graduate school mixers</li>
+                            <li>International student welcome events</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="usecase-card">
+                    <div class="usecase-color"></div>
+                    <div class="usecase-body">
+                        <div class="usecase-icon">
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline><line x1="14" y1="4" x2="10" y2="20"></line></svg>
+                        </div>
+                        <h3>Hackathons</h3>
+                        <p>Great hackathons are built on great teams. Use Hoogah to match participants by skill set, experience level, and project interest before the clock starts. Stronger teams build better products.</p>
+                        <ul class="usecase-list">
+                            <li>Team formation networking</li>
+                            <li>Mentor-participant matching</li>
+                            <li>Cross-discipline collaboration</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="usecase-card">
+                    <div class="usecase-color"></div>
+                    <div class="usecase-body">
+                        <div class="usecase-icon">
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"></rect><path d="M9 22v-4h6v4"></path><path d="M8 6h.01"></path><path d="M16 6h.01"></path><path d="M12 6h.01"></path><path d="M12 10h.01"></path><path d="M12 14h.01"></path><path d="M16 10h.01"></path><path d="M16 14h.01"></path><path d="M8 10h.01"></path><path d="M8 14h.01"></path></svg>
+                        </div>
+                        <h3>Coworking Spaces</h3>
+                        <p>Coworking is about more than shared desks. It's about shared ideas. Run weekly or monthly Hoogah sessions to connect members who would never meet otherwise. Turn your space into a community, not just a venue.</p>
+                        <ul class="usecase-list">
+                            <li>Monthly community mixers</li>
+                            <li>Skill-sharing sessions</li>
+                            <li>Freelancer collaboration events</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TESTIMONIALS ========== -->
+    <section class="proof-section">
+        <div class="container">
+            <div class="proof-quote">
+                <img src="undraw_smiley-face.svg" alt="Happy attendees" style="width: 80px; height: auto; margin-bottom: 24px;">
+                <blockquote>
+                    We ran Hoogah at our annual leadership offsite with 120 senior managers from 8 different offices. People who had worked in the same company for years but never spoken had conversations that completely shifted how they think about cross-team collaboration. Three new initiatives came out of those pairings alone.
+                </blockquote>
+                <div class="proof-author">
+                    <div class="proof-avatar">L</div>
+                    <div class="proof-author-info">
+                        <h4>L&D Director</h4>
+                        <p>Fortune 500 Tech Company</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECOND TESTIMONIAL ========== -->
+    <section class="content-section bg-navy">
+        <div class="container">
+            <div class="content-grid">
+                <div class="content-text">
+                    <h2 style="color: var(--white);">What Organizers Are Saying</h2>
+                    <div style="margin-top: 32px;">
+                        <div style="padding: 28px; border: 2px solid rgba(255,255,255,0.2); margin-bottom: 20px;">
+                            <p style="font-size: 16px; color: rgba(255,255,255,0.85); line-height: 1.8; font-style: italic; margin-bottom: 16px;">
+                                "I've organized events for 12 years. Every platform promises engagement. Hoogah is the first one that actually delivered it. Our post-event surveys went from 'good speakers' to 'I made a real friend.' That's a completely different outcome."
+                            </p>
+                            <div style="display: flex; align-items: center; gap: 12px;">
+                                <div style="width: 40px; height: 40px; background: var(--magenta); border: 2px solid rgba(255,255,255,0.3); display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-weight: 700; color: var(--white); font-size: 16px;">R</div>
+                                <div>
+                                    <h4 style="font-size: 14px; color: var(--white);">Conference Director</h4>
+                                    <p style="font-size: 13px; color: rgba(255,255,255,0.5);">SaaS Industry Summit</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="padding: 28px; border: 2px solid rgba(255,255,255,0.2);">
+                            <p style="font-size: 16px; color: rgba(255,255,255,0.85); line-height: 1.8; font-style: italic; margin-bottom: 16px;">
+                                "Our community was dying. Attendance dropped 60% over two quarters. We tried Hoogah at a small event and the energy completely changed. People lingered. They exchanged numbers. They asked when the next one was. That hadn't happened in months."
+                            </p>
+                            <div style="display: flex; align-items: center; gap: 12px;">
+                                <div style="width: 40px; height: 40px; background: var(--lime); border: 2px solid var(--black); display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-weight: 700; color: var(--black); font-size: 16px;">A</div>
+                                <div>
+                                    <h4 style="font-size: 14px; color: var(--white);">Community Manager</h4>
+                                    <p style="font-size: 13px; color: rgba(255,255,255,0.5);">Founder Network, NYC</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 24px;">
+                    <div style="padding: 32px; border: 3px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.05);">
+                        <div style="font-family: 'Space Grotesk', sans-serif; font-size: 48px; font-weight: 700; color: var(--lime); margin-bottom: 8px;">93%</div>
+                        <p style="font-size: 15px; color: rgba(255,255,255,0.7); line-height: 1.6;">of attendees rated their Hoogah pairing as "valuable" or "extremely valuable"</p>
+                    </div>
+                    <div style="padding: 32px; border: 3px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.05);">
+                        <div style="font-family: 'Space Grotesk', sans-serif; font-size: 48px; font-weight: 700; color: var(--lime); margin-bottom: 8px;">2x</div>
+                        <p style="font-size: 15px; color: rgba(255,255,255,0.7); line-height: 1.6;">event return rate for organizers who implement intentional networking</p>
+                    </div>
+                    <div style="padding: 32px; border: 3px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.05);">
+                        <div style="font-family: 'Space Grotesk', sans-serif; font-size: 48px; font-weight: 700; color: var(--lime); margin-bottom: 8px;">&lt;60s</div>
+                        <p style="font-size: 15px; color: rgba(255,255,255,0.7); line-height: 1.6;">from scan to first pairing. No app downloads, no friction, no excuses.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CTA ========== -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-grid">
+                <div class="cta-illo-wrap">
+                    <img src="undraw_rocket.svg" alt="Launch your event success" style="width: 100%; max-width: 300px; height: auto; filter: brightness(0) invert(1);">
+                </div>
+                <div class="cta-inner">
+                    <div class="tag" style="margin-bottom: 24px;">Limited Beta Access</div>
+                    <h2>Ready to Design an Event People <span style="color: var(--lime);">Actually Come Back To?</span></h2>
+                    <p>Book a 15-minute demo. We'll show you what happens when you stop leaving connection to chance and start designing for belonging.</p>
+                    <div class="cta-buttons">
+                        <a href="https://calendly.com" class="btn btn-primary">Book a Free Demo &rarr;</a>
+                        <a href="mailto:hello@hoogah.com" class="btn btn-secondary">Contact Sales</a>
+                    </div>
+                    <p class="cta-note">No credit card required. Setup takes less than 10 minutes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="logo.png" alt="Hoogah" style="height: 44px; filter: brightness(10);">
+                    <p>Intentional networking designed for belonging. Because connection isn't a perk. It's infrastructure. Built for people who bring people together.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <a href="how-it-works.html">How It Works</a>
+                    <a href="our-belief.html">Our Belief</a>
+                    <a href="use-cases.html">Use Cases</a>
+                    <a href="pricing.html">Pricing</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <a href="#">About Us</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Contact</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <a href="#">Case Studies</a>
+                    <a href="#">Documentation</a>
+                    <a href="#">Help Center</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Hoogah. All rights reserved.</p>
+                <div class="footer-socials">
+                    <a href="#" aria-label="LinkedIn">in</a>
+                    <a href="#" aria-label="Twitter">&Xopf;</a>
+                    <a href="#" aria-label="Instagram">ig</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+
+</body>
+</html>

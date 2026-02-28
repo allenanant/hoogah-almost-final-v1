@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Hoogah</title>
+    <link rel="icon" href="logo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Inter:wght@300..700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-inner">
+                <a href="index.html" class="navbar-logo"><img src="logo.png" alt="Hoogah"></a>
+                <div class="navbar-links">
+                    <a href="how-it-works.html">How It Works</a>
+                    <a href="our-belief.html">Our Belief</a>
+                    <a href="use-cases.html">Use Cases</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="book-demo.html" class="navbar-cta">Book a Demo →</a>
+                </div>
+                <button class="mobile-toggle" aria-label="Menu" onclick="toggleMobileMenu()">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="how-it-works.html" onclick="closeMobileMenu()">How It Works</a>
+            <a href="our-belief.html" onclick="closeMobileMenu()">Our Belief</a>
+            <a href="use-cases.html" onclick="closeMobileMenu()">Use Cases</a>
+            <a href="pricing.html" onclick="closeMobileMenu()">Pricing</a>
+            <a href="book-demo.html" class="navbar-cta" onclick="closeMobileMenu()">Book a Demo →</a>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Blog</h1>
+            <p>Insights on intentional networking, community building, and designing for belonging.</p>
+        </div>
+    </section>
+
+    <!-- Blog Empty State -->
+    <section class="blog-empty">
+        <div class="container">
+            <div class="blog-empty-card">
+                <div class="blog-empty-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 20h9"></path>
+                        <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+                    </svg>
+                </div>
+                <h2>Coming Soon</h2>
+                <p>We're crafting stories about connection, community, and what happens when you design for belonging. Be the first to read them.</p>
+                <form class="subscribe-form" onsubmit="event.preventDefault();">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-grid">
+                <div class="cta-illo-wrap">
+                    <img src="undraw_rocket.svg" alt="Launch your event success" style="width: 100%; max-width: 300px; height: auto; filter: brightness(0) invert(1);">
+                </div>
+                <div class="cta-inner">
+                    <div class="tag" style="margin-bottom: 24px;">Limited Beta Access</div>
+                    <h2>Ready to Design an Event People <span style="color: var(--lime);">Actually Come Back To?</span></h2>
+                    <p>Book a 15-minute demo. We'll show you what happens when you stop leaving connection to chance and start designing for belonging.</p>
+                    <div class="cta-buttons">
+                        <a href="https://calendly.com" class="btn btn-primary">Book a Free Demo →</a>
+                        <a href="mailto:hello@hoogah.com" class="btn btn-secondary">Contact Sales</a>
+                    </div>
+                    <p class="cta-note">No credit card required. Setup takes less than 10 minutes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="logo.png" alt="Hoogah" style="height: 44px; filter: brightness(10);">
+                    <p>Intentional networking designed for belonging. Because connection isn't a perk. It's infrastructure. Built for people who bring people together.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <a href="how-it-works.html">How It Works</a>
+                    <a href="our-belief.html">Our Belief</a>
+                    <a href="use-cases.html">Use Cases</a>
+                    <a href="pricing.html">Pricing</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <a href="#">About Us</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Contact</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <a href="#">Case Studies</a>
+                    <a href="#">Documentation</a>
+                    <a href="#">Help Center</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Hoogah. All rights reserved.</p>
+                <div class="footer-socials">
+                    <a href="#" aria-label="LinkedIn">in</a>
+                    <a href="#" aria-label="Twitter">&#x1D54F;</a>
+                    <a href="#" aria-label="Instagram">ig</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+
+</body>
+</html>
