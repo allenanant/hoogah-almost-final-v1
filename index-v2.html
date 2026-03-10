@@ -40,8 +40,9 @@
         .hero-v2 {
             margin-top: 72px;
             padding: 100px 0 0;
-            overflow: hidden;
+            overflow: visible;
             position: relative;
+            z-index: 1;
         }
 
         .hero-v2-inner {
@@ -110,6 +111,7 @@
             position: relative;
             max-width: 1100px;
             margin: 0 auto;
+            margin-bottom: 40px;
             animation: heroImageReveal 1s cubic-bezier(0.16, 1, 0.3, 1) 0.6s both;
         }
 
@@ -132,16 +134,15 @@
 
         /* Floating stats bar on hero image */
         .hero-float-stats {
-            position: absolute;
-            bottom: -30px;
-            left: 50%;
-            transform: translateX(-50%);
+            position: relative;
+            margin: -30px auto 0;
             display: flex;
             gap: 0;
             background: var(--white);
             border: var(--border);
             box-shadow: var(--shadow-lg);
             z-index: 10;
+            width: fit-content;
         }
 
         .hero-float-stat {
@@ -269,6 +270,8 @@
             border-bottom: var(--border);
             color: var(--white);
             overflow: hidden;
+            position: relative;
+            z-index: 0;
         }
 
         .reality-v2-grid {
@@ -733,7 +736,7 @@
 
         /* ========== RESPONSIVE ========== */
         @media (max-width: 900px) {
-            .hero-float-stats { flex-wrap: wrap; width: 90%; bottom: -20px; }
+            .hero-float-stats { flex-wrap: wrap; width: 90%; }
             .hero-float-stat { padding: 14px 20px; flex: 1; min-width: 100px; }
             .hero-float-stat .num { font-size: 24px; }
             .stack-card-inner { grid-template-columns: 1fr; }
@@ -751,7 +754,7 @@
         @media (max-width: 600px) {
             .hero-v2 { padding: 80px 0 0; }
             .hero-v2-inner { padding-bottom: 40px; }
-            .hero-float-stats { position: relative; bottom: 0; transform: none; left: 0; width: 100%; margin-top: 20px; }
+            .hero-float-stats { width: 100%; margin-top: 20px; }
             .hero-v2-image-wrap { margin: 0; }
             .stack-section { padding: 80px 0 40px; }
             .stack-card { position: relative; top: auto !important; }
@@ -1080,13 +1083,14 @@
         }
 
         // Animate stat numbers
-        function animateCount(el, target, suffix) {
+        function animateCount(el, target, suffix, prefix) {
             var start = 0, duration = 1500, startTime = null;
+            prefix = prefix || '';
             function step(ts) {
                 if (!startTime) startTime = ts;
                 var p = Math.min((ts - startTime) / duration, 1);
                 var ease = 1 - Math.pow(1 - p, 3);
-                el.textContent = Math.floor(ease * target) + suffix;
+                el.textContent = prefix + Math.floor(ease * target) + suffix;
                 if (p < 1) requestAnimationFrame(step);
             }
             requestAnimationFrame(step);
@@ -1100,7 +1104,7 @@
                         var t = e.target.textContent.trim();
                         if (t.includes('%')) animateCount(e.target, 93, '%');
                         else if (t.includes('x')) animateCount(e.target, 2, 'x');
-                        else if (t.includes('60')) animateCount(e.target, 60, 's');
+                        else if (t.includes('60')) animateCount(e.target, 60, 's', '<');
                         statObs.unobserve(e.target);
                     }
                 });
