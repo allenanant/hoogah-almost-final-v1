@@ -521,6 +521,306 @@
             flex-wrap: wrap;
         }
 
+        /* ========== ANIMATIONS ========== */
+
+        /* Scroll-triggered reveal base */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Stagger delays for children */
+        .reveal-stagger > .reveal:nth-child(1) { transition-delay: 0s; }
+        .reveal-stagger > .reveal:nth-child(2) { transition-delay: 0.1s; }
+        .reveal-stagger > .reveal:nth-child(3) { transition-delay: 0.2s; }
+        .reveal-stagger > .reveal:nth-child(4) { transition-delay: 0.25s; }
+        .reveal-stagger > .reveal:nth-child(5) { transition-delay: 0.3s; }
+
+        /* Fade in from left */
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Fade in from right */
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Scale in */
+        .reveal-scale {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal-scale.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Hero entrance animations */
+        .hero-v2-inner h1 {
+            animation: heroFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+        }
+
+        .hero-v2-subhead {
+            animation: heroFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+        }
+
+        .hero-v2-buttons {
+            animation: heroFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.5s both;
+        }
+
+        .hero-v2-image {
+            animation: heroImageReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.6s both;
+        }
+
+        @keyframes heroFadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes heroImageReveal {
+            from {
+                opacity: 0;
+                transform: translateY(40px) scale(0.97);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* Hero image subtle zoom on hover */
+        .hero-v2-image img {
+            transition: transform 6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .hero-v2-image:hover img {
+            transform: scale(1.03);
+        }
+
+        /* Reality section list items stagger */
+        .reality-formats li {
+            transition: background 0.3s ease;
+        }
+
+        .reality-formats li:hover {
+            background: var(--gray-100);
+            padding-left: 12px;
+        }
+
+        .reality-list li {
+            transition: transform 0.3s ease;
+        }
+
+        .reality-list li:hover {
+            transform: translateX(6px);
+        }
+
+        /* Reality result box pulse */
+        .reality-result {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .reality-result:hover {
+            transform: translate(-3px, -3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Solution visual float animation */
+        .solution-visual {
+            animation: gentleFloat 6s ease-in-out infinite;
+            animation-play-state: paused;
+        }
+
+        .solution-visual.visible {
+            animation-play-state: running;
+        }
+
+        @keyframes gentleFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        /* Match card typing effect for name */
+        .match-card .match-name {
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 3px solid var(--magenta);
+            width: 0;
+            margin: 0 auto 8px;
+            animation: none;
+        }
+
+        .match-card .match-name.typing {
+            animation: typeWriter 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards,
+                       blinkCursor 0.6s step-end 0.3s 4;
+        }
+
+        @keyframes typeWriter {
+            from { width: 0; }
+            to { width: 240px; border-right-color: transparent; }
+        }
+
+        @keyframes blinkCursor {
+            50% { border-right-color: transparent; }
+        }
+
+        /* Story phone card pulse */
+        .story-split-phone {
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+        }
+
+        .story-split-phone:hover {
+            transform: translateY(-4px) rotate(-1deg);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Story image parallax-like zoom */
+        .story-split-image img {
+            transition: transform 5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .story-split-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Story columns hover lift */
+        .story-col {
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                        box-shadow 0.3s ease;
+        }
+
+        .story-col:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Story number count-up color pulse */
+        .story-col-number {
+            transition: color 0.3s ease;
+        }
+
+        .story-col:hover .story-col-number {
+            color: var(--navy);
+        }
+
+        /* Testimonial cards subtle glow on hover */
+        .testimonial-v2-card {
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-v2-card:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: var(--lime);
+            transform: translateY(-4px);
+        }
+
+        /* Closing CTA section gradient background animation */
+        .closing-v2 {
+            background: linear-gradient(135deg, var(--cream) 0%, var(--white) 50%, var(--cream) 100%);
+            background-size: 200% 200%;
+            animation: gradientShift 8s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* CTA button pulse on closing section */
+        .closing-v2 .btn-primary {
+            animation: subtlePulse 3s ease-in-out infinite;
+        }
+
+        @keyframes subtlePulse {
+            0%, 100% { box-shadow: var(--shadow); }
+            50% { box-shadow: 8px 8px 0px var(--black), 0 0 20px rgba(200, 255, 0, 0.3); }
+        }
+
+        /* Smooth section label slide-in */
+        .section-label {
+            transition: all 0.3s ease;
+        }
+
+        /* Use case cards - icon accent on hover */
+        .usecase-v2-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .usecase-v2-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 4px;
+            background: var(--magenta);
+            transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .usecase-v2-card:hover::after {
+            width: 100%;
+        }
+
+        /* Prefers reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            .reveal, .reveal-left, .reveal-right, .reveal-scale {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+            .hero-v2-inner h1,
+            .hero-v2-subhead,
+            .hero-v2-buttons,
+            .hero-v2-image {
+                animation: none;
+            }
+            .solution-visual,
+            .closing-v2,
+            .closing-v2 .btn-primary {
+                animation: none;
+            }
+            .match-card .match-name {
+                width: auto;
+                border-right: none;
+                animation: none;
+            }
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .hero-v2 {
@@ -622,25 +922,25 @@
     <section class="reality-section">
         <div class="container">
             <div class="reality-inner">
-                <h2>What actually happens during networking time</h2>
+                <h2 class="reveal">What actually happens during networking time</h2>
 
-                <p>Most events include networking.</p>
+                <p class="reveal">Most events include networking.</p>
 
-                <div class="reality-formats">
-                    <li>Happy hours</li>
-                    <li>Coffee breaks</li>
-                    <li>Networking lounges</li>
+                <div class="reality-formats reveal-stagger">
+                    <li class="reveal">Happy hours</li>
+                    <li class="reveal">Coffee breaks</li>
+                    <li class="reveal">Networking lounges</li>
                 </div>
 
-                <p>But what usually happens?</p>
+                <p class="reveal">But what usually happens?</p>
 
-                <ul class="reality-list">
-                    <li>The same few people dominate conversations</li>
-                    <li>Attendees talk to people they already know</li>
-                    <li>Many people don't know who to approach</li>
+                <ul class="reality-list reveal-stagger">
+                    <li class="reveal">The same few people dominate conversations</li>
+                    <li class="reveal">Attendees talk to people they already know</li>
+                    <li class="reveal">Many people don't know who to approach</li>
                 </ul>
 
-                <div class="reality-result">
+                <div class="reality-result reveal">
                     <p>People attend the event, but leave wishing they had met more of the right people.</p>
                 </div>
             </div>
@@ -651,7 +951,7 @@
     <section class="solution-section">
         <div class="container">
             <div class="solution-grid">
-                <div class="solution-content">
+                <div class="solution-content reveal-left">
                     <div class="section-label">The Solution</div>
                     <h2>Hoogah helps the right people meet</h2>
                     <p>Before the event, attendees answer a few simple questions.</p>
@@ -659,10 +959,10 @@
                     <p>During the event, those introductions happen intentionally.</p>
                     <p><strong>Networking becomes easier for everyone.</strong></p>
                 </div>
-                <div class="solution-visual">
+                <div class="solution-visual reveal-right">
                     <div class="match-card">
                         <div class="match-label">You've been matched with</div>
-                        <div class="match-name">Alex Chen</div>
+                        <div class="match-name" id="matchName">Alex Chen</div>
                         <div class="match-role">Product Leader, Series B Startup</div>
                         <div class="match-divider"></div>
                         <div class="match-icebreaker">
@@ -677,24 +977,24 @@
     <!-- ========== 4. STORY SECTION ========== -->
     <section class="story-section">
         <div class="container">
-            <div class="story-header">
+            <div class="story-header reveal">
                 <h2>A simple introduction can change the event</h2>
             </div>
 
             <!-- Split visual -->
             <div class="story-split">
-                <div class="story-split-phone">
+                <div class="story-split-phone reveal-left">
                     <div class="match-label">You've been matched with</div>
                     <div class="match-name">Alex Chen</div>
                 </div>
-                <div class="story-split-image">
+                <div class="story-split-image reveal-right">
                     <img src="images/story-attendees-meeting.png" alt="Two attendees meeting for the first time at a conference">
                 </div>
             </div>
 
             <!-- Three columns -->
-            <div class="story-columns">
-                <div class="story-col">
+            <div class="story-columns reveal-stagger">
+                <div class="story-col reveal">
                     <div class="story-col-number">1</div>
                     <h3>Attendees Answer a Few Questions</h3>
                     <p>Sarah arrives at the event knowing only two people. She notices the Hoogah networking area and answers a few quick questions about:</p>
@@ -704,13 +1004,13 @@
                         <li>Her interests</li>
                     </ul>
                 </div>
-                <div class="story-col">
+                <div class="story-col reveal">
                     <div class="story-col-number">2</div>
                     <h3>Hoogah Creates Intentional Pairings</h3>
                     <p>During the afternoon networking break, Hoogah introduces her to Alex, another product leader working on similar challenges.</p>
                     <p>Hoogah suggests a time and place for them to meet.</p>
                 </div>
-                <div class="story-col">
+                <div class="story-col reveal">
                     <div class="story-col-number">3</div>
                     <h3>Real Conversations Start</h3>
                     <p>Two people who want to connect are introduced. They quickly move past small talk and into a deeper conversation.</p>
@@ -723,29 +1023,29 @@
     <!-- ========== 5. USE CASES ========== -->
     <section class="usecases-v2">
         <div class="container">
-            <div class="usecases-v2-header">
+            <div class="usecases-v2-header reveal">
                 <div class="section-label">Built For</div>
                 <h2>Designed for Events Where Networking Matters</h2>
                 <p>Hoogah works best at events where meaningful conversations are part of the experience.</p>
             </div>
-            <div class="usecases-v2-grid">
-                <div class="usecase-v2-card">
+            <div class="usecases-v2-grid reveal-stagger">
+                <div class="usecase-v2-card reveal">
                     <h3>User Conferences</h3>
                     <p>Help attendees meet peers facing similar challenges.</p>
                 </div>
-                <div class="usecase-v2-card">
+                <div class="usecase-v2-card reveal">
                     <h3>Executive Summits</h3>
                     <p>Create curated introductions between leaders.</p>
                 </div>
-                <div class="usecase-v2-card">
+                <div class="usecase-v2-card reveal">
                     <h3>Corporate Town Halls</h3>
                     <p>Help employees connect across teams.</p>
                 </div>
-                <div class="usecase-v2-card">
+                <div class="usecase-v2-card reveal">
                     <h3>Sales Kickoffs (SKOs)</h3>
                     <p>Make networking easier across regions and roles.</p>
                 </div>
-                <div class="usecase-v2-card span-full">
+                <div class="usecase-v2-card span-full reveal">
                     <h3>Leadership Offsites</h3>
                     <p>Encourage deeper connections across the organization.</p>
                 </div>
@@ -756,21 +1056,21 @@
     <!-- ========== 6. TESTIMONIALS ========== -->
     <section class="testimonials-v2">
         <div class="container">
-            <h2>When the Right People Meet</h2>
-            <div class="testimonials-v2-grid">
-                <div class="testimonial-v2-card">
+            <h2 class="reveal">When the Right People Meet</h2>
+            <div class="testimonials-v2-grid reveal-stagger">
+                <div class="testimonial-v2-card reveal">
                     <blockquote>"Hoogah made networking feel intentional. People met others they never would have connected with on their own."</blockquote>
                     <div class="t-author">Director of Events, SaaS Company</div>
                 </div>
-                <div class="testimonial-v2-card">
+                <div class="testimonial-v2-card reveal">
                     <blockquote>"It gave me the push to talk to someone I wouldn't have otherwise. And it was an absolute blast!"</blockquote>
                     <div class="t-author">Summit Attendee</div>
                 </div>
-                <div class="testimonial-v2-card">
+                <div class="testimonial-v2-card reveal">
                     <blockquote>"For once, networking didn't feel random. People were having real conversations instead of talking to the people they already knew."</blockquote>
                     <div class="t-author">Event Strategist</div>
                 </div>
-                <div class="testimonial-v2-card">
+                <div class="testimonial-v2-card reveal">
                     <blockquote>"Networking is why people come to events. Hoogah helped us make sure it actually happened."</blockquote>
                     <div class="t-author">Conference Organizer</div>
                 </div>
@@ -782,8 +1082,8 @@
     <section class="closing-v2">
         <div class="container">
             <div class="closing-v2-inner">
-                <h2>Stop leaving networking to chance</h2>
-                <p>Design events where every attendee has a way into meaningful conversations.</p>
+                <h2 class="reveal">Stop leaving networking to chance</h2>
+                <p class="reveal">Design events where every attendee has a way into meaningful conversations.</p>
                 <div class="closing-v2-buttons">
                     <a href="book-demo.html" class="btn btn-primary">Bring Hoogah to Your Next Event</a>
                     <a href="how-it-works.html" class="btn btn-secondary">See How Hoogah Works</a>
@@ -834,6 +1134,50 @@
     </footer>
 
     <script src="js/main.js"></script>
+
+    <script>
+    // Scroll-triggered reveal animations
+    (function() {
+        const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.15,
+                rootMargin: '0px 0px -40px 0px'
+            });
+
+            revealElements.forEach(function(el) {
+                observer.observe(el);
+            });
+
+            // Typing effect for match card name
+            var matchName = document.getElementById('matchName');
+            if (matchName) {
+                var matchObserver = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            matchName.classList.add('typing');
+                            matchObserver.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.5 });
+                matchObserver.observe(matchName);
+            }
+        } else {
+            // Fallback: show everything
+            revealElements.forEach(function(el) {
+                el.classList.add('visible');
+            });
+        }
+    })();
+    </script>
 
 </body>
 </html>
