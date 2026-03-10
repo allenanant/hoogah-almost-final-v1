@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoogah | Great Events Don't Leave Networking to Chance</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css?v=2">
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2407352259709613');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=2407352259709613&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+    <style>
+        /* ========== V2 HOMEPAGE STYLES ========== */
+
+        /* Hero V2 - Editorial, human-first */
+        .hero-v2 {
+            margin-top: 72px;
+            padding: 100px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-v2-inner {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-v2 h1 {
+            font-size: clamp(38px, 5vw, 60px);
+            margin-bottom: 24px;
+            color: var(--black);
+            line-height: 1.1;
+        }
+
+        .hero-v2-subhead {
+            font-size: 20px;
+            color: var(--gray-600);
+            line-height: 1.7;
+            max-width: 640px;
+            margin: 0 auto 40px;
+        }
+
+        .hero-v2-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 60px;
+        }
+
+        .hero-v2-image {
+            max-width: 960px;
+            margin: 0 auto;
+            border: var(--border);
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            background: var(--gray-200);
+            aspect-ratio: 16/9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-v2-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-v2-image .placeholder-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 18px;
+            color: var(--gray-400);
+            text-align: center;
+            padding: 40px;
+        }
+
+        /* Reality Section */
+        .reality-section {
+            padding: 100px 0;
+            background: var(--white);
+            border-top: var(--border);
+            border-bottom: var(--border);
+        }
+
+        .reality-inner {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .reality-section h2 {
+            font-size: clamp(28px, 4vw, 42px);
+            margin-bottom: 40px;
+            color: var(--black);
+        }
+
+        .reality-section p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: var(--gray-600);
+            margin-bottom: 24px;
+        }
+
+        .reality-list {
+            list-style: none;
+            padding: 0;
+            margin: 32px 0;
+        }
+
+        .reality-list li {
+            font-size: 18px;
+            line-height: 1.8;
+            color: var(--black);
+            padding: 8px 0 8px 28px;
+            position: relative;
+        }
+
+        .reality-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 17px;
+            width: 10px;
+            height: 10px;
+            background: var(--magenta);
+            border: 2px solid var(--black);
+        }
+
+        .reality-formats {
+            list-style: none;
+            padding: 0;
+            margin: 24px 0;
+        }
+
+        .reality-formats li {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--black);
+            padding: 12px 0;
+            border-bottom: 2px dashed var(--gray-200);
+        }
+
+        .reality-result {
+            margin-top: 40px;
+            padding: 32px;
+            background: var(--cream);
+            border: var(--border);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .reality-result p {
+            font-size: 20px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            color: var(--black);
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* Solution Section */
+        .solution-section {
+            padding: 100px 0;
+        }
+
+        .solution-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .solution-content h2 {
+            font-size: clamp(28px, 4vw, 42px);
+            margin-bottom: 32px;
+            color: var(--black);
+        }
+
+        .solution-content p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: var(--gray-600);
+            margin-bottom: 20px;
+        }
+
+        .solution-visual {
+            background: var(--white);
+            border: var(--border);
+            box-shadow: var(--shadow-lg);
+            padding: 40px;
+            position: relative;
+        }
+
+        .solution-visual::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 100%;
+            height: 100%;
+            border: var(--border);
+            background: var(--lime);
+            z-index: -1;
+        }
+
+        .match-card {
+            text-align: center;
+        }
+
+        .match-card .match-label {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--gray-400);
+            margin-bottom: 20px;
+        }
+
+        .match-card .match-name {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--black);
+            margin-bottom: 8px;
+        }
+
+        .match-card .match-role {
+            font-size: 16px;
+            color: var(--gray-600);
+            margin-bottom: 24px;
+        }
+
+        .match-card .match-divider {
+            width: 60px;
+            height: 3px;
+            background: var(--magenta);
+            margin: 0 auto 24px;
+        }
+
+        .match-card .match-icebreaker {
+            font-size: 15px;
+            line-height: 1.7;
+            color: var(--gray-600);
+            font-style: italic;
+            padding: 20px;
+            background: var(--gray-100);
+            border: 2px solid var(--gray-200);
+        }
+
+        /* Story Section */
+        .story-section {
+            padding: 100px 0;
+            background: var(--white);
+            border-top: var(--border);
+            border-bottom: var(--border);
+        }
+
+        .story-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+
+        .story-header h2 {
+            font-size: clamp(28px, 4vw, 42px);
+            margin-bottom: 20px;
+        }
+
+        .story-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+            align-items: center;
+        }
+
+        .story-split-phone {
+            background: var(--white);
+            border: var(--border);
+            box-shadow: var(--shadow);
+            padding: 40px 32px;
+            text-align: center;
+            max-width: 320px;
+            margin: 0 auto;
+        }
+
+        .story-split-phone .match-label {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--gray-400);
+            margin-bottom: 16px;
+        }
+
+        .story-split-phone .match-name {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--black);
+        }
+
+        .story-split-image {
+            border: var(--border);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            background: var(--gray-200);
+            aspect-ratio: 4/3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .story-split-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .story-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 32px;
+        }
+
+        .story-col {
+            padding: 32px;
+            border: var(--border);
+            background: var(--cream);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .story-col-number {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--magenta);
+            line-height: 1;
+            margin-bottom: 16px;
+        }
+
+        .story-col h3 {
+            font-size: 20px;
+            margin-bottom: 16px;
+            color: var(--black);
+        }
+
+        .story-col p {
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--gray-600);
+        }
+
+        .story-col ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 12px;
+        }
+
+        .story-col ul li {
+            font-size: 15px;
+            color: var(--gray-600);
+            padding: 4px 0 4px 20px;
+            position: relative;
+        }
+
+        .story-col ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 12px;
+            width: 8px;
+            height: 8px;
+            background: var(--lime);
+            border: 1px solid var(--black);
+        }
+
+        /* Use Cases V2 */
+        .usecases-v2 {
+            padding: 100px 0;
+        }
+
+        .usecases-v2-header {
+            max-width: 600px;
+            margin-bottom: 60px;
+        }
+
+        .usecases-v2-header h2 {
+            font-size: clamp(28px, 4vw, 42px);
+            margin-bottom: 16px;
+        }
+
+        .usecases-v2-header p {
+            font-size: 18px;
+            color: var(--gray-600);
+            line-height: 1.7;
+        }
+
+        .usecases-v2-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .usecase-v2-card {
+            padding: 36px;
+            border: var(--border);
+            background: var(--white);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.15s ease;
+        }
+
+        .usecase-v2-card:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .usecase-v2-card h3 {
+            font-size: 22px;
+            margin-bottom: 12px;
+            color: var(--black);
+        }
+
+        .usecase-v2-card p {
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--gray-600);
+        }
+
+        .usecase-v2-card.span-full {
+            grid-column: 1 / -1;
+        }
+
+        /* Testimonials V2 */
+        .testimonials-v2 {
+            padding: 100px 0;
+            background: var(--navy);
+            border-top: var(--border);
+            border-bottom: var(--border);
+        }
+
+        .testimonials-v2 h2 {
+            font-size: clamp(28px, 4vw, 42px);
+            color: var(--white);
+            margin-bottom: 60px;
+        }
+
+        .testimonials-v2-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .testimonial-v2-card {
+            padding: 36px;
+            border: 3px solid rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.05);
+        }
+
+        .testimonial-v2-card blockquote {
+            font-size: 18px;
+            line-height: 1.7;
+            color: var(--white);
+            margin-bottom: 24px;
+            font-style: italic;
+        }
+
+        .testimonial-v2-card .t-author {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--lime);
+        }
+
+        /* Closing CTA V2 */
+        .closing-v2 {
+            padding: 120px 0;
+            text-align: center;
+        }
+
+        .closing-v2-inner {
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        .closing-v2 h2 {
+            font-size: clamp(32px, 5vw, 52px);
+            margin-bottom: 24px;
+            color: var(--black);
+        }
+
+        .closing-v2 p {
+            font-size: 20px;
+            color: var(--gray-600);
+            line-height: 1.7;
+            margin-bottom: 40px;
+        }
+
+        .closing-v2-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-v2 {
+                padding: 80px 0 60px;
+            }
+
+            .hero-v2-subhead {
+                font-size: 17px;
+            }
+
+            .solution-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .story-split {
+                grid-template-columns: 1fr;
+            }
+
+            .story-columns {
+                grid-template-columns: 1fr;
+            }
+
+            .usecases-v2-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonials-v2-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .reality-section {
+                padding: 60px 0;
+            }
+
+            .solution-section,
+            .story-section,
+            .usecases-v2,
+            .testimonials-v2,
+            .closing-v2 {
+                padding: 60px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ========== NAVBAR ========== -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-inner">
+                <a href="index.html" class="navbar-logo">
+                    <img src="logo.png" alt="Hoogah">
+                </a>
+                <div class="navbar-links">
+                    <a href="how-it-works.html">How It Works</a>
+                    <a href="our-belief.html">Our Belief</a>
+                    <a href="use-cases.html">Use Cases</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="book-demo.html" class="navbar-cta">Book a Demo</a>
+                </div>
+                <button class="mobile-toggle" aria-label="Menu" onclick="toggleMobileMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="how-it-works.html" onclick="closeMobileMenu()">How It Works</a>
+            <a href="our-belief.html" onclick="closeMobileMenu()">Our Belief</a>
+            <a href="use-cases.html" onclick="closeMobileMenu()">Use Cases</a>
+            <a href="pricing.html" onclick="closeMobileMenu()">Pricing</a>
+            <a href="book-demo.html" class="navbar-cta" onclick="closeMobileMenu()">Book a Demo</a>
+        </div>
+    </nav>
+
+    <!-- ========== 1. HERO ========== -->
+    <section class="hero-v2">
+        <div class="container">
+            <div class="hero-v2-inner">
+                <h1>Great events don't leave networking to chance.</h1>
+                <p class="hero-v2-subhead">
+                    Hoogah helps event organizers create intentional introductions between attendees so meaningful conversations actually happen.
+                </p>
+                <div class="hero-v2-buttons">
+                    <a href="book-demo.html" class="btn btn-primary">Bring Hoogah to Your Next Event</a>
+                    <a href="how-it-works.html" class="btn btn-secondary">See How It Works</a>
+                </div>
+            </div>
+            <div class="hero-v2-image">
+                <!-- Replace with a real photo of two attendees talking at an event -->
+                <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=960&q=80" alt="Attendees having a meaningful conversation at an event">
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== 2. THE REALITY OF NETWORKING ========== -->
+    <section class="reality-section">
+        <div class="container">
+            <div class="reality-inner">
+                <h2>What actually happens during networking time</h2>
+
+                <p>Most events include networking.</p>
+
+                <div class="reality-formats">
+                    <li>Happy hours</li>
+                    <li>Coffee breaks</li>
+                    <li>Networking lounges</li>
+                </div>
+
+                <p>But what usually happens?</p>
+
+                <ul class="reality-list">
+                    <li>The same few people dominate conversations</li>
+                    <li>Attendees talk to people they already know</li>
+                    <li>Many people don't know who to approach</li>
+                </ul>
+
+                <div class="reality-result">
+                    <p>People attend the event, but leave wishing they had met more of the right people.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== 3. THE SOLUTION ========== -->
+    <section class="solution-section">
+        <div class="container">
+            <div class="solution-grid">
+                <div class="solution-content">
+                    <div class="section-label">The Solution</div>
+                    <h2>Hoogah helps the right people meet</h2>
+                    <p>Before the event, attendees answer a few simple questions.</p>
+                    <p>Hoogah then identifies people they're likely to have meaningful conversations with.</p>
+                    <p>During the event, those introductions happen intentionally.</p>
+                    <p><strong>Networking becomes easier for everyone.</strong></p>
+                </div>
+                <div class="solution-visual">
+                    <div class="match-card">
+                        <div class="match-label">You've been matched with</div>
+                        <div class="match-name">Alex Chen</div>
+                        <div class="match-role">Product Leader, Series B Startup</div>
+                        <div class="match-divider"></div>
+                        <div class="match-icebreaker">
+                            "You both believe community is the most undervalued growth lever. What's one community moment that changed your career?"
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== 4. STORY SECTION ========== -->
+    <section class="story-section">
+        <div class="container">
+            <div class="story-header">
+                <h2>A simple introduction can change the event</h2>
+            </div>
+
+            <!-- Split visual -->
+            <div class="story-split">
+                <div class="story-split-phone">
+                    <div class="match-label">You've been matched with</div>
+                    <div class="match-name">Alex Chen</div>
+                </div>
+                <div class="story-split-image">
+                    <!-- Replace with real photo of two attendees meeting -->
+                    <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&q=80" alt="Two attendees meeting at an event">
+                </div>
+            </div>
+
+            <!-- Three columns -->
+            <div class="story-columns">
+                <div class="story-col">
+                    <div class="story-col-number">1</div>
+                    <h3>Attendees Answer a Few Questions</h3>
+                    <p>Sarah arrives at the event knowing only two people. She notices the Hoogah networking area and answers a few quick questions about:</p>
+                    <ul>
+                        <li>Her goals for attending</li>
+                        <li>Her career stage</li>
+                        <li>Her interests</li>
+                    </ul>
+                </div>
+                <div class="story-col">
+                    <div class="story-col-number">2</div>
+                    <h3>Hoogah Creates Intentional Pairings</h3>
+                    <p>During the afternoon networking break, Hoogah introduces her to Alex, another product leader working on similar challenges.</p>
+                    <p>Hoogah suggests a time and place for them to meet.</p>
+                </div>
+                <div class="story-col">
+                    <div class="story-col-number">3</div>
+                    <h3>Real Conversations Start</h3>
+                    <p>Two people who want to connect are introduced. They quickly move past small talk and into a deeper conversation.</p>
+                    <p><strong>It becomes the most valuable conversation Sarah has all day.</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== 5. USE CASES ========== -->
+    <section class="usecases-v2">
+        <div class="container">
+            <div class="usecases-v2-header">
+                <div class="section-label">Built For</div>
+                <h2>Designed for Events Where Networking Matters</h2>
+                <p>Hoogah works best at events where meaningful conversations are part of the experience.</p>
+            </div>
+            <div class="usecases-v2-grid">
+                <div class="usecase-v2-card">
+                    <h3>User Conferences</h3>
+                    <p>Help attendees meet peers facing similar challenges.</p>
+                </div>
+                <div class="usecase-v2-card">
+                    <h3>Executive Summits</h3>
+                    <p>Create curated introductions between leaders.</p>
+                </div>
+                <div class="usecase-v2-card">
+                    <h3>Corporate Town Halls</h3>
+                    <p>Help employees connect across teams.</p>
+                </div>
+                <div class="usecase-v2-card">
+                    <h3>Sales Kickoffs (SKOs)</h3>
+                    <p>Make networking easier across regions and roles.</p>
+                </div>
+                <div class="usecase-v2-card span-full">
+                    <h3>Leadership Offsites</h3>
+                    <p>Encourage deeper connections across the organization.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== 6. TESTIMONIALS ========== -->
+    <section class="testimonials-v2">
+        <div class="container">
+            <h2>When the Right People Meet</h2>
+            <div class="testimonials-v2-grid">
+                <div class="testimonial-v2-card">
+                    <blockquote>"Hoogah made networking feel intentional. People met others they never would have connected with on their own."</blockquote>
+                    <div class="t-author">Director of Events, SaaS Company</div>
+                </div>
+                <div class="testimonial-v2-card">
+                    <blockquote>"It gave me the push to talk to someone I wouldn't have otherwise. And it was an absolute blast!"</blockquote>
+                    <div class="t-author">Summit Attendee</div>
+                </div>
+                <div class="testimonial-v2-card">
+                    <blockquote>"For once, networking didn't feel random. People were having real conversations instead of talking to the people they already knew."</blockquote>
+                    <div class="t-author">Event Strategist</div>
+                </div>
+                <div class="testimonial-v2-card">
+                    <blockquote>"Networking is why people come to events. Hoogah helped us make sure it actually happened."</blockquote>
+                    <div class="t-author">Conference Organizer</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== 7. CLOSING CTA ========== -->
+    <section class="closing-v2">
+        <div class="container">
+            <div class="closing-v2-inner">
+                <h2>Stop leaving networking to chance</h2>
+                <p>Design events where every attendee has a way into meaningful conversations.</p>
+                <div class="closing-v2-buttons">
+                    <a href="book-demo.html" class="btn btn-primary">Bring Hoogah to Your Next Event</a>
+                    <a href="how-it-works.html" class="btn btn-secondary">See How Hoogah Works</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="logo.png" alt="Hoogah" style="height: 44px; filter: brightness(10);">
+                    <p>Intentional networking for events where meaningful conversations matter.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <a href="how-it-works.html">How It Works</a>
+                    <a href="our-belief.html">Our Belief</a>
+                    <a href="use-cases.html">Use Cases</a>
+                    <a href="pricing.html">Pricing</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <a href="#">About Us</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Contact</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <a href="#">Case Studies</a>
+                    <a href="#">Documentation</a>
+                    <a href="#">Help Center</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Hoogah. All rights reserved.</p>
+                <div class="footer-socials">
+                    <a href="#" aria-label="LinkedIn">in</a>
+                    <a href="#" aria-label="Twitter">X</a>
+                    <a href="#" aria-label="Instagram">ig</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+
+</body>
+</html>
