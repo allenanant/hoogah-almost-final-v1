@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css?v=2">
+    <link rel="stylesheet" href="css/styles.css?v=3">
     <!-- Meta Pixel Code -->
     <script>
     !function(f,b,e,v,n,t,s)
@@ -27,35 +27,72 @@
     /></noscript>
     <!-- End Meta Pixel Code -->
     <style>
-        /* ========== V2 HOMEPAGE STYLES ========== */
+        /* ========== V2 HOMEPAGE - FULL REDESIGN ========== */
 
-        /* Hero V2 - Editorial, human-first */
+        /* Highlighted text */
+        .hl { background: var(--lime); padding: 0 6px; border: 2px solid var(--black); display: inline; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+        .hl-mag { color: var(--magenta); }
+        .hl-navy { color: var(--navy); }
+        .text-big { font-size: 1.15em; }
+        .text-bold { font-weight: 700; }
+
+        /* ========== HERO ========== */
         .hero-v2 {
             margin-top: 72px;
-            padding: 100px 0 80px;
-            position: relative;
+            padding: 100px 0 0;
             overflow: hidden;
+            position: relative;
         }
 
         .hero-v2-inner {
             text-align: center;
-            max-width: 800px;
+            max-width: 860px;
             margin: 0 auto;
+            padding-bottom: 60px;
         }
 
+        .hero-v2-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: var(--navy);
+            color: var(--white);
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            font-size: 13px;
+            border: 2px solid var(--black);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 28px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            animation: heroFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0s both;
+        }
+
+        .hero-v2-badge .pulse {
+            width: 8px; height: 8px;
+            background: var(--lime);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(1.5)} }
+
         .hero-v2 h1 {
-            font-size: clamp(38px, 5vw, 60px);
-            margin-bottom: 24px;
+            font-size: clamp(40px, 5.5vw, 68px);
+            margin-bottom: 28px;
             color: var(--black);
-            line-height: 1.1;
+            line-height: 1.08;
+            animation: heroFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
         }
 
         .hero-v2-subhead {
-            font-size: 20px;
+            font-size: clamp(18px, 2.2vw, 22px);
             color: var(--gray-600);
             line-height: 1.7;
-            max-width: 640px;
-            margin: 0 auto 40px;
+            max-width: 660px;
+            margin: 0 auto 44px;
+            animation: heroFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
         }
 
         .hero-v2-buttons {
@@ -63,199 +100,326 @@
             gap: 16px;
             justify-content: center;
             flex-wrap: wrap;
-            margin-bottom: 60px;
+            margin-bottom: 0;
+            animation: heroFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.45s both;
         }
 
-        .hero-v2-image {
-            max-width: 960px;
+        @keyframes heroFadeUp { from{opacity:0;transform:translateY(30px)} to{opacity:1;transform:translateY(0)} }
+
+        .hero-v2-image-wrap {
+            position: relative;
+            max-width: 1100px;
             margin: 0 auto;
+            animation: heroImageReveal 1s cubic-bezier(0.16, 1, 0.3, 1) 0.6s both;
+        }
+
+        @keyframes heroImageReveal { from{opacity:0;transform:translateY(50px) scale(0.96)} to{opacity:1;transform:translateY(0) scale(1)} }
+
+        .hero-v2-image {
+            width: 100%;
             border: var(--border);
             box-shadow: var(--shadow-lg);
             overflow: hidden;
-            background: var(--gray-200);
             aspect-ratio: 16/9;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
         .hero-v2-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            width: 100%; height: 100%; object-fit: cover;
+            transition: transform 8s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .hero-v2-image .placeholder-text {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 18px;
-            color: var(--gray-400);
-            text-align: center;
-            padding: 40px;
-        }
+        .hero-v2-image:hover img { transform: scale(1.04); }
 
-        /* Reality Section */
-        .reality-section {
-            padding: 100px 0;
+        /* Floating stats bar on hero image */
+        .hero-float-stats {
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 0;
             background: var(--white);
-            border-top: var(--border);
-            border-bottom: var(--border);
+            border: var(--border);
+            box-shadow: var(--shadow-lg);
+            z-index: 10;
         }
 
-        .reality-inner {
-            max-width: 720px;
-            margin: 0 auto;
+        .hero-float-stat {
+            padding: 20px 36px;
+            text-align: center;
+            border-right: 2px solid var(--black);
         }
 
-        .reality-section h2 {
-            font-size: clamp(28px, 4vw, 42px);
-            margin-bottom: 40px;
-            color: var(--black);
+        .hero-float-stat:last-child { border-right: none; }
+
+        .hero-float-stat .num {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--navy);
+            line-height: 1;
         }
 
-        .reality-section p {
-            font-size: 18px;
-            line-height: 1.8;
+        .hero-float-stat .label {
+            font-size: 13px;
             color: var(--gray-600);
-            margin-bottom: 24px;
+            margin-top: 4px;
         }
 
-        .reality-list {
-            list-style: none;
-            padding: 0;
-            margin: 32px 0;
-        }
-
-        .reality-list li {
-            font-size: 18px;
-            line-height: 1.8;
-            color: var(--black);
-            padding: 8px 0 8px 28px;
+        /* ========== STACKING CARDS SECTION ========== */
+        .stack-section {
+            padding: 120px 0 60px;
             position: relative;
         }
 
-        .reality-list li::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 17px;
-            width: 10px;
-            height: 10px;
-            background: var(--magenta);
-            border: 2px solid var(--black);
+        .stack-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 80px;
         }
 
-        .reality-formats {
-            list-style: none;
-            padding: 0;
-            margin: 24px 0;
+        .stack-header h2 {
+            font-size: clamp(30px, 4.5vw, 50px);
+            margin-bottom: 16px;
         }
 
-        .reality-formats li {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 20px;
-            font-weight: 600;
-            color: var(--black);
-            padding: 12px 0;
-            border-bottom: 2px dashed var(--gray-200);
+        .stack-header p {
+            font-size: 19px;
+            color: var(--gray-600);
+            line-height: 1.7;
         }
 
-        .reality-result {
-            margin-top: 40px;
-            padding: 32px;
-            background: var(--cream);
+        .stack-container {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .stack-card {
+            position: sticky;
+            top: 100px;
+            margin-bottom: 40px;
             border: var(--border);
-            box-shadow: var(--shadow-sm);
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .reality-result p {
-            font-size: 20px;
+        .stack-card:nth-child(1) { z-index: 1; background: var(--white); }
+        .stack-card:nth-child(2) { z-index: 2; background: var(--cream); top: 120px; }
+        .stack-card:nth-child(3) { z-index: 3; background: var(--white); top: 140px; }
+
+        .stack-card:hover {
+            transform: scale(1.01);
+            box-shadow: 10px 10px 0px var(--black);
+        }
+
+        .stack-card-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 400px;
+        }
+
+        .stack-card-content {
+            padding: 48px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .stack-card-step {
             font-family: 'Space Grotesk', sans-serif;
-            font-weight: 600;
-            color: var(--black);
-            margin: 0;
-            line-height: 1.5;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--magenta);
+            margin-bottom: 16px;
         }
 
-        /* Solution Section */
-        .solution-section {
+        .stack-card-content h3 {
+            font-size: clamp(24px, 3vw, 34px);
+            margin-bottom: 20px;
+            line-height: 1.15;
+        }
+
+        .stack-card-content p {
+            font-size: 17px;
+            line-height: 1.8;
+            color: var(--gray-600);
+        }
+
+        .stack-card-image {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .stack-card-image img {
+            width: 100%; height: 100%; object-fit: cover;
+            transition: transform 6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .stack-card:hover .stack-card-image img { transform: scale(1.05); }
+
+        /* ========== REALITY SECTION ========== */
+        .reality-v2 {
             padding: 100px 0;
+            background: var(--navy);
+            border-top: var(--border);
+            border-bottom: var(--border);
+            color: var(--white);
+            overflow: hidden;
         }
 
-        .solution-grid {
+        .reality-v2-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 80px;
             align-items: center;
         }
 
-        .solution-content h2 {
-            font-size: clamp(28px, 4vw, 42px);
+        .reality-v2-content h2 {
+            font-size: clamp(28px, 4vw, 44px);
+            color: var(--white);
             margin-bottom: 32px;
-            color: var(--black);
         }
 
-        .solution-content p {
+        .reality-v2-content p {
             font-size: 18px;
             line-height: 1.8;
-            color: var(--gray-600);
+            color: rgba(255,255,255,0.7);
             margin-bottom: 20px;
         }
 
-        .solution-visual {
-            background: var(--white);
-            border: var(--border);
-            box-shadow: var(--shadow-lg);
-            padding: 40px;
+        .reality-pain-list {
+            list-style: none;
+            padding: 0;
+            margin: 32px 0;
+        }
+
+        .reality-pain-list li {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--white);
+            padding: 16px 0 16px 32px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
             position: relative;
         }
 
-        .solution-visual::before {
+        .reality-pain-list li::before {
             content: '';
             position: absolute;
-            top: -10px;
-            right: -10px;
-            width: 100%;
-            height: 100%;
+            left: 0; top: 22px;
+            width: 12px; height: 12px;
+            background: var(--magenta);
+            border: 2px solid var(--white);
+        }
+
+        .reality-stat-block {
+            text-align: center;
+        }
+
+        .reality-big-stat {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(80px, 12vw, 140px);
+            font-weight: 700;
+            color: var(--lime);
+            line-height: 1;
+            margin-bottom: 16px;
+        }
+
+        .reality-stat-label {
+            font-size: 22px;
+            color: rgba(255,255,255,0.8);
+            line-height: 1.5;
+        }
+
+        /* ========== SOLUTION / MATCH CARD ========== */
+        .solution-v2 {
+            padding: 100px 0;
+        }
+
+        .solution-v2-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .solution-v2-content h2 {
+            font-size: clamp(28px, 4vw, 44px);
+            margin-bottom: 28px;
+        }
+
+        .solution-v2-content p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: var(--gray-600);
+            margin-bottom: 16px;
+        }
+
+        .match-card-v2 {
+            background: var(--white);
+            border: var(--border);
+            box-shadow: var(--shadow-lg);
+            padding: 48px 40px;
+            position: relative;
+            text-align: center;
+        }
+
+        .match-card-v2::before {
+            content: '';
+            position: absolute;
+            top: -12px; right: -12px;
+            width: 100%; height: 100%;
             border: var(--border);
             background: var(--lime);
             z-index: -1;
         }
 
-        .match-card {
-            text-align: center;
-        }
-
-        .match-card .match-label {
+        .match-card-v2 .mc-label {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 13px;
+            font-size: 12px;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             color: var(--gray-400);
             margin-bottom: 20px;
         }
 
-        .match-card .match-name {
+        .match-card-v2 .mc-avatar {
+            width: 72px; height: 72px;
+            border: var(--border);
+            background: var(--navy);
+            color: var(--white);
             font-family: 'Space Grotesk', sans-serif;
             font-size: 28px;
             font-weight: 700;
-            color: var(--black);
-            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
         }
 
-        .match-card .match-role {
-            font-size: 16px;
+        .match-card-v2 .mc-name {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .match-card-v2 .mc-role {
+            font-size: 15px;
             color: var(--gray-600);
             margin-bottom: 24px;
         }
 
-        .match-card .match-divider {
-            width: 60px;
-            height: 3px;
+        .match-card-v2 .mc-divider {
+            width: 60px; height: 3px;
             background: var(--magenta);
             margin: 0 auto 24px;
         }
 
-        .match-card .match-icebreaker {
+        .match-card-v2 .mc-icebreaker {
             font-size: 15px;
             line-height: 1.7;
             color: var(--gray-600);
@@ -265,604 +429,341 @@
             border: 2px solid var(--gray-200);
         }
 
-        /* Story Section */
-        .story-section {
+        /* Gentle float */
+        .match-card-v2 {
+            animation: gentleFloat 6s ease-in-out infinite;
+        }
+
+        @keyframes gentleFloat { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+
+        /* ========== USE CASES V2 ========== */
+        .usecases-v3 {
             padding: 100px 0;
             background: var(--white);
             border-top: var(--border);
             border-bottom: var(--border);
         }
 
-        .story-header {
+        .usecases-v3-header {
+            max-width: 640px;
+            margin-bottom: 60px;
+        }
+
+        .usecases-v3-header h2 {
+            font-size: clamp(28px, 4vw, 44px);
+            margin-bottom: 16px;
+        }
+
+        .usecases-v3-header p {
+            font-size: 18px;
+            color: var(--gray-600);
+            line-height: 1.7;
+        }
+
+        .usecases-v3-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .uc-card {
+            padding: 32px;
+            border: var(--border);
+            background: var(--cream);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .uc-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0;
+            width: 0; height: 4px;
+            background: var(--magenta);
+            transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .uc-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .uc-card:hover::after { width: 100%; }
+
+        .uc-card .uc-emoji {
+            font-size: 32px;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .uc-card h3 {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .uc-card p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--gray-600);
+        }
+
+        /* ========== HOW IT FEELS SECTION ========== */
+        .feels-section {
+            padding: 100px 0;
+            overflow: hidden;
+        }
+
+        .feels-header {
             text-align: center;
             max-width: 700px;
             margin: 0 auto 60px;
         }
 
-        .story-header h2 {
-            font-size: clamp(28px, 4vw, 42px);
-            margin-bottom: 20px;
-        }
-
-        .story-split {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            margin-bottom: 60px;
-            align-items: center;
-        }
-
-        .story-split-phone {
-            background: var(--white);
-            border: var(--border);
-            box-shadow: var(--shadow);
-            padding: 40px 32px;
-            text-align: center;
-            max-width: 320px;
-            margin: 0 auto;
-        }
-
-        .story-split-phone .match-label {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--gray-400);
+        .feels-header h2 {
+            font-size: clamp(28px, 4vw, 44px);
             margin-bottom: 16px;
         }
 
-        .story-split-phone .match-name {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 22px;
-            font-weight: 700;
-            color: var(--black);
-        }
-
-        .story-split-image {
-            border: var(--border);
-            box-shadow: var(--shadow);
-            overflow: hidden;
-            background: var(--gray-200);
-            aspect-ratio: 4/3;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .story-split-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .story-columns {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 32px;
-        }
-
-        .story-col {
-            padding: 32px;
-            border: var(--border);
-            background: var(--cream);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .story-col-number {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 48px;
-            font-weight: 700;
-            color: var(--magenta);
-            line-height: 1;
-            margin-bottom: 16px;
-        }
-
-        .story-col h3 {
-            font-size: 20px;
-            margin-bottom: 16px;
-            color: var(--black);
-        }
-
-        .story-col p {
-            font-size: 16px;
-            line-height: 1.7;
-            color: var(--gray-600);
-        }
-
-        .story-col ul {
-            list-style: none;
-            padding: 0;
-            margin-top: 12px;
-        }
-
-        .story-col ul li {
-            font-size: 15px;
-            color: var(--gray-600);
-            padding: 4px 0 4px 20px;
-            position: relative;
-        }
-
-        .story-col ul li::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 12px;
-            width: 8px;
-            height: 8px;
-            background: var(--lime);
-            border: 1px solid var(--black);
-        }
-
-        /* Use Cases V2 */
-        .usecases-v2 {
-            padding: 100px 0;
-        }
-
-        .usecases-v2-header {
-            max-width: 600px;
-            margin-bottom: 60px;
-        }
-
-        .usecases-v2-header h2 {
-            font-size: clamp(28px, 4vw, 42px);
-            margin-bottom: 16px;
-        }
-
-        .usecases-v2-header p {
-            font-size: 18px;
-            color: var(--gray-600);
-            line-height: 1.7;
-        }
-
-        .usecases-v2-grid {
+        .feels-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 24px;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
-        .usecase-v2-card {
-            padding: 36px;
+        .feels-card {
+            padding: 40px;
             border: var(--border);
             background: var(--white);
-            box-shadow: var(--shadow-sm);
-            transition: all 0.15s ease;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
         }
 
-        .usecase-v2-card:hover {
-            transform: translate(-2px, -2px);
+        .feels-card:hover {
+            transform: translate(-3px, -3px);
             box-shadow: var(--shadow-lg);
         }
 
-        .usecase-v2-card h3 {
-            font-size: 22px;
+        .feels-card .fc-before {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--gray-400);
             margin-bottom: 12px;
+        }
+
+        .feels-card .fc-text {
+            font-size: 20px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            line-height: 1.5;
             color: var(--black);
         }
 
-        .usecase-v2-card p {
-            font-size: 16px;
-            line-height: 1.7;
-            color: var(--gray-600);
+        .feels-card.without .fc-text {
+            text-decoration: line-through;
+            color: var(--gray-400);
         }
 
-        .usecase-v2-card.span-full {
-            grid-column: 1 / -1;
-        }
-
-        /* Testimonials V2 */
-        .testimonials-v2 {
-            padding: 100px 0;
+        .feels-card.with {
             background: var(--navy);
+        }
+
+        .feels-card.with .fc-before { color: var(--lime); }
+        .feels-card.with .fc-text { color: var(--white); }
+
+        /* ========== TESTIMONIALS ========== */
+        .testimonials-v3 {
+            padding: 100px 0;
+            background: var(--cream);
             border-top: var(--border);
             border-bottom: var(--border);
         }
 
-        .testimonials-v2 h2 {
-            font-size: clamp(28px, 4vw, 42px);
-            color: var(--white);
+        .testimonials-v3 h2 {
+            font-size: clamp(28px, 4vw, 44px);
             margin-bottom: 60px;
-        }
-
-        .testimonials-v2-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-        }
-
-        .testimonial-v2-card {
-            padding: 36px;
-            border: 3px solid rgba(255,255,255,0.2);
-            background: rgba(255,255,255,0.05);
-        }
-
-        .testimonial-v2-card blockquote {
-            font-size: 18px;
-            line-height: 1.7;
-            color: var(--white);
-            margin-bottom: 24px;
-            font-style: italic;
-        }
-
-        .testimonial-v2-card .t-author {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--lime);
-        }
-
-        /* Closing CTA V2 */
-        .closing-v2 {
-            padding: 120px 0;
             text-align: center;
         }
 
-        .closing-v2-inner {
-            max-width: 640px;
+        .testimonials-v3-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
-        .closing-v2 h2 {
-            font-size: clamp(32px, 5vw, 52px);
-            margin-bottom: 24px;
-            color: var(--black);
+        .t-card {
+            padding: 36px;
+            border: var(--border);
+            background: var(--white);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
         }
 
-        .closing-v2 p {
+        .t-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .t-card blockquote {
+            font-size: 17px;
+            line-height: 1.7;
+            color: var(--black);
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .t-card .t-author {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--magenta);
+        }
+
+        /* ========== ORGANIZER IMAGE SECTION ========== */
+        .organizer-section {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .organizer-image {
+            width: 100%;
+            aspect-ratio: 21/9;
+            overflow: hidden;
+        }
+
+        .organizer-image img {
+            width: 100%; height: 100%; object-fit: cover;
+        }
+
+        .organizer-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right, rgba(26,10,94,0.9) 0%, rgba(26,10,94,0.4) 100%);
+            display: flex;
+            align-items: center;
+        }
+
+        .organizer-text {
+            max-width: 560px;
+            padding: 60px;
+        }
+
+        .organizer-text h2 {
+            font-size: clamp(28px, 4vw, 44px);
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .organizer-text p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 32px;
+        }
+
+        /* ========== CLOSING CTA ========== */
+        .closing-v3 {
+            padding: 120px 0;
+            text-align: center;
+            background: linear-gradient(135deg, var(--cream) 0%, var(--white) 50%, var(--cream) 100%);
+            background-size: 200% 200%;
+            animation: gradientShift 8s ease infinite;
+        }
+
+        @keyframes gradientShift { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
+
+        .closing-v3-inner {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .closing-v3 h2 {
+            font-size: clamp(36px, 5.5vw, 60px);
+            margin-bottom: 24px;
+        }
+
+        .closing-v3 p {
             font-size: 20px;
             color: var(--gray-600);
             line-height: 1.7;
             margin-bottom: 40px;
         }
 
-        .closing-v2-buttons {
+        .closing-v3-buttons {
             display: flex;
             gap: 16px;
             justify-content: center;
             flex-wrap: wrap;
         }
 
-        /* ========== ANIMATIONS ========== */
-
-        /* Scroll-triggered reveal base */
-        .reveal {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-                        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Stagger delays for children */
-        .reveal-stagger > .reveal:nth-child(1) { transition-delay: 0s; }
-        .reveal-stagger > .reveal:nth-child(2) { transition-delay: 0.1s; }
-        .reveal-stagger > .reveal:nth-child(3) { transition-delay: 0.2s; }
-        .reveal-stagger > .reveal:nth-child(4) { transition-delay: 0.25s; }
-        .reveal-stagger > .reveal:nth-child(5) { transition-delay: 0.3s; }
-
-        /* Fade in from left */
-        .reveal-left {
-            opacity: 0;
-            transform: translateX(-50px);
-            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-                        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .reveal-left.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        /* Fade in from right */
-        .reveal-right {
-            opacity: 0;
-            transform: translateX(50px);
-            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-                        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .reveal-right.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        /* Scale in */
-        .reveal-scale {
-            opacity: 0;
-            transform: scale(0.9);
-            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-                        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .reveal-scale.visible {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        /* Hero entrance animations */
-        .hero-v2-inner h1 {
-            animation: heroFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
-        }
-
-        .hero-v2-subhead {
-            animation: heroFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
-        }
-
-        .hero-v2-buttons {
-            animation: heroFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.5s both;
-        }
-
-        .hero-v2-image {
-            animation: heroImageReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.6s both;
-        }
-
-        @keyframes heroFadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes heroImageReveal {
-            from {
-                opacity: 0;
-                transform: translateY(40px) scale(0.97);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
-        }
-
-        /* Hero image subtle zoom on hover */
-        .hero-v2-image img {
-            transition: transform 6s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .hero-v2-image:hover img {
-            transform: scale(1.03);
-        }
-
-        /* Reality section list items stagger */
-        .reality-formats li {
-            transition: background 0.3s ease;
-        }
-
-        .reality-formats li:hover {
-            background: var(--gray-100);
-            padding-left: 12px;
-        }
-
-        .reality-list li {
-            transition: transform 0.3s ease;
-        }
-
-        .reality-list li:hover {
-            transform: translateX(6px);
-        }
-
-        /* Reality result box pulse */
-        .reality-result {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .reality-result:hover {
-            transform: translate(-3px, -3px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        /* Solution visual float animation */
-        .solution-visual {
-            animation: gentleFloat 6s ease-in-out infinite;
-            animation-play-state: paused;
-        }
-
-        .solution-visual.visible {
-            animation-play-state: running;
-        }
-
-        @keyframes gentleFloat {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
-        }
-
-        /* Match card typing effect for name */
-        .match-card .match-name {
-            overflow: hidden;
-            white-space: nowrap;
-            border-right: 3px solid var(--magenta);
-            width: 0;
-            margin: 0 auto 8px;
-            animation: none;
-        }
-
-        .match-card .match-name.typing {
-            animation: typeWriter 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards,
-                       blinkCursor 0.6s step-end 0.3s 4;
-        }
-
-        @keyframes typeWriter {
-            from { width: 0; }
-            to { width: 240px; border-right-color: transparent; }
-        }
-
-        @keyframes blinkCursor {
-            50% { border-right-color: transparent; }
-        }
-
-        /* Story phone card pulse */
-        .story-split-phone {
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
-        }
-
-        .story-split-phone:hover {
-            transform: translateY(-4px) rotate(-1deg);
-            box-shadow: var(--shadow-lg);
-        }
-
-        /* Story image parallax-like zoom */
-        .story-split-image img {
-            transition: transform 5s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .story-split-image:hover img {
-            transform: scale(1.05);
-        }
-
-        /* Story columns hover lift */
-        .story-col {
-            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-                        box-shadow 0.3s ease;
-        }
-
-        .story-col:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        /* Story number count-up color pulse */
-        .story-col-number {
-            transition: color 0.3s ease;
-        }
-
-        .story-col:hover .story-col-number {
-            color: var(--navy);
-        }
-
-        /* Testimonial cards subtle glow on hover */
-        .testimonial-v2-card {
-            transition: all 0.3s ease;
-        }
-
-        .testimonial-v2-card:hover {
-            background: rgba(255,255,255,0.1);
-            border-color: var(--lime);
-            transform: translateY(-4px);
-        }
-
-        /* Closing CTA section gradient background animation */
-        .closing-v2 {
-            background: linear-gradient(135deg, var(--cream) 0%, var(--white) 50%, var(--cream) 100%);
-            background-size: 200% 200%;
-            animation: gradientShift 8s ease infinite;
-        }
-
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        /* CTA button pulse on closing section */
-        .closing-v2 .btn-primary {
+        .closing-v3 .btn-primary {
             animation: subtlePulse 3s ease-in-out infinite;
         }
 
-        @keyframes subtlePulse {
-            0%, 100% { box-shadow: var(--shadow); }
-            50% { box-shadow: 8px 8px 0px var(--black), 0 0 20px rgba(200, 255, 0, 0.3); }
+        @keyframes subtlePulse { 0%,100%{box-shadow:var(--shadow)} 50%{box-shadow:8px 8px 0px var(--black), 0 0 24px rgba(200,255,0,0.35)} }
+
+        /* ========== SCROLL REVEAL ========== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        .reveal-left { opacity: 0; transform: translateX(-50px); transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .reveal-left.visible { opacity: 1; transform: translateX(0); }
+
+        .reveal-right { opacity: 0; transform: translateX(50px); transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+        .reveal-stagger > .reveal:nth-child(1) { transition-delay: 0s; }
+        .reveal-stagger > .reveal:nth-child(2) { transition-delay: 0.1s; }
+        .reveal-stagger > .reveal:nth-child(3) { transition-delay: 0.15s; }
+        .reveal-stagger > .reveal:nth-child(4) { transition-delay: 0.2s; }
+        .reveal-stagger > .reveal:nth-child(5) { transition-delay: 0.25s; }
+        .reveal-stagger > .reveal:nth-child(6) { transition-delay: 0.3s; }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 900px) {
+            .hero-float-stats { flex-wrap: wrap; width: 90%; bottom: -20px; }
+            .hero-float-stat { padding: 14px 20px; flex: 1; min-width: 100px; }
+            .hero-float-stat .num { font-size: 24px; }
+            .stack-card-inner { grid-template-columns: 1fr; }
+            .stack-card-image { aspect-ratio: 16/9; min-height: 220px; }
+            .stack-card-content { padding: 32px; }
+            .reality-v2-grid { grid-template-columns: 1fr; gap: 40px; }
+            .solution-v2-grid { grid-template-columns: 1fr; gap: 40px; }
+            .usecases-v3-grid { grid-template-columns: 1fr; }
+            .feels-grid { grid-template-columns: 1fr; }
+            .testimonials-v3-grid { grid-template-columns: 1fr; }
+            .organizer-text { padding: 32px; }
+            .organizer-image { aspect-ratio: 16/9; }
         }
 
-        /* Smooth section label slide-in */
-        .section-label {
-            transition: all 0.3s ease;
+        @media (max-width: 600px) {
+            .hero-v2 { padding: 80px 0 0; }
+            .hero-v2-inner { padding-bottom: 40px; }
+            .hero-float-stats { position: relative; bottom: 0; transform: none; left: 0; width: 100%; margin-top: 20px; }
+            .hero-v2-image-wrap { margin: 0; }
+            .stack-section { padding: 80px 0 40px; }
+            .stack-card { position: relative; top: auto !important; }
+            .stack-card-content h3 { font-size: 22px; }
+            .reality-big-stat { font-size: 80px; }
+            .match-card-v2 { padding: 32px 24px; }
         }
 
-        /* Use case cards - icon accent on hover */
-        .usecase-v2-card {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .usecase-v2-card::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 4px;
-            background: var(--magenta);
-            transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .usecase-v2-card:hover::after {
-            width: 100%;
-        }
-
-        /* Prefers reduced motion */
         @media (prefers-reduced-motion: reduce) {
-            .reveal, .reveal-left, .reveal-right, .reveal-scale {
-                opacity: 1;
-                transform: none;
-                transition: none;
-            }
-            .hero-v2-inner h1,
-            .hero-v2-subhead,
-            .hero-v2-buttons,
-            .hero-v2-image {
-                animation: none;
-            }
-            .solution-visual,
-            .closing-v2,
-            .closing-v2 .btn-primary {
-                animation: none;
-            }
-            .match-card .match-name {
-                width: auto;
-                border-right: none;
-                animation: none;
-            }
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero-v2 {
-                padding: 80px 0 60px;
-            }
-
-            .hero-v2-subhead {
-                font-size: 17px;
-            }
-
-            .solution-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .story-split {
-                grid-template-columns: 1fr;
-            }
-
-            .story-columns {
-                grid-template-columns: 1fr;
-            }
-
-            .usecases-v2-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .testimonials-v2-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .reality-section {
-                padding: 60px 0;
-            }
-
-            .solution-section,
-            .story-section,
-            .usecases-v2,
-            .testimonials-v2,
-            .closing-v2 {
-                padding: 60px 0;
-            }
+            .reveal, .reveal-left, .reveal-right { opacity: 1; transform: none; transition: none; }
+            .hero-v2-badge, .hero-v2 h1, .hero-v2-subhead, .hero-v2-buttons, .hero-v2-image-wrap { animation: none; }
+            .match-card-v2, .closing-v3, .closing-v3 .btn-primary { animation: none; }
         }
     </style>
 </head>
@@ -872,9 +773,7 @@
     <nav class="navbar">
         <div class="container">
             <div class="navbar-inner">
-                <a href="index.html" class="navbar-logo">
-                    <img src="logo.png" alt="Hoogah">
-                </a>
+                <a href="index.html" class="navbar-logo"><img src="logo.png" alt="Hoogah"></a>
                 <div class="navbar-links">
                     <a href="how-it-works.html">How It Works</a>
                     <a href="our-belief.html">Our Belief</a>
@@ -883,13 +782,10 @@
                     <a href="book-demo.html" class="navbar-cta">Book a Demo</a>
                 </div>
                 <button class="mobile-toggle" aria-label="Menu" onclick="toggleMobileMenu()">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                    <span></span><span></span><span></span>
                 </button>
             </div>
         </div>
-        <!-- Mobile Menu -->
         <div class="mobile-menu" id="mobileMenu">
             <a href="how-it-works.html" onclick="closeMobileMenu()">How It Works</a>
             <a href="our-belief.html" onclick="closeMobileMenu()">Our Belief</a>
@@ -903,69 +799,120 @@
     <section class="hero-v2">
         <div class="container">
             <div class="hero-v2-inner">
-                <h1>Great events don't leave networking to chance.</h1>
+                <div class="hero-v2-badge"><span class="pulse"></span> For Event Organizers</div>
+                <h1>Great events don't leave <span class="hl">networking</span> to chance.</h1>
                 <p class="hero-v2-subhead">
-                    Hoogah helps event organizers create intentional introductions between attendees so meaningful conversations actually happen.
+                    Hoogah helps event organizers create <strong class="hl-navy">intentional introductions</strong> between attendees so <strong class="hl-mag">meaningful conversations</strong> actually happen.
                 </p>
                 <div class="hero-v2-buttons">
                     <a href="book-demo.html" class="btn btn-primary">Bring Hoogah to Your Next Event</a>
                     <a href="how-it-works.html" class="btn btn-secondary">See How It Works</a>
                 </div>
             </div>
-            <div class="hero-v2-image">
-                <img src="images/hero-event-networking.png" alt="Two professionals having a meaningful conversation at a networking event">
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== 2. THE REALITY OF NETWORKING ========== -->
-    <section class="reality-section">
-        <div class="container">
-            <div class="reality-inner">
-                <h2 class="reveal">What actually happens during networking time</h2>
-
-                <p class="reveal">Most events include networking.</p>
-
-                <div class="reality-formats reveal-stagger">
-                    <li class="reveal">Happy hours</li>
-                    <li class="reveal">Coffee breaks</li>
-                    <li class="reveal">Networking lounges</li>
+            <div class="hero-v2-image-wrap">
+                <div class="hero-v2-image">
+                    <img src="images/hero-crowd-networking.png" alt="Hundreds of professionals networking at a modern conference event">
                 </div>
-
-                <p class="reveal">But what usually happens?</p>
-
-                <ul class="reality-list reveal-stagger">
-                    <li class="reveal">The same few people dominate conversations</li>
-                    <li class="reveal">Attendees talk to people they already know</li>
-                    <li class="reveal">Many people don't know who to approach</li>
-                </ul>
-
-                <div class="reality-result reveal">
-                    <p>People attend the event, but leave wishing they had met more of the right people.</p>
+                <div class="hero-float-stats">
+                    <div class="hero-float-stat"><div class="num">93%</div><div class="label">Satisfaction rate</div></div>
+                    <div class="hero-float-stat"><div class="num">2x</div><div class="label">Return rate</div></div>
+                    <div class="hero-float-stat"><div class="num">&lt;60s</div><div class="label">First pairing</div></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ========== 3. THE SOLUTION ========== -->
-    <section class="solution-section">
+    <!-- ========== 2. REALITY OF NETWORKING ========== -->
+    <section class="reality-v2">
         <div class="container">
-            <div class="solution-grid">
-                <div class="solution-content reveal-left">
-                    <div class="section-label">The Solution</div>
-                    <h2>Hoogah helps the right people meet</h2>
-                    <p>Before the event, attendees answer a few simple questions.</p>
-                    <p>Hoogah then identifies people they're likely to have meaningful conversations with.</p>
-                    <p>During the event, those introductions happen intentionally.</p>
-                    <p><strong>Networking becomes easier for everyone.</strong></p>
+            <div class="reality-v2-grid">
+                <div class="reality-v2-content reveal-left">
+                    <h2>What <em>actually</em> happens during networking time</h2>
+                    <p>Most events include happy hours, coffee breaks, and networking lounges. But here's the truth:</p>
+                    <ul class="reality-pain-list">
+                        <li>The same few people <strong>dominate</strong> every conversation</li>
+                        <li>Attendees talk to people they <strong>already know</strong></li>
+                        <li>Introverts hover near the <strong>edges, alone</strong></li>
+                        <li>Most people leave without a single <strong>real connection</strong></li>
+                    </ul>
                 </div>
-                <div class="solution-visual reveal-right">
-                    <div class="match-card">
-                        <div class="match-label">You've been matched with</div>
-                        <div class="match-name" id="matchName">Alex Chen</div>
-                        <div class="match-role">Product Leader, Series B Startup</div>
-                        <div class="match-divider"></div>
-                        <div class="match-icebreaker">
+                <div class="reality-stat-block reveal-right">
+                    <div class="reality-big-stat">68%</div>
+                    <div class="reality-stat-label">of attendees leave events<br><strong>without making a meaningful connection</strong></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== 3. STACKING CARDS - HOW IT WORKS ========== -->
+    <section class="stack-section">
+        <div class="container">
+            <div class="stack-header reveal">
+                <h2>Three steps. <span class="hl">Real conversations.</span></h2>
+                <p>Hoogah integrates into your event in minutes. No app downloads, no friction.</p>
+            </div>
+            <div class="stack-container">
+                <!-- Card 1 -->
+                <div class="stack-card">
+                    <div class="stack-card-inner">
+                        <div class="stack-card-content">
+                            <div class="stack-card-step">Step 01</div>
+                            <h3>Attendees answer <span class="hl">a few questions</span></h3>
+                            <p>Via QR code, attendees answer 4-5 custom questions tailored to your event theme. Takes 90 seconds. You control the questions through your admin dashboard.</p>
+                        </div>
+                        <div class="stack-card-image">
+                            <img src="images/phone-scan-qr.png" alt="Attendee scanning QR code at event check-in">
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="stack-card">
+                    <div class="stack-card-inner">
+                        <div class="stack-card-content">
+                            <div class="stack-card-step">Step 02</div>
+                            <h3>Hoogah creates <span class="hl-mag">intentional pairings</span></h3>
+                            <p>Our algorithm reads between the lines and creates purposeful pairings: <strong>1-on-1 or huddles of 3-6 people</strong>, based on shared interests, goals, and complementary perspectives.</p>
+                        </div>
+                        <div class="stack-card-image">
+                            <img src="images/pair-deep-conversation.png" alt="Two professionals in a deep, meaningful conversation">
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="stack-card">
+                    <div class="stack-card-inner">
+                        <div class="stack-card-content">
+                            <div class="stack-card-step">Step 03</div>
+                            <h3><span class="hl-navy">Real conversations</span> start</h3>
+                            <p>Each pair receives a <strong>personalized icebreaker</strong> and a meeting spot. No more "what do you do?" Just real, intentional dialogue from minute one.</p>
+                        </div>
+                        <div class="stack-card-image">
+                            <img src="images/group-huddle-laughing.png" alt="Group of professionals laughing and networking">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== 4. THE SOLUTION / MATCH CARD ========== -->
+    <section class="solution-v2">
+        <div class="container">
+            <div class="solution-v2-grid">
+                <div class="solution-v2-content reveal-left">
+                    <div class="section-label">The Hoogah Moment</div>
+                    <h2>A simple <span class="hl">introduction</span> can change the entire event</h2>
+                    <p>Sarah arrives knowing only two people. She answers a few quick questions. During the networking break, Hoogah introduces her to Alex, another product leader working on similar challenges.</p>
+                    <p>They skip the small talk. Move straight into a conversation that matters. <strong class="hl-mag">It becomes the most valuable conversation Sarah has all day.</strong></p>
+                </div>
+                <div class="reveal-right">
+                    <div class="match-card-v2">
+                        <div class="mc-label">You've been matched with</div>
+                        <div class="mc-avatar">A</div>
+                        <div class="mc-name">Alex Chen</div>
+                        <div class="mc-role">Product Leader, Series B Startup</div>
+                        <div class="mc-divider"></div>
+                        <div class="mc-icebreaker">
                             "You both believe community is the most undervalued growth lever. What's one community moment that changed your career?"
                         </div>
                     </div>
@@ -974,117 +921,100 @@
         </div>
     </section>
 
-    <!-- ========== 4. STORY SECTION ========== -->
-    <section class="story-section">
+    <!-- ========== 5. HOW IT FEELS (BEFORE/AFTER) ========== -->
+    <section class="feels-section">
         <div class="container">
-            <div class="story-header reveal">
-                <h2>A simple introduction can change the event</h2>
+            <div class="feels-header reveal">
+                <h2>Networking <span class="hl-mag">without</span> Hoogah vs. <span class="hl">with</span> Hoogah</h2>
             </div>
-
-            <!-- Split visual -->
-            <div class="story-split">
-                <div class="story-split-phone reveal-left">
-                    <div class="match-label">You've been matched with</div>
-                    <div class="match-name">Alex Chen</div>
+            <div class="feels-grid reveal-stagger">
+                <div class="feels-card without reveal">
+                    <div class="fc-before">Without Hoogah</div>
+                    <div class="fc-text">"I stood near the coffee bar for 20 minutes and didn't talk to anyone."</div>
                 </div>
-                <div class="story-split-image reveal-right">
-                    <img src="images/story-attendees-meeting.png" alt="Two attendees meeting for the first time at a conference">
+                <div class="feels-card with reveal">
+                    <div class="fc-before">With Hoogah</div>
+                    <div class="fc-text">"I was introduced to someone working on the exact same problem as me."</div>
                 </div>
-            </div>
-
-            <!-- Three columns -->
-            <div class="story-columns reveal-stagger">
-                <div class="story-col reveal">
-                    <div class="story-col-number">1</div>
-                    <h3>Attendees Answer a Few Questions</h3>
-                    <p>Sarah arrives at the event knowing only two people. She notices the Hoogah networking area and answers a few quick questions about:</p>
-                    <ul>
-                        <li>Her goals for attending</li>
-                        <li>Her career stage</li>
-                        <li>Her interests</li>
-                    </ul>
+                <div class="feels-card without reveal">
+                    <div class="fc-before">Without Hoogah</div>
+                    <div class="fc-text">"I ended up talking to the same people I already knew."</div>
                 </div>
-                <div class="story-col reveal">
-                    <div class="story-col-number">2</div>
-                    <h3>Hoogah Creates Intentional Pairings</h3>
-                    <p>During the afternoon networking break, Hoogah introduces her to Alex, another product leader working on similar challenges.</p>
-                    <p>Hoogah suggests a time and place for them to meet.</p>
-                </div>
-                <div class="story-col reveal">
-                    <div class="story-col-number">3</div>
-                    <h3>Real Conversations Start</h3>
-                    <p>Two people who want to connect are introduced. They quickly move past small talk and into a deeper conversation.</p>
-                    <p><strong>It becomes the most valuable conversation Sarah has all day.</strong></p>
+                <div class="feels-card with reveal">
+                    <div class="fc-before">With Hoogah</div>
+                    <div class="fc-text">"I met three people I'm still in touch with months later."</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ========== 5. USE CASES ========== -->
-    <section class="usecases-v2">
+    <!-- ========== 6. USE CASES ========== -->
+    <section class="usecases-v3">
         <div class="container">
-            <div class="usecases-v2-header reveal">
+            <div class="usecases-v3-header reveal">
                 <div class="section-label">Built For</div>
-                <h2>Designed for Events Where Networking Matters</h2>
+                <h2>Designed for events where <span class="hl">networking matters</span></h2>
                 <p>Hoogah works best at events where meaningful conversations are part of the experience.</p>
             </div>
-            <div class="usecases-v2-grid reveal-stagger">
-                <div class="usecase-v2-card reveal">
-                    <h3>User Conferences</h3>
-                    <p>Help attendees meet peers facing similar challenges.</p>
-                </div>
-                <div class="usecase-v2-card reveal">
-                    <h3>Executive Summits</h3>
-                    <p>Create curated introductions between leaders.</p>
-                </div>
-                <div class="usecase-v2-card reveal">
-                    <h3>Corporate Town Halls</h3>
-                    <p>Help employees connect across teams.</p>
-                </div>
-                <div class="usecase-v2-card reveal">
-                    <h3>Sales Kickoffs (SKOs)</h3>
-                    <p>Make networking easier across regions and roles.</p>
-                </div>
-                <div class="usecase-v2-card span-full reveal">
-                    <h3>Leadership Offsites</h3>
-                    <p>Encourage deeper connections across the organization.</p>
-                </div>
+            <div class="usecases-v3-grid reveal-stagger">
+                <div class="uc-card reveal"><div class="uc-emoji">🎤</div><h3>User Conferences</h3><p>Help attendees meet peers facing similar challenges.</p></div>
+                <div class="uc-card reveal"><div class="uc-emoji">👔</div><h3>Executive Summits</h3><p>Create curated introductions between leaders.</p></div>
+                <div class="uc-card reveal"><div class="uc-emoji">🏢</div><h3>Corporate Town Halls</h3><p>Help employees connect across teams and departments.</p></div>
+                <div class="uc-card reveal"><div class="uc-emoji">🚀</div><h3>Sales Kickoffs</h3><p>Make networking easier across regions and roles.</p></div>
+                <div class="uc-card reveal"><div class="uc-emoji">🤝</div><h3>Leadership Offsites</h3><p>Encourage deeper connections across the organization.</p></div>
+                <div class="uc-card reveal"><div class="uc-emoji">🎓</div><h3>Training Programs</h3><p>Build real bonds between participants during learning.</p></div>
             </div>
         </div>
     </section>
 
-    <!-- ========== 6. TESTIMONIALS ========== -->
-    <section class="testimonials-v2">
+    <!-- ========== 7. TESTIMONIALS ========== -->
+    <section class="testimonials-v3">
         <div class="container">
-            <h2 class="reveal">When the Right People Meet</h2>
-            <div class="testimonials-v2-grid reveal-stagger">
-                <div class="testimonial-v2-card reveal">
-                    <blockquote>"Hoogah made networking feel intentional. People met others they never would have connected with on their own."</blockquote>
+            <h2 class="reveal">When the <span class="hl">right people</span> meet</h2>
+            <div class="testimonials-v3-grid reveal-stagger">
+                <div class="t-card reveal">
+                    <blockquote>"Hoogah made networking feel <strong>intentional</strong>. People met others they never would have connected with on their own."</blockquote>
                     <div class="t-author">Director of Events, SaaS Company</div>
                 </div>
-                <div class="testimonial-v2-card reveal">
-                    <blockquote>"It gave me the push to talk to someone I wouldn't have otherwise. And it was an absolute blast!"</blockquote>
+                <div class="t-card reveal">
+                    <blockquote>"It gave me the push to talk to someone I wouldn't have otherwise. And it was an <strong>absolute blast!</strong>"</blockquote>
                     <div class="t-author">Summit Attendee</div>
                 </div>
-                <div class="testimonial-v2-card reveal">
-                    <blockquote>"For once, networking didn't feel random. People were having real conversations instead of talking to the people they already knew."</blockquote>
+                <div class="t-card reveal">
+                    <blockquote>"For once, networking didn't feel <strong>random</strong>. People were having real conversations instead of talking to the people they already knew."</blockquote>
                     <div class="t-author">Event Strategist</div>
                 </div>
-                <div class="testimonial-v2-card reveal">
-                    <blockquote>"Networking is why people come to events. Hoogah helped us make sure it actually happened."</blockquote>
+                <div class="t-card reveal">
+                    <blockquote>"Networking is why people come to events. Hoogah helped us make sure <strong>it actually happened</strong>."</blockquote>
                     <div class="t-author">Conference Organizer</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ========== 7. CLOSING CTA ========== -->
-    <section class="closing-v2">
+    <!-- ========== 8. ORGANIZER IMAGE BANNER ========== -->
+    <section class="organizer-section">
+        <div class="organizer-image">
+            <img src="images/organizer-watching-connections.png" alt="Event organizer watching attendees network successfully">
+        </div>
+        <div class="organizer-overlay">
+            <div class="container">
+                <div class="organizer-text">
+                    <h2>Your attendees remember the <span style="color: var(--lime);">people they met</span>, not the panels they sat through.</h2>
+                    <p>Give them connections worth coming back for. Design events that feel intentional from the first handshake.</p>
+                    <a href="book-demo.html" class="btn btn-primary">Book a Free Demo</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== 9. CLOSING CTA ========== -->
+    <section class="closing-v3">
         <div class="container">
-            <div class="closing-v2-inner">
-                <h2 class="reveal">Stop leaving networking to chance</h2>
+            <div class="closing-v3-inner">
+                <h2 class="reveal">Stop leaving networking to <span class="hl">chance</span></h2>
                 <p class="reveal">Design events where every attendee has a way into meaningful conversations.</p>
-                <div class="closing-v2-buttons">
+                <div class="closing-v3-buttons reveal">
                     <a href="book-demo.html" class="btn btn-primary">Bring Hoogah to Your Next Event</a>
                     <a href="how-it-works.html" class="btn btn-secondary">See How Hoogah Works</a>
                 </div>
@@ -1134,50 +1064,64 @@
     </footer>
 
     <script src="js/main.js"></script>
-
     <script>
-    // Scroll-triggered reveal animations
     (function() {
-        const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
-
+        // Scroll reveal
+        var els = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
         if ('IntersectionObserver' in window) {
-            const observer = new IntersectionObserver(function(entries) {
-                entries.forEach(function(entry) {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        observer.unobserve(entry.target);
+            var obs = new IntersectionObserver(function(entries) {
+                entries.forEach(function(e) {
+                    if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+                });
+            }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
+            els.forEach(function(el) { obs.observe(el); });
+        } else {
+            els.forEach(function(el) { el.classList.add('visible'); });
+        }
+
+        // Animate stat numbers
+        function animateCount(el, target, suffix) {
+            var start = 0, duration = 1500, startTime = null;
+            function step(ts) {
+                if (!startTime) startTime = ts;
+                var p = Math.min((ts - startTime) / duration, 1);
+                var ease = 1 - Math.pow(1 - p, 3);
+                el.textContent = Math.floor(ease * target) + suffix;
+                if (p < 1) requestAnimationFrame(step);
+            }
+            requestAnimationFrame(step);
+        }
+
+        var statEls = document.querySelectorAll('.hero-float-stat .num');
+        if (statEls.length) {
+            var statObs = new IntersectionObserver(function(entries) {
+                entries.forEach(function(e) {
+                    if (e.isIntersecting) {
+                        var t = e.target.textContent.trim();
+                        if (t.includes('%')) animateCount(e.target, 93, '%');
+                        else if (t.includes('x')) animateCount(e.target, 2, 'x');
+                        else if (t.includes('60')) animateCount(e.target, 60, 's');
+                        statObs.unobserve(e.target);
                     }
                 });
-            }, {
-                threshold: 0.15,
-                rootMargin: '0px 0px -40px 0px'
-            });
+            }, { threshold: 0.5 });
+            statEls.forEach(function(el) { statObs.observe(el); });
+        }
 
-            revealElements.forEach(function(el) {
-                observer.observe(el);
-            });
-
-            // Typing effect for match card name
-            var matchName = document.getElementById('matchName');
-            if (matchName) {
-                var matchObserver = new IntersectionObserver(function(entries) {
-                    entries.forEach(function(entry) {
-                        if (entry.isIntersecting) {
-                            matchName.classList.add('typing');
-                            matchObserver.unobserve(entry.target);
-                        }
-                    });
-                }, { threshold: 0.5 });
-                matchObserver.observe(matchName);
-            }
-        } else {
-            // Fallback: show everything
-            revealElements.forEach(function(el) {
-                el.classList.add('visible');
-            });
+        // Animate reality big stat
+        var bigStat = document.querySelector('.reality-big-stat');
+        if (bigStat) {
+            var bsObs = new IntersectionObserver(function(entries) {
+                entries.forEach(function(e) {
+                    if (e.isIntersecting) {
+                        animateCount(e.target, 68, '%');
+                        bsObs.unobserve(e.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            bsObs.observe(bigStat);
         }
     })();
     </script>
-
 </body>
 </html>
