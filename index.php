@@ -28,6 +28,7 @@ $content = str_replace( 'href="css/',      'href="'   . $template_uri . '/css/',
 $content = str_replace( 'src="js/',        'src="'    . $template_uri . '/js/',       $content );
 $content = str_replace( 'href="logo.png"', 'href="'   . $template_uri . '/logo.png"', $content );
 $content = str_replace( 'src="logo.png"',  'src="'    . $template_uri . '/logo.png"', $content );
+$content = str_replace( 'src="logo-white.png"', 'src="' . $template_uri . '/logo-white.png"', $content );
 $content = preg_replace( '/src="(undraw_[^"]+)"/', 'src="' . $template_uri . '/$1"', $content );
 $content = str_replace( 'src="images/',    'src="'    . $template_uri . '/images/',    $content );
 
