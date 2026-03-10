@@ -12,6 +12,7 @@ function hoogah_rewrite_rules() {
     add_rewrite_rule( '^pricing/?$',      'index.php?hoogah_page=pricing',      'top' );
     add_rewrite_rule( '^book-demo/?$',    'index.php?hoogah_page=book-demo',    'top' );
     add_rewrite_rule( '^blog/?$',         'index.php?hoogah_page=blog',         'top' );
+    add_rewrite_rule( '^homepage-v2/?$',  'index.php?hoogah_page=homepage-v2',  'top' );
 }
 add_action( 'init', 'hoogah_rewrite_rules' );
 

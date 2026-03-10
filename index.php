@@ -11,6 +11,7 @@ $file_map = [
     'pricing'      => 'pricing.html',
     'book-demo'    => 'book-demo.html',
     'blog'         => 'blog.html',
+    'homepage-v2'  => 'index-v2.html',
 ];
 
 $html_file = isset( $file_map[ $page ] ) ? $file_map[ $page ] : 'index.html';
