@@ -12,6 +12,7 @@ $file_map = [
     'book-demo'    => 'book-demo.html',
     'blog'         => 'blog.html',
     'homepage-v2'  => 'index-v2.html',
+    'thank-you'    => 'thank-you.html',
 ];
 
 $html_file = isset( $file_map[ $page ] ) ? $file_map[ $page ] : 'index.html';
@@ -40,5 +41,6 @@ $content = str_replace( 'href="use-cases.html"',    'href="/use-cases"',    $con
 $content = str_replace( 'href="pricing.html"',      'href="/pricing"',      $content );
 $content = str_replace( 'href="book-demo.html"',    'href="/book-demo"',    $content );
 $content = str_replace( 'href="blog.html"',         'href="/blog"',         $content );
+$content = str_replace( 'href="thank-you.html"',    'href="/thank-you"',    $content );
 
 echo $content;
