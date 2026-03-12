@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You're In | Hoogah</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/styles.css?v=2">
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2407352259709613');
+    fbq('track', 'PageView');
+    fbq('track', 'Schedule');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=2407352259709613&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+    <style>
+        .thankyou-section {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 120px;
+            padding-bottom: 80px;
+        }
+
+        .thankyou-card {
+            text-align: center;
+            max-width: 620px;
+            margin: 0 auto;
+            background: var(--white);
+            border: var(--border);
+            box-shadow: var(--shadow-lg);
+            padding: 60px 48px;
+        }
+
+        .thankyou-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--lime);
+            border: var(--border);
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 32px;
+            font-size: 40px;
+        }
+
+        .thankyou-card h1 {
+            font-size: clamp(32px, 5vw, 48px);
+            margin-bottom: 16px;
+        }
+
+        .thankyou-card p {
+            font-size: 18px;
+            line-height: 1.7;
+            color: var(--gray-600);
+            margin-bottom: 12px;
+        }
+
+        .thankyou-steps {
+            text-align: left;
+            margin: 36px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .thankyou-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 16px;
+            background: var(--gray-100);
+            border: 2px solid var(--black);
+        }
+
+        .step-number {
+            flex-shrink: 0;
+            width: 36px;
+            height: 36px;
+            background: var(--navy);
+            color: var(--white);
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid var(--black);
+        }
+
+        .step-text {
+            font-size: 16px;
+            line-height: 1.5;
+            padding-top: 6px;
+        }
+
+        .thankyou-card .btn {
+            margin-top: 24px;
+        }
+
+        @media (max-width: 640px) {
+            .thankyou-card {
+                padding: 40px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-inner">
+                <a href="index.html" class="navbar-logo"><img src="logo.png" alt="Hoogah"></a>
+                <div class="navbar-links">
+                    <a href="how-it-works.html">How It Works</a>
+                    <a href="our-belief.html">Our Belief</a>
+                    <a href="use-cases.html">Use Cases</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="book-demo.html" class="navbar-cta">Book a Demo &rarr;</a>
+                </div>
+                <button class="mobile-toggle" aria-label="Menu" onclick="toggleMobileMenu()">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="how-it-works.html" onclick="closeMobileMenu()">How It Works</a>
+            <a href="our-belief.html" onclick="closeMobileMenu()">Our Belief</a>
+            <a href="use-cases.html" onclick="closeMobileMenu()">Use Cases</a>
+            <a href="pricing.html" onclick="closeMobileMenu()">Pricing</a>
+            <a href="book-demo.html" class="navbar-cta" onclick="closeMobileMenu()">Book a Demo &rarr;</a>
+        </div>
+    </nav>
+
+    <!-- Thank You Content -->
+    <section class="thankyou-section">
+        <div class="container">
+            <div class="thankyou-card">
+                <div class="thankyou-icon">&#10003;</div>
+                <h1>You're all set.</h1>
+                <p>Your demo has been booked. Check your email for the calendar invite and meeting link.</p>
+
+                <div class="thankyou-steps">
+                    <div class="thankyou-step">
+                        <div class="step-number">1</div>
+                        <div class="step-text">Check your inbox for a confirmation email with the meeting details.</div>
+                    </div>
+                    <div class="thankyou-step">
+                        <div class="step-number">2</div>
+                        <div class="step-text">Think about what you'd want your first community event to look like.</div>
+                    </div>
+                    <div class="thankyou-step">
+                        <div class="step-number">3</div>
+                        <div class="step-text">We'll walk you through everything on the call. No prep needed.</div>
+                    </div>
+                </div>
+
+                <a href="index.html" class="btn btn-primary">Back to Home &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="logo-white.png" alt="Hoogah" style="height: 44px;">
+                    <p>Intentional networking designed for belonging. Because connection isn't a perk. It's infrastructure. Built for people who bring people together.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <a href="how-it-works.html">How It Works</a>
+                    <a href="our-belief.html">Our Belief</a>
+                    <a href="use-cases.html">Use Cases</a>
+                    <a href="pricing.html">Pricing</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <a href="#">About Us</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Contact</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <a href="#">Case Studies</a>
+                    <a href="#">Documentation</a>
+                    <a href="#">Help Center</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Hoogah. All rights reserved.</p>
+                <div class="footer-socials">
+                    <a href="#" aria-label="LinkedIn">in</a>
+                    <a href="#" aria-label="Twitter">&#x1D54F;</a>
+                    <a href="#" aria-label="Instagram">ig</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+
+</body>
+</html>
