@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog | Hoogah</title>
+    <meta name="description" content="Insights on intentional networking, community building, and designing for belonging from the Hoogah team.">
     <link rel="icon" href="logo.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,6 +28,86 @@
     src="https://www.facebook.com/tr?id=2407352259709613&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Meta Pixel Code -->
+    <style>
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 32px;
+            padding: 60px 0 80px;
+        }
+        .blog-card {
+            background: var(--white);
+            border: var(--border);
+            box-shadow: var(--shadow);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: inherit;
+        }
+        .blog-card:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 8px 8px 0px var(--black);
+        }
+        .blog-card-image {
+            width: 100%;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+            border-bottom: var(--border);
+        }
+        .blog-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .blog-card-body {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+        .blog-card-meta {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.8rem;
+            color: var(--gray-600);
+            margin-bottom: 12px;
+        }
+        .blog-card-dot {
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background: var(--gray-400);
+        }
+        .blog-card-author {
+            font-weight: 600;
+        }
+        .blog-card h3 {
+            font-size: 1.2rem;
+            line-height: 1.3;
+            margin-bottom: 8px;
+        }
+        .blog-card p {
+            font-size: 0.9rem;
+            color: var(--gray-600);
+            line-height: 1.5;
+            flex: 1;
+        }
+        .blog-card-link {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--magenta);
+            margin-top: 16px;
+        }
+        @media (max-width: 768px) {
+            .blog-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+                padding: 40px 0 60px;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -40,7 +121,7 @@
                     <a href="our-belief.html">Our Belief</a>
                     <a href="use-cases.html">Use Cases</a>
                     <a href="pricing.html">Pricing</a>
-                    <a href="book-demo.html" class="navbar-cta">Book a Demo →</a>
+                    <a href="book-demo.html" class="navbar-cta">Book a Demo &rarr;</a>
                 </div>
                 <button class="mobile-toggle" aria-label="Menu" onclick="toggleMobileMenu()">
                     <span></span><span></span><span></span>
@@ -52,7 +133,7 @@
             <a href="our-belief.html" onclick="closeMobileMenu()">Our Belief</a>
             <a href="use-cases.html" onclick="closeMobileMenu()">Use Cases</a>
             <a href="pricing.html" onclick="closeMobileMenu()">Pricing</a>
-            <a href="book-demo.html" class="navbar-cta" onclick="closeMobileMenu()">Book a Demo →</a>
+            <a href="book-demo.html" class="navbar-cta" onclick="closeMobileMenu()">Book a Demo &rarr;</a>
         </div>
     </nav>
 
@@ -64,22 +145,395 @@
         </div>
     </section>
 
-    <!-- Blog Empty State -->
-    <section class="blog-empty">
+    <!-- Blog Grid -->
+    <section>
         <div class="container">
-            <div class="blog-empty-card">
-                <div class="blog-empty-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M12 20h9"></path>
-                        <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
-                    </svg>
+            <div class="blog-grid">
+
+            <a href="blog/two-rewards-two-very-different-messages.html" class="blog-card">
+                <div class="blog-card-image">
+                    <img src="https://substackcdn.com/image/fetch/$s_!aKnx!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9412fa0d-4369-47cd-a386-db4ceeb5cff8_1600x896.jpeg" alt="Two Rewards. Two Very Different Messages." loading="lazy">
                 </div>
-                <h2>Coming Soon</h2>
-                <p>We're crafting stories about connection, community, and what happens when you design for belonging. Be the first to read them.</p>
-                <form class="subscribe-form" onsubmit="event.preventDefault();">
-                    <input type="email" placeholder="Enter your email" required>
-                    <button type="submit" class="btn btn-primary">Subscribe</button>
-                </form>
+                <div class="blog-card-body">
+                    <div class="blog-card-meta">
+                        <span class="blog-card-author">Khushi Yadav & Joe Lovett</span>
+                        <span class="blog-card-dot"></span>
+                        <span class="blog-card-date">Mar 12, 2026</span>
+                    </div>
+                    <h3>Two Rewards. Two Very Different Messages.</h3>
+                    <p>Most companies reward performance.</p>
+                    <span class="blog-card-link">Read more &rarr;</span>
+                </div>
+            </a>
+
+            <a href="blog/not-the-best-talk-the-best-conversation.html" class="blog-card">
+                <div class="blog-card-image">
+                    <img src="https://substackcdn.com/image/fetch/$s_!6ubY!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F90587d99-3706-4da2-9076-2f601508eca3_1600x896.jpeg" alt="Not the Best Talk — The Best Conversation" loading="lazy">
+                </div>
+                <div class="blog-card-body">
+                    <div class="blog-card-meta">
+                        <span class="blog-card-author">Joe Lovett & Khushi Yadav</span>
+                        <span class="blog-card-dot"></span>
+                        <span class="blog-card-date">Mar 12, 2026</span>
+                    </div>
+                    <h3>Not the Best Talk — The Best Conversation</h3>
+                    <p>For people who attend conferences regularly:</p>
+                    <span class="blog-card-link">Read more &rarr;</span>
+                </div>
+            </a>
+
+            <a href="blog/work-can-reinforce-a-role-or-it-can.html" class="blog-card">
+                <div class="blog-card-image">
+                    <img src="https://substackcdn.com/image/fetch/$s_!ESbS!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F192e1f4e-5585-472b-a685-cf13cb310f21_1024x1536.png" alt="Work Can Reinforce a Role. Or It Can Reinforce a Person." loading="lazy">
+                </div>
+                <div class="blog-card-body">
+                    <div class="blog-card-meta">
+                        <span class="blog-card-author">Joe Lovett & Khushi Yadav</span>
+                        <span class="blog-card-dot"></span>
+                        <span class="blog-card-date">Mar 11, 2026</span>
+                    </div>
+                    <h3>Work Can Reinforce a Role. Or It Can Reinforce a Person.</h3>
+                    <p>A recent Wall Street Journal article found that paid time off makes employees feel more “human” than bonuses. The real issue isn’t vacation. It’s i...</p>
+                    <span class="blog-card-link">Read more &rarr;</span>
+                </div>
+            </a>
+
+            <a href="blog/horses-run-in-herds-birds-fly-in.html" class="blog-card">
+                <div class="blog-card-image">
+                    <img src="https://substackcdn.com/image/fetch/$s_!aIWO!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F866ae885-34de-4cca-bb71-b47878e7bc53_1953x1739.jpeg" alt="Horses Run in Herds. Birds Fly in Flocks." loading="lazy">
+                </div>
+                <div class="blog-card-body">
+                    <div class="blog-card-meta">
+                        <span class="blog-card-author">Khushi Yadav</span>
+                        <span class="blog-card-dot"></span>
+                        <span class="blog-card-date">Mar 04, 2026</span>
+                    </div>
+                    <h3>Horses Run in Herds. Birds Fly in Flocks.</h3>
+                    <p>You can build alone. You just shouldn’t have to.</p>
+                    <span class="blog-card-link">Read more &rarr;</span>
+                </div>
+            </a>
+
+            <a href="blog/what-events-give-us-that-the-internet.html" class="blog-card">
+                <div class="blog-card-image">
+                    <img src="https://substackcdn.com/image/fetch/$s_!-im8!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ffd475501-5b5d-4702-ac7c-e0106138e95b_1536x1024.png" alt="What Events Give Us That the Internet Never Will" loading="lazy">
+                </div>
+                <div class="blog-card-body">
+                    <div class="blog-card-meta">
+                        <span class="blog-card-author">Joe Lovett & Khushi Yadav</span>
+                        <span class="blog-card-dot"></span>
+                        <span class="blog-card-date">Feb 25, 2026</span>
+                    </div>
+                    <h3>What Events Give Us That the Internet Never Will</h3>
+                    <p>In a world of polished content and instant answers, live gatherings remain one of the few places people encounter unfiltered reality.</p>
+                    <span class="blog-card-link">Read more &rarr;</span>
+                </div>
+            </a>
+
+            <a href="blog/what-a-phone-free-break-really-reveals.html" class="blog-card">
+                <div class="blog-card-image">
+                    <img src="https://substackcdn.com/image/fetch/$s_!E_31!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc3c78827-29ff-4827-ae93-b818457c587e_1536x1024.png" alt="What a Phone-Free Break Really Reveals About Workplace Culture" loading="lazy">
+                </div>
+                <div class="blog-card-body">
+                    <div class="blog-card-meta">
+                        <span class="blog-card-author">Joe Lovett & Khushi Yadav</span>
+                        <span class="blog-card-dot"></span>
+                        <span class="blog-card-date">Feb 18, 2026</span>
+                    </div>
+                    <h3>What a Phone-Free Break Really Reveals About Workplace Culture</h3>
+                    <p>Why workers are asking for presence, not perks, and how intentional connection turns space into belonging</p>
+                    <span class="blog-card-link">Read more &rarr;</span>
+                </div>
+            </a>
+
+            <a href="blog/when-an-app-has-to-ask-are-you-dead.html" class="blog-card">
+                <div class="blog-card-image">
+                    <img src="https://substackcdn.com/image/fetch/$s_!Ajp6!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F20aed55c-e1d9-49f5-8313-658bb166be63_1536x1024.png" alt="When an App Has to Ask “Are You Dead?”" loading="lazy">
+                </div>
+                <div class="blog-card-body">
+                    <div class="blog-card-meta">
+                        <span class="blog-card-author">Joe Lovett & Khushi Yadav</span>
+                        <span class="blog-card-dot"></span>
+                        <span class="blog-card-date">Feb 11, 2026</span>
+                    </div>
+                    <h3>When an App Has to Ask “Are You Dead?”</h3>
+                    <p>What a viral app reveals about loneliness and the need to be seen</p>
+                    <span class="blog-card-link">Read more &rarr;</span>
+                </div>
+            </a>
+
+            <a href="blog/from-headcount-to-human-impact-rethinking.html" class="blog-card">
+                <div class="blog-card-image">
+                    <img src="https://substackcdn.com/image/fetch/$s_!ANCu!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9636a3da-fb96-485d-b9c6-7530888e971b_1536x1024.png" alt="From Headcount to Human Impact: Rethinking Event ROI" loading="lazy">
+                </div>
+                <div class="blog-card-body">
+                    <div class="blog-card-meta">
+                        <span class="blog-card-author">Joe Lovett & Khushi Yadav</span>
+                        <span class="blog-card-dot"></span>
+                        <span class="blog-card-date">Feb 04, 2026</span>
+                    </div>
+                    <h3>From Headcount to Human Impact: Rethinking Event ROI</h3>
+                    <p>Why the real value of events is measured in moments of connection, not moments of attendance</p>
+                    <span class="blog-card-link">Read more &rarr;</span>
+                </div>
+            </a>
+
+            <a href="blog/the-feature-that-failed-on-day-one.html" class="blog-card">
+                <div class="blog-card-image">
+                    <img src="https://substackcdn.com/image/fetch/$s_!5_L2!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fde415b5f-ec63-4b31-8a4f-d90c415f567b_1536x1024.png" alt="The Feature That Failed on Day One " loading="lazy">
+                </div>
+                <div class="blog-card-body">
+                    <div class="blog-card-meta">
+                        <span class="blog-card-author">Khushi Yadav</span>
+                        <span class="blog-card-dot"></span>
+                        <span class="blog-card-date">Jan 28, 2026</span>
+                    </div>
+                    <h3>The Feature That Failed on Day One </h3>
+                    <p>What a failed launch taught us about blind spots, real users, and building something that actually works</p>
+                    <span class="blog-card-link">Read more &rarr;</span>
+                </div>
+            </a>
+
+            <a href="blog/why-training-is-one-of-the-most-overlooked.html" class="blog-card">
+                <div class="blog-card-image">
+                    <img src="https://substackcdn.com/image/fetch/$s_!KrjN!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7419d779-02f3-44bb-b583-10f59cb5759a_1536x1024.png" alt="Why Training Is One of the Most Overlooked Culture Levers" loading="lazy">
+                </div>
+                <div class="blog-card-body">
+                    <div class="blog-card-meta">
+                        <span class="blog-card-author">Joe Lovett & Khushi Yadav</span>
+                        <span class="blog-card-dot"></span>
+                        <span class="blog-card-date">Jan 21, 2026</span>
+                    </div>
+                    <h3>Why Training Is One of the Most Overlooked Culture Levers</h3>
+                    <p>And it doesn’t require massive programs or complex infrastructure</p>
+                    <span class="blog-card-link">Read more &rarr;</span>
+                </div>
+            </a>
+
+            <a href="blog/the-5-million-risk-hiding-in-employee.html" class="blog-card">
+                <div class="blog-card-image">
+                    <img src="https://substackcdn.com/image/fetch/$s_!zIsR!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F73e2de88-0331-452a-9ba5-2ecffa865100_1536x1024.png" alt="The $5 Million Risk Hiding in Employee Disengagement" loading="lazy">
+                </div>
+                <div class="blog-card-body">
+                    <div class="blog-card-meta">
+                        <span class="blog-card-author">Culture By Design</span>
+                        <span class="blog-card-dot"></span>
+                        <span class="blog-card-date">Jan 14, 2026</span>
+                    </div>
+                    <h3>The $5 Million Risk Hiding in Employee Disengagement</h3>
+                    <p>Why Disengagement Is Not a Morale Issue but a Measurable Financial Risk</p>
+                    <span class="blog-card-link">Read more &rarr;</span>
+                </div>
+            </a>
+
+            <a href="blog/the-new-year-reset-nobody-plans-for.html" class="blog-card">
+                <div class="blog-card-image">
+                    <img src="https://substackcdn.com/image/fetch/$s_!zM96!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4b867cae-169e-4796-932a-e1a4dbf450ff_1536x1024.png" alt="The New Year Reset Nobody Plans For: Belonging" loading="lazy">
+                </div>
+                <div class="blog-card-body">
+                    <div class="blog-card-meta">
+                        <span class="blog-card-author">Joe Lovett & Khushi Yadav</span>
+                        <span class="blog-card-dot"></span>
+                        <span class="blog-card-date">Jan 07, 2026</span>
+                    </div>
+                    <h3>The New Year Reset Nobody Plans For: Belonging</h3>
+                    <p>Why January momentum fades when connection is left to chance</p>
+                    <span class="blog-card-link">Read more &rarr;</span>
+                </div>
+            </a>
+
+            <a href="blog/the-holidays-are-when-networking.html" class="blog-card">
+                <div class="blog-card-image">
+                    <img src="https://substackcdn.com/image/fetch/$s_!h0k8!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F45d9f7e8-4beb-4a9b-9259-106e7695dca8_1200x800.jpeg" alt="The Holidays Are When Networking Becomes Human Again" loading="lazy">
+                </div>
+                <div class="blog-card-body">
+                    <div class="blog-card-meta">
+                        <span class="blog-card-author">Joe Lovett & Khushi Yadav</span>
+                        <span class="blog-card-dot"></span>
+                        <span class="blog-card-date">Dec 17, 2025</span>
+                    </div>
+                    <h3>The Holidays Are When Networking Becomes Human Again</h3>
+                    <p>A reflection on belonging, intention, and why small talk falls short</p>
+                    <span class="blog-card-link">Read more &rarr;</span>
+                </div>
+            </a>
+
+            <a href="blog/why-events-need-more-breathing-room.html" class="blog-card">
+                <div class="blog-card-image">
+                    <img src="https://substackcdn.com/image/fetch/$s_!GUib!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F79bed5f4-81e0-49f9-b3a7-f1bb85e740eb_1024x1024.png" alt="Why Events Need More Breathing Room (And What Most Agendas Get Wrong)" loading="lazy">
+                </div>
+                <div class="blog-card-body">
+                    <div class="blog-card-meta">
+                        <span class="blog-card-author">Joe Lovett</span>
+                        <span class="blog-card-dot"></span>
+                        <span class="blog-card-date">Dec 10, 2025</span>
+                    </div>
+                    <h3>Why Events Need More Breathing Room (And What Most Agendas Get Wrong)</h3>
+                    <p>In a distracted, hybrid world, connection is the reset your attendees are starving for.</p>
+                    <span class="blog-card-link">Read more &rarr;</span>
+                </div>
+            </a>
+
+            <a href="blog/vuca-is-the-enemy-of-culture-events.html" class="blog-card">
+                <div class="blog-card-image">
+                    <img src="https://substackcdn.com/image/fetch/$s_!_n9x!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7165430e-7ace-4e8d-bcf5-305481495c0c_1536x1024.png" alt="VUCA Is the Enemy of Culture. Events Are the Counterweight. " loading="lazy">
+                </div>
+                <div class="blog-card-body">
+                    <div class="blog-card-meta">
+                        <span class="blog-card-author">Joe Lovett & Khushi Yadav</span>
+                        <span class="blog-card-dot"></span>
+                        <span class="blog-card-date">Dec 03, 2025</span>
+                    </div>
+                    <h3>VUCA Is the Enemy of Culture. Events Are the Counterweight. </h3>
+                    <p>Why Every Leader Needs a “Connection Strategy” in a Constantly Changing, Uncertain World</p>
+                    <span class="blog-card-link">Read more &rarr;</span>
+                </div>
+            </a>
+
+            <a href="blog/community-is-a-muscle-thanksgiving.html" class="blog-card">
+                <div class="blog-card-image">
+                    <img src="https://substackcdn.com/image/fetch/$s_!USnb!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F89f6e47d-8680-4bcc-8b5b-d8be489af796.png" alt="Community Is a Muscle. Thanksgiving Reminds Us to Strengthen It" loading="lazy">
+                </div>
+                <div class="blog-card-body">
+                    <div class="blog-card-meta">
+                        <span class="blog-card-author">Joe Lovett & Khushi Yadav</span>
+                        <span class="blog-card-dot"></span>
+                        <span class="blog-card-date">Nov 26, 2025</span>
+                    </div>
+                    <h3>Community Is a Muscle. Thanksgiving Reminds Us to Strengthen It</h3>
+                    <p>In a volatile world, the muscle we ignore is the one we end up needing most.</p>
+                    <span class="blog-card-link">Read more &rarr;</span>
+                </div>
+            </a>
+
+            <a href="blog/why-the-best-conversations-arent.html" class="blog-card">
+                <div class="blog-card-image">
+                    <img src="https://substackcdn.com/image/fetch/$s_!1_Tb!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F37481074-4b60-413e-bbd2-fdc338204e6c_871x859.png" alt="Why the Best Conversations Aren’t Found in Crowded Rooms" loading="lazy">
+                </div>
+                <div class="blog-card-body">
+                    <div class="blog-card-meta">
+                        <span class="blog-card-author">Joe Lovett</span>
+                        <span class="blog-card-dot"></span>
+                        <span class="blog-card-date">Nov 20, 2025</span>
+                    </div>
+                    <h3>Why the Best Conversations Aren’t Found in Crowded Rooms</h3>
+                    <p>If networking feels broken, maybe it’s the design, not the people. Let’s try something better.</p>
+                    <span class="blog-card-link">Read more &rarr;</span>
+                </div>
+            </a>
+
+            <a href="blog/why-networking-feels-broken-and-what.html" class="blog-card">
+                <div class="blog-card-image">
+                    <img src="https://substackcdn.com/image/fetch/$s_!eKun!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fef2dd5f8-fcfe-4954-be96-712fcb4d6632_871x859.png" alt="Why “Networking” Feels Broken, and What We’re Doing About It" loading="lazy">
+                </div>
+                <div class="blog-card-body">
+                    <div class="blog-card-meta">
+                        <span class="blog-card-author">Joe Lovett</span>
+                        <span class="blog-card-dot"></span>
+                        <span class="blog-card-date">Nov 13, 2025</span>
+                    </div>
+                    <h3>Why “Networking” Feels Broken, and What We’re Doing About It</h3>
+                    <p>We don’t need more networking. We need better ways to find the people who truly get what we’re building.</p>
+                    <span class="blog-card-link">Read more &rarr;</span>
+                </div>
+            </a>
+
+            <a href="blog/why-leaders-should-think-like-mountain.html" class="blog-card">
+                <div class="blog-card-image">
+                    <img src="https://substackcdn.com/image/fetch/$s_!LvCN!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7c189ea3-ba28-40ac-821a-89dc6358cdd2_6000x4000.jpeg" alt="Why Leaders Should Think Like Mountain Bikers" loading="lazy">
+                </div>
+                <div class="blog-card-body">
+                    <div class="blog-card-meta">
+                        <span class="blog-card-author">Joe Lovett & Khushi Yadav</span>
+                        <span class="blog-card-dot"></span>
+                        <span class="blog-card-date">Nov 05, 2025</span>
+                    </div>
+                    <h3>Why Leaders Should Think Like Mountain Bikers</h3>
+                    <p>Building Culture with Agility, Connection, and Awareness</p>
+                    <span class="blog-card-link">Read more &rarr;</span>
+                </div>
+            </a>
+
+            <a href="blog/culture-isnt-a-clash-its-a-conversation.html" class="blog-card">
+                <div class="blog-card-image">
+                    <img src="https://substackcdn.com/image/fetch/$s_!ivew!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fae09342e-f5ff-4ed0-9e3a-872f9634604a_1536x1024.png" alt="Culture Isn’t a Clash. It’s a Conversation." loading="lazy">
+                </div>
+                <div class="blog-card-body">
+                    <div class="blog-card-meta">
+                        <span class="blog-card-author">Joe Lovett & Khushi Yadav</span>
+                        <span class="blog-card-dot"></span>
+                        <span class="blog-card-date">Oct 29, 2025</span>
+                    </div>
+                    <h3>Culture Isn’t a Clash. It’s a Conversation.</h3>
+                    <p>Why Gen Z’s “values mismatch” isn’t the problem. It’s the opportunity.</p>
+                    <span class="blog-card-link">Read more &rarr;</span>
+                </div>
+            </a>
+
+            <a href="blog/the-friendship-recession-is-real.html" class="blog-card">
+                <div class="blog-card-image">
+                    <img src="https://substackcdn.com/image/fetch/$s_!CQDl!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F052387ad-06b9-462e-9619-b267068408b5_1024x1536.png" alt="The Friendship Recession Is Real, and It’s Hurting Your Workplace" loading="lazy">
+                </div>
+                <div class="blog-card-body">
+                    <div class="blog-card-meta">
+                        <span class="blog-card-author">Joe Lovett & Khushi Yadav</span>
+                        <span class="blog-card-dot"></span>
+                        <span class="blog-card-date">Oct 22, 2025</span>
+                    </div>
+                    <h3>The Friendship Recession Is Real, and It’s Hurting Your Workplace</h3>
+                    <p>As work becomes more efficient, it&#x27;s also becoming more isolating. Why building real connections at work isn&#x27;t optional anymore.</p>
+                    <span class="blog-card-link">Read more &rarr;</span>
+                </div>
+            </a>
+
+            <a href="blog/what-connection-looks-like-in-the.html" class="blog-card">
+                <div class="blog-card-image">
+                    <img src="https://substackcdn.com/image/fetch/$s_!tNdZ!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9dd15dba-70b1-40f1-a52f-546ac26548d7_1024x1536.png" alt="What Connection Looks Like in the Wild" loading="lazy">
+                </div>
+                <div class="blog-card-body">
+                    <div class="blog-card-meta">
+                        <span class="blog-card-author">Joe Lovett & Khushi Yadav</span>
+                        <span class="blog-card-dot"></span>
+                        <span class="blog-card-date">Oct 16, 2025</span>
+                    </div>
+                    <h3>What Connection Looks Like in the Wild</h3>
+                    <p>What happens when your big idea meets real people, real noise, and a real happy hour.</p>
+                    <span class="blog-card-link">Read more &rarr;</span>
+                </div>
+            </a>
+
+            <a href="blog/the-room-i-couldnt-own-anymore.html" class="blog-card">
+                <div class="blog-card-image">
+                    <img src="https://substackcdn.com/image/fetch/$s_!2XTg!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe2adaa21-c95c-4970-bdc0-50856bef271e_1536x1024.png" alt="The Room I Couldn&#x27;t Own Anymore" loading="lazy">
+                </div>
+                <div class="blog-card-body">
+                    <div class="blog-card-meta">
+                        <span class="blog-card-author">Joe Lovett</span>
+                        <span class="blog-card-dot"></span>
+                        <span class="blog-card-date">Oct 09, 2025</span>
+                    </div>
+                    <h3>The Room I Couldn&#x27;t Own Anymore</h3>
+                    <p>When even the most social among us start to hesitate, it’s time to rethink how we build belonging.</p>
+                    <span class="blog-card-link">Read more &rarr;</span>
+                </div>
+            </a>
+
+            <a href="blog/in-a-world-where-connection-feels.html" class="blog-card">
+                <div class="blog-card-image">
+                    <img src="https://substackcdn.com/image/fetch/$s_!PmyI!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fea8a5e3f-7608-48f0-b69c-badf5cbe5397_1024x1536.png" alt="In a world where connection feels scarce, your event can be the place people finally feel seen" loading="lazy">
+                </div>
+                <div class="blog-card-body">
+                    <div class="blog-card-meta">
+                        <span class="blog-card-author">Joe Lovett & Khushi Yadav</span>
+                        <span class="blog-card-dot"></span>
+                        <span class="blog-card-date">Oct 01, 2025</span>
+                    </div>
+                    <h3>In a world where connection feels scarce, your event can be the place people finally feel seen</h3>
+                    <p>In an era of rising loneliness, the events that create true connection will stand apart.</p>
+                    <span class="blog-card-link">Read more &rarr;</span>
+                </div>
+            </a>
+
             </div>
         </div>
     </section>
