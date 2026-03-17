@@ -14,6 +14,7 @@ $file_map = [
     'blog'         => 'blog.html',
     'homepage-v2'  => 'index-v2.html',
     'thank-you'    => 'thank-you.html',
+    'event-organizers' => 'lp-event-organizers.html',
 ];
 
 // Handle blog post routes: /blog/{slug}
