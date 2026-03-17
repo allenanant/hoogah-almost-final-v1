@@ -958,7 +958,7 @@
 
         .booking-wrap iframe {
             width: 100%;
-            min-height: 600px;
+            min-height: 437px;
             border: none;
         }
 
@@ -1736,11 +1736,27 @@
         </div>
     </section>
 
-    <!-- ========== BOOKING EMBED ========== -->
+    <!-- ========== FORM EMBED ========== -->
     <section class="booking-section">
         <div class="container">
             <div class="booking-wrap reveal">
-                <iframe src="https://api.leadconnectorhq.com/widget/booking/dIEEY52XKYBdBEZKBAgo" scrolling="no" id="booking-embed"></iframe>
+                <iframe
+                    src="https://api.leadconnectorhq.com/widget/form/w6Z8vTRwBlrM2CIQuRWl"
+                    style="width:100%;height:100%;border:none;border-radius:4px"
+                    id="inline-w6Z8vTRwBlrM2CIQuRWl"
+                    data-layout="{'id':'INLINE'}"
+                    data-trigger-type="alwaysShow"
+                    data-trigger-value=""
+                    data-activation-type="alwaysActivated"
+                    data-activation-value=""
+                    data-deactivation-type="neverDeactivate"
+                    data-deactivation-value=""
+                    data-form-name="LP EVENT - FORM"
+                    data-height="437"
+                    data-layout-iframe-id="inline-w6Z8vTRwBlrM2CIQuRWl"
+                    data-form-id="w6Z8vTRwBlrM2CIQuRWl"
+                    title="LP EVENT - FORM"
+                ></iframe>
             </div>
         </div>
     </section>
@@ -1859,17 +1875,6 @@
         handleTopbar();
         handleStickyCta();
 
-        // ========== BOOKING IFRAME AUTO-RESIZE ==========
-        window.addEventListener('message', function(e) {
-            if (e.data && e.data.type === 'hsFormCallback') return;
-            try {
-                const data = typeof e.data === 'string' ? JSON.parse(e.data) : e.data;
-                if (data.height) {
-                    const iframe = document.getElementById('booking-embed');
-                    if (iframe) iframe.style.height = data.height + 'px';
-                }
-            } catch(err) {}
-        });
     </script>
 
     <!-- GoHighLevel booking form script -->
