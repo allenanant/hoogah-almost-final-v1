@@ -153,6 +153,20 @@
             padding: 18px 0;
             transition: all 0.5s var(--ease-smooth);
         }
+        /* Subtle dark gradient when over hero (before scrolled state kicks in) */
+        .topbar::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(17, 8, 64, 0.5) 0%, rgba(17, 8, 64, 0) 100%);
+            opacity: 1;
+            transition: opacity 0.5s var(--ease-smooth);
+            pointer-events: none;
+            z-index: -1;
+        }
+        .topbar.scrolled::before {
+            opacity: 0;
+        }
         .topbar.scrolled {
             padding: 12px 0;
             background: rgba(250, 248, 245, 0.88);
@@ -166,7 +180,7 @@
             justify-content: space-between;
         }
         .topbar-logo { position: relative; display: flex; }
-        .topbar-logo img { height: 34px; transition: opacity 0.4s var(--ease-smooth); }
+        .topbar-logo img { height: 40px; transition: opacity 0.4s var(--ease-smooth); }
         .topbar-logo:hover img { opacity: 0.7; }
         .topbar-logo .logo-dark { display: none; }
         .topbar.scrolled .topbar-logo .logo-white { display: none; }
@@ -223,6 +237,16 @@
                 );
         }
 
+        /* Vignette effect on hero */
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            pointer-events: none;
+            background: radial-gradient(ellipse at center, transparent 50%, rgba(17, 8, 64, 0.45) 100%);
+        }
+
         .hero-content {
             position: relative;
             z-index: 2;
@@ -233,11 +257,12 @@
 
         .hero-lead {
             font-family: var(--font-body);
-            font-size: clamp(1rem, 1.6vw, 1.2rem);
-            color: rgba(250, 248, 245, 0.7);
-            line-height: 1.8;
+            font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+            color: rgba(250, 248, 245, 0.8);
+            line-height: 1.75;
             margin-bottom: 28px;
             letter-spacing: 0.005em;
+            font-weight: 500;
         }
 
         .hero h1 {
@@ -261,25 +286,17 @@
             flex-wrap: wrap;
         }
 
-        /* ========== PROBLEM ========== */
+        /* ========== PROBLEM (single column, centered) ========== */
         .problem {
-            padding: 100px 0 120px;
+            padding: 120px 0 100px;
             background: var(--cream);
             position: relative;
         }
 
-        .problem-layout {
-            display: grid;
-            grid-template-columns: 1fr 1.1fr;
-            gap: 80px;
-            align-items: start;
-        }
-
-        .problem h2 {
-            font-size: clamp(2rem, 3.5vw, 2.75rem);
-            margin-bottom: 20px;
-            position: sticky;
-            top: 120px;
+        .problem-header {
+            text-align: center;
+            max-width: 640px;
+            margin: 0 auto 64px;
         }
 
         .problem-label {
@@ -293,28 +310,39 @@
             display: block;
         }
 
-        .problem-right {
+        .problem h2 {
+            font-size: clamp(2.25rem, 4vw, 3.25rem);
+            line-height: 1.1;
+        }
+
+        .problem-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1080px;
+            margin: 0 auto 56px;
+        }
+
+        .problem-card {
+            padding: 36px 32px;
+            border-radius: var(--radius-lg);
+            background: white;
+            border: 1px solid rgba(26, 10, 94, 0.05);
             display: flex;
             flex-direction: column;
-            gap: 0;
-        }
-
-        .problem-item {
-            padding: 32px 0;
-            border-bottom: 1px solid var(--border-subtle);
-            display: grid;
-            grid-template-columns: 48px 1fr;
             gap: 20px;
-            align-items: start;
+            transition: transform 0.5s var(--ease-out), border-color 0.4s var(--ease-smooth);
         }
 
-        .problem-item:first-child { padding-top: 0; }
-        .problem-item:last-child { border-bottom: none; }
+        .problem-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(168, 25, 139, 0.15);
+        }
 
         .problem-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
+            width: 52px;
+            height: 52px;
+            border-radius: 16px;
             background: rgba(168, 25, 139, 0.06);
             display: flex;
             align-items: center;
@@ -323,26 +351,29 @@
         }
 
         .problem-icon svg {
-            width: 20px;
-            height: 20px;
+            width: 22px;
+            height: 22px;
             stroke: var(--magenta);
             stroke-width: 2;
             fill: none;
         }
 
-        .problem-item p {
+        .problem-card p {
             font-size: 1.05rem;
-            line-height: 1.7;
+            line-height: 1.65;
             color: var(--text);
             max-width: none;
+            font-weight: 500;
         }
 
         .problem-result {
-            margin-top: 48px;
-            padding: 40px 44px;
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 44px 52px;
             border-radius: var(--radius-lg);
             background: var(--navy);
             color: var(--cream);
+            text-align: center;
         }
 
         .problem-result p {
@@ -357,6 +388,48 @@
         .problem-result strong {
             color: var(--lime);
             font-weight: 700;
+        }
+
+        /* ========== MARQUEE ========== */
+        .marquee-section {
+            padding: 0;
+            background: var(--cream);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .marquee-track {
+            display: flex;
+            width: max-content;
+            padding: 40px 0 48px;
+        }
+
+        .marquee-content {
+            display: flex;
+            align-items: center;
+            gap: 0;
+            flex-shrink: 0;
+            will-change: transform;
+        }
+
+        .marquee-item {
+            font-family: var(--font-heading);
+            font-size: clamp(1rem, 1.6vw, 1.2rem);
+            font-weight: 600;
+            color: var(--navy);
+            opacity: 0.12;
+            white-space: nowrap;
+            padding: 0 24px;
+            letter-spacing: -0.01em;
+        }
+
+        .marquee-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--magenta);
+            opacity: 0.2;
+            flex-shrink: 0;
         }
 
         /* ========== SOLUTION ========== */
@@ -411,13 +484,14 @@
             overflow: hidden;
             background: rgba(255,255,255,0.03);
             border: 1px solid rgba(255,255,255,0.06);
-            transition: transform 0.5s var(--ease-out), border-color 0.4s;
+            transition: transform 0.5s var(--ease-out), border-color 0.4s, box-shadow 0.5s var(--ease-out);
             will-change: transform;
         }
 
         .solution-step:hover {
             transform: translateY(-4px);
-            border-color: rgba(255,255,255,0.12);
+            border-color: rgba(200, 255, 0, 0.15);
+            box-shadow: 0 8px 40px rgba(200, 255, 0, 0.06), 0 0 80px rgba(168, 25, 139, 0.04);
         }
 
         .step-text {
@@ -462,6 +536,7 @@
             height: 100%;
             object-fit: cover;
             transition: transform 0.6s var(--ease-out);
+            will-change: transform;
         }
 
         .solution-step:hover .step-image img {
@@ -481,54 +556,101 @@
         }
 
         .proof-inner {
-            max-width: 960px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 100px 32px 140px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-        }
-
-        .proof-card {
-            padding: 44px;
-            border-radius: var(--radius-lg);
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.06);
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            min-height: 240px;
-            transition: transform 0.5s var(--ease-out), border-color 0.4s;
+            align-items: center;
+            gap: 48px;
         }
 
-        .proof-card:hover {
-            transform: translateY(-4px);
-            border-color: rgba(255,255,255,0.12);
+        /* Primary (large) testimonial */
+        .proof-primary {
+            text-align: center;
+            position: relative;
+            padding: 60px 48px 48px;
+            border-radius: var(--radius-xl);
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.06);
+            width: 100%;
+            transition: border-color 0.4s;
         }
 
-        .proof-card blockquote {
+        .proof-primary:hover {
+            border-color: rgba(255,255,255,0.1);
+        }
+
+        .proof-quote-mark {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 8rem;
+            line-height: 1;
+            color: var(--lime);
+            opacity: 0.15;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .proof-primary blockquote {
             font-family: var(--font-heading);
-            font-size: clamp(1.15rem, 1.8vw, 1.4rem);
-            line-height: 1.45;
-            color: rgba(250, 248, 245, 0.95);
-            font-weight: 500;
+            font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+            line-height: 1.35;
+            color: var(--cream);
+            font-weight: 600;
             font-style: normal;
-            margin-bottom: 32px;
+            margin-bottom: 28px;
+            position: relative;
+            z-index: 1;
         }
 
-        .proof-card .dash {
-            width: 32px;
+        .proof-primary .author-block {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .proof-primary .author-dash {
+            width: 28px;
             height: 2px;
             background: var(--lime);
             opacity: 0.5;
+        }
+
+        .proof-primary .author {
+            font-family: var(--font-heading);
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: rgba(250,248,245,0.6);
+            letter-spacing: 0.02em;
+        }
+
+        /* Secondary (smaller) testimonial */
+        .proof-secondary {
+            text-align: center;
+            padding: 0 48px;
+            max-width: 600px;
+        }
+
+        .proof-secondary blockquote {
+            font-family: var(--font-heading);
+            font-size: clamp(1.1rem, 1.6vw, 1.3rem);
+            line-height: 1.5;
+            color: rgba(250, 248, 245, 0.7);
+            font-weight: 500;
+            font-style: normal;
             margin-bottom: 16px;
         }
 
-        .proof-card .author {
+        .proof-secondary .author {
             font-family: var(--font-heading);
             font-size: 0.8rem;
             font-weight: 500;
-            color: rgba(250,248,245,0.4);
+            color: rgba(250,248,245,0.35);
             letter-spacing: 0.02em;
         }
 
@@ -537,6 +659,7 @@
             padding: 100px 0;
             background: var(--cream);
             position: relative;
+            border-radius: var(--radius-xl) var(--radius-xl) 0 0;
         }
 
         .cta-layout {
@@ -649,11 +772,10 @@
         @media (max-width: 1024px) {
             .container { padding: 0 24px; }
 
-            .problem-layout {
+            .problem-cards {
                 grid-template-columns: 1fr;
-                gap: 48px;
+                max-width: 520px;
             }
-            .problem h2 { position: static; }
 
             .solution-step {
                 grid-template-columns: 1fr;
@@ -677,17 +799,21 @@
             .hero { min-height: 100dvh; }
             .hero-content { padding: 0 20px 72px; }
             .hero h1 { font-size: 2.25rem; }
-            .hero-lead { font-size: 0.95rem; margin-bottom: 20px; }
+            .hero-lead { font-size: 1rem; margin-bottom: 20px; }
             .hero-desc { font-size: 0.95rem; margin-bottom: 36px; }
             .hero-buttons { flex-direction: column; align-items: stretch; }
             .hero-buttons .btn { justify-content: center; }
 
-            .problem { padding: 80px 0 100px; }
+            .problem { padding: 80px 0 80px; }
             .problem h2 { font-size: 1.75rem; }
-            .problem-item { grid-template-columns: 40px 1fr; gap: 14px; padding: 24px 0; }
-            .problem-icon { width: 40px; height: 40px; }
-            .problem-result { padding: 28px 24px; margin-top: 32px; }
+            .problem-header { margin-bottom: 40px; }
+            .problem-cards { gap: 12px; }
+            .problem-card { padding: 28px 24px; }
+            .problem-result { padding: 28px 24px; margin-top: 0; }
             .problem-result p { font-size: 1.05rem; }
+
+            .marquee-track { padding: 28px 0 36px; }
+            .marquee-item { font-size: 0.9rem; }
 
             .solution { padding: 80px 0; border-radius: var(--radius-lg) var(--radius-lg) 0 0; }
             .solution-header { margin-bottom: 48px; }
@@ -695,11 +821,14 @@
             .step-text { padding: 28px 24px; }
             .step-image { min-height: 220px; }
 
-            .proof-inner { grid-template-columns: 1fr; padding: 60px 20px 80px; gap: 16px; }
-            .proof-card { padding: 32px; min-height: auto; }
-            .proof-card blockquote { font-size: 1.1rem; }
+            .proof-inner { padding: 60px 20px 80px; gap: 32px; }
+            .proof-primary { padding: 48px 28px 36px; }
+            .proof-primary blockquote { font-size: 1.3rem; }
+            .proof-secondary { padding: 0 20px; }
+            .proof-secondary blockquote { font-size: 1rem; }
+            .proof-quote-mark { font-size: 5rem; top: -8px; }
 
-            .final-cta { padding: 80px 0; }
+            .final-cta { padding: 80px 0; border-radius: var(--radius-lg) var(--radius-lg) 0 0; }
             .cta-text h2 { font-size: 1.75rem; }
             .cta-text .cta-desc { font-size: 1rem; }
             .cta-image { aspect-ratio: 16/10; }
@@ -719,9 +848,13 @@
             .hero h1 { font-size: 1.85rem; }
             .hero-content { padding: 0 16px 56px; }
             .problem-result { padding: 24px 20px; }
+            .problem-card { padding: 24px 20px; }
             .step-text { padding: 24px 20px; }
-            .proof-card { padding: 24px; }
+            .proof-primary { padding: 40px 20px 28px; }
+            .proof-primary blockquote { font-size: 1.15rem; }
+            .proof-quote-mark { font-size: 4rem; }
             .solution-step { border-radius: var(--radius); }
+            .final-cta { border-radius: var(--radius-lg) var(--radius-lg) 0 0; }
         }
     </style>
 </head>
@@ -767,37 +900,77 @@
     <!-- ========== 2. PROBLEM ========== -->
     <section class="problem">
         <div class="container">
-            <div class="problem-layout">
-                <div class="problem-left">
-                    <span class="problem-label gs-reveal">The reality</span>
-                    <h2 class="gs-reveal">What actually happens at most events</h2>
+            <div class="problem-header">
+                <span class="problem-label gs-reveal">The reality</span>
+                <h2 class="gs-reveal">What actually happens at most events</h2>
+            </div>
+            <div class="problem-cards">
+                <div class="problem-card gs-reveal">
+                    <div class="problem-icon">
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <p>Attendees talk to people they already know</p>
                 </div>
-                <div class="problem-right">
-                    <div class="problem-item gs-reveal">
-                        <div class="problem-icon">
-                            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                        </div>
-                        <p>Attendees talk to people they already know</p>
+                <div class="problem-card gs-reveal">
+                    <div class="problem-icon">
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
                     </div>
-                    <div class="problem-item gs-reveal">
-                        <div class="problem-icon">
-                            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-                        </div>
-                        <p>Most don't know who to approach</p>
-                    </div>
-                    <div class="problem-item gs-reveal">
-                        <div class="problem-icon">
-                            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-                        </div>
-                        <p>Conversations stay at the "so what do you do?" level</p>
-                    </div>
-                    <div class="problem-result gs-reveal">
-                        <p>Most attendees meet one or two people. <strong>They miss the conversations that matter.</strong></p>
-                    </div>
+                    <p>Most don't know who to approach</p>
                 </div>
+                <div class="problem-card gs-reveal">
+                    <div class="problem-icon">
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    </div>
+                    <p>Conversations stay at the "so what do you do?" level</p>
+                </div>
+            </div>
+            <div class="problem-result gs-reveal">
+                <p>Most attendees meet one or two people. <strong>They miss the conversations that matter.</strong></p>
             </div>
         </div>
     </section>
+
+    <!-- ========== MARQUEE ========== -->
+    <div class="marquee-section" aria-hidden="true">
+        <div class="marquee-track" id="marqueeTrack">
+            <div class="marquee-content" id="marqueeA">
+                <span class="marquee-item">Intentional Networking</span>
+                <span class="marquee-dot"></span>
+                <span class="marquee-item">Connection by Design</span>
+                <span class="marquee-dot"></span>
+                <span class="marquee-item">Built for Everyone</span>
+                <span class="marquee-dot"></span>
+                <span class="marquee-item">Meaningful Conversations</span>
+                <span class="marquee-dot"></span>
+                <span class="marquee-item">Intentional Networking</span>
+                <span class="marquee-dot"></span>
+                <span class="marquee-item">Connection by Design</span>
+                <span class="marquee-dot"></span>
+                <span class="marquee-item">Built for Everyone</span>
+                <span class="marquee-dot"></span>
+                <span class="marquee-item">Meaningful Conversations</span>
+                <span class="marquee-dot"></span>
+            </div>
+            <div class="marquee-content" id="marqueeB">
+                <span class="marquee-item">Intentional Networking</span>
+                <span class="marquee-dot"></span>
+                <span class="marquee-item">Connection by Design</span>
+                <span class="marquee-dot"></span>
+                <span class="marquee-item">Built for Everyone</span>
+                <span class="marquee-dot"></span>
+                <span class="marquee-item">Meaningful Conversations</span>
+                <span class="marquee-dot"></span>
+                <span class="marquee-item">Intentional Networking</span>
+                <span class="marquee-dot"></span>
+                <span class="marquee-item">Connection by Design</span>
+                <span class="marquee-dot"></span>
+                <span class="marquee-item">Built for Everyone</span>
+                <span class="marquee-dot"></span>
+                <span class="marquee-item">Meaningful Conversations</span>
+                <span class="marquee-dot"></span>
+            </div>
+        </div>
+    </div>
 
     <!-- ========== 3. SOLUTION ========== -->
     <section class="solution" id="solution">
@@ -816,7 +989,7 @@
                         <p>You decide what to ask based on your event goals. Attendees scan a QR code and answer in 90 seconds.</p>
                     </div>
                     <div class="step-image">
-                        <img src="images/phone-scan-qr.png" alt="Attendee scanning QR code at event">
+                        <img src="images/phone-scan-qr.png" alt="Attendee scanning QR code at event" class="step-parallax-img">
                     </div>
                 </div>
                 <!-- Step 2 -->
@@ -827,7 +1000,7 @@
                         <p>Matched based on shared interests, goals, or mindset. Each pair gets a personalized conversation starter so they can skip the small talk.</p>
                     </div>
                     <div class="step-image">
-                        <img src="images/pair-deep-conversation.png" alt="Two people having a meaningful conversation at an event">
+                        <img src="images/pair-deep-conversation.png" alt="Two people having a meaningful conversation at an event" class="step-parallax-img">
                     </div>
                 </div>
                 <!-- Step 3 -->
@@ -838,7 +1011,7 @@
                         <p>See what matters to attendees, what conversations are happening, and how engaged people are.</p>
                     </div>
                     <div class="step-image">
-                        <img src="images/organizer-watching-connections.png" alt="Event organizer watching attendees connect">
+                        <img src="images/organizer-watching-connections.png" alt="Event organizer watching attendees connect" class="step-parallax-img">
                     </div>
                 </div>
             </div>
@@ -848,19 +1021,17 @@
     <!-- ========== 4. PROOF ========== -->
     <section class="proof">
         <div class="proof-inner">
-            <div class="proof-card gs-reveal">
+            <div class="proof-primary gs-reveal">
+                <div class="proof-quote-mark">"</div>
                 <blockquote>"People met others they never would have connected with."</blockquote>
-                <div>
-                    <div class="dash"></div>
-                    <div class="author">Event Organizer</div>
+                <div class="author-block">
+                    <span class="author-dash"></span>
+                    <span class="author">Event Organizer</span>
                 </div>
             </div>
-            <div class="proof-card gs-reveal">
+            <div class="proof-secondary gs-reveal">
                 <blockquote>"For once, networking didn't feel random."</blockquote>
-                <div>
-                    <div class="dash"></div>
-                    <div class="author">Event Strategist</div>
-                </div>
+                <span class="author">Event Strategist</span>
             </div>
         </div>
     </section>
@@ -928,8 +1099,54 @@
             }
         });
 
+        // ---- Step image parallax (subtle upward movement on scroll) ----
+        gsap.utils.toArray('.step-parallax-img').forEach(function(img) {
+            gsap.fromTo(img, {
+                yPercent: 8
+            }, {
+                yPercent: -8,
+                ease: 'none',
+                scrollTrigger: {
+                    trigger: img.closest('.solution-step'),
+                    start: 'top bottom',
+                    end: 'bottom top',
+                    scrub: 1.2
+                }
+            });
+        });
+
+        // ---- Marquee infinite scroll ----
+        (function initMarquee() {
+            var marqueeA = document.getElementById('marqueeA');
+            var marqueeB = document.getElementById('marqueeB');
+            if (!marqueeA || !marqueeB) return;
+
+            // Get the width of one set of items
+            var contentWidth = marqueeA.offsetWidth;
+
+            // Set initial positions
+            gsap.set(marqueeB, { x: 0 });
+
+            // Create infinite scroll
+            var tl = gsap.timeline({ repeat: -1 });
+            tl.to([marqueeA, marqueeB], {
+                x: '-=' + contentWidth,
+                duration: contentWidth / 50, // speed: 50px/sec
+                ease: 'none'
+            });
+
+            // When marqueeA goes fully off screen, reset both
+            tl.eventCallback('onUpdate', function() {
+                var aX = gsap.getProperty(marqueeA, 'x');
+                if (aX <= -contentWidth) {
+                    gsap.set(marqueeA, { x: gsap.getProperty(marqueeA, 'x') + contentWidth });
+                    gsap.set(marqueeB, { x: gsap.getProperty(marqueeB, 'x') + contentWidth });
+                }
+            });
+        })();
+
         // ---- Scroll reveals ----
-        gsap.utils.toArray('.gs-reveal').forEach((el) => {
+        gsap.utils.toArray('.gs-reveal').forEach(function(el) {
             gsap.to(el, {
                 opacity: 1,
                 y: 0,
@@ -945,19 +1162,19 @@
         });
 
         // ---- Topbar ----
-        const topbar = document.getElementById('topbar');
+        var topbar = document.getElementById('topbar');
         function handleTopbar() {
             topbar.classList.toggle('scrolled', window.scrollY > 60);
         }
 
         // ---- Sticky mobile CTA ----
-        const stickyCta = document.getElementById('stickyCta');
+        var stickyCta = document.getElementById('stickyCta');
         function handleStickyCta() {
             if (window.innerWidth > 768) return;
             stickyCta.classList.toggle('visible', window.scrollY > 500);
         }
 
-        window.addEventListener('scroll', () => {
+        window.addEventListener('scroll', function() {
             handleTopbar();
             handleStickyCta();
         }, { passive: true });
@@ -966,9 +1183,9 @@
         handleStickyCta();
 
         // ---- Smooth scroll ----
-        document.querySelectorAll('a[href^="#"]').forEach(a => {
+        document.querySelectorAll('a[href^="#"]').forEach(function(a) {
             a.addEventListener('click', function(e) {
-                const t = document.querySelector(this.getAttribute('href'));
+                var t = document.querySelector(this.getAttribute('href'));
                 if (t) {
                     e.preventDefault();
                     window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' });
