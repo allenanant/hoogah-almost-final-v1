@@ -163,15 +163,15 @@
             align-items: center;
             justify-content: space-between;
         }
-        .topbar-logo { display: flex; }
-        .topbar-logo-mark {
-            display: block;
-            width: 130px;
-            height: 38px;
-            background: url(logo-white.png) 50% 52% / auto 550% no-repeat;
+        .topbar-logo { display: flex; overflow: hidden; width: 130px; height: 38px; }
+        .topbar-logo img {
+            width: 100%;
+            height: 550%;
+            object-fit: cover;
+            object-position: 50% 52%;
             transition: opacity 0.4s var(--ease-smooth);
         }
-        .topbar-logo:hover .topbar-logo-mark { opacity: 0.75; }
+        .topbar-logo:hover img { opacity: 0.75; }
         .topbar-links {
             display: flex;
             align-items: center;
@@ -639,12 +639,100 @@
             letter-spacing: 0.02em;
         }
 
+        /* ========== TEAM ========== */
+        .team {
+            padding: 100px 0;
+            background: var(--cream);
+            border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+            position: relative;
+        }
+
+        .team-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .team-label {
+            font-family: var(--font-heading);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--magenta);
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .team-header h2 {
+            font-size: clamp(2rem, 3.5vw, 2.75rem);
+            color: var(--navy);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            max-width: 880px;
+            margin: 0 auto;
+        }
+
+        .team-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .team-photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 28px;
+            border: 3px solid var(--border-subtle);
+            transition: transform 0.5s var(--ease-out);
+        }
+
+        .team-card:hover .team-photo {
+            transform: scale(1.05);
+        }
+
+        .team-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .team-card h3 {
+            font-size: 1.3rem;
+            color: var(--navy);
+            margin-bottom: 4px;
+            line-height: 1.3;
+        }
+
+        .team-role {
+            font-family: var(--font-heading);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--magenta);
+            margin-bottom: 16px;
+        }
+
+        .team-card p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            max-width: 340px;
+        }
+
         /* ========== FINAL CTA ========== */
         .final-cta {
             padding: 100px 0;
-            background: var(--cream);
+            background: var(--navy-deep);
+            color: var(--cream);
             position: relative;
-            border-radius: var(--radius-xl) var(--radius-xl) 0 0;
         }
 
         .cta-layout {
@@ -657,12 +745,12 @@
         .cta-text h2 {
             font-size: clamp(2.25rem, 4vw, 3.25rem);
             margin-bottom: 20px;
-            color: var(--navy);
+            color: var(--cream);
         }
 
         .cta-text .cta-desc {
             font-size: 1.1rem;
-            color: var(--text-muted);
+            color: var(--text-light);
             line-height: 1.7;
             margin-bottom: 40px;
             max-width: 440px;
@@ -813,7 +901,10 @@
             .proof-secondary blockquote { font-size: 1rem; }
             .proof-quote-mark { font-size: 5rem; top: -8px; }
 
-            .final-cta { padding: 80px 0; border-radius: var(--radius-lg) var(--radius-lg) 0 0; }
+            .team { padding: 64px 0; }
+            .team-grid { grid-template-columns: 1fr; gap: 40px; max-width: 400px; margin: 0 auto; }
+            .team-photo { width: 140px; height: 140px; }
+            .final-cta { padding: 80px 0; }
             .cta-text h2 { font-size: 1.75rem; }
             .cta-text .cta-desc { font-size: 1rem; }
             .cta-image { aspect-ratio: 16/10; }
@@ -849,7 +940,7 @@
     <header class="topbar" id="topbar">
         <div class="container">
             <a href="index.html" class="topbar-logo" aria-label="Hoogah Home">
-                <span class="topbar-logo-mark"></span>
+                <img src="logo-white.png" alt="Hoogah">
             </a>
             <nav class="topbar-links">
                 <a href="how-it-works.html">How It Works</a>
@@ -1021,6 +1112,35 @@
     </section>
 
     <!-- ========== 5. CTA ========== -->
+    <!-- ========== 5. TEAM ========== -->
+    <section class="team">
+        <div class="container">
+            <div class="team-header">
+                <span class="team-label gs-reveal">Who we are</span>
+                <h2 class="gs-reveal">Built by people who believe in connection</h2>
+            </div>
+            <div class="team-grid">
+                <div class="team-card gs-reveal">
+                    <div class="team-photo">
+                        <img src="images/khushi.png" alt="Khushi Yadav">
+                    </div>
+                    <h3>Khushi Yadav</h3>
+                    <div class="team-role">Founder</div>
+                    <p>20 years in tech before building Hoogah. Started after seeing firsthand how isolation breaks teams and communities. On a mission to make belonging something you can design.</p>
+                </div>
+                <div class="team-card gs-reveal">
+                    <div class="team-photo">
+                        <img src="images/joe.jpg" alt="Joe Lovett">
+                    </div>
+                    <h3>Joe Lovett</h3>
+                    <div class="team-role">Co-Founder</div>
+                    <p>Strategic marketing leader who has worked with Google, Marriott, and P&G. Spent his career figuring out what makes people engage. Now applying that to real human connection.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== 6. CTA ========== -->
     <section class="final-cta">
         <div class="container">
             <div class="cta-layout">
