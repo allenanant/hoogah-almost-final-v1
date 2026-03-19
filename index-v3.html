@@ -165,8 +165,12 @@
             align-items: center;
             justify-content: space-between;
         }
-        .topbar-logo img { height: 34px; transition: opacity 0.3s; }
+        .topbar-logo { position: relative; display: flex; }
+        .topbar-logo img { height: 34px; transition: opacity 0.4s var(--ease-smooth); }
         .topbar-logo:hover img { opacity: 0.7; }
+        .topbar-logo .logo-dark { display: none; }
+        .topbar.scrolled .topbar-logo .logo-white { display: none; }
+        .topbar.scrolled .topbar-logo .logo-dark { display: block; }
         .topbar-links {
             display: flex;
             align-items: center;
@@ -176,12 +180,14 @@
             font-family: var(--font-heading);
             font-size: 0.85rem;
             font-weight: 500;
-            color: var(--text);
+            color: rgba(250,248,245,0.85);
             text-decoration: none;
             letter-spacing: 0.01em;
-            transition: color 0.3s;
+            transition: color 0.4s;
         }
-        .topbar-links a:hover { color: var(--magenta); }
+        .topbar-links a:hover { color: var(--lime); }
+        .topbar.scrolled .topbar-links a { color: var(--text); }
+        .topbar.scrolled .topbar-links a:hover { color: var(--magenta); }
         .topbar .btn { padding: 10px 24px; font-size: 0.82rem; letter-spacing: 0.01em; }
 
         /* ========== HERO ========== */
@@ -734,7 +740,8 @@
     <header class="topbar" id="topbar">
         <div class="container">
             <a href="index.html" class="topbar-logo">
-                <img src="logo.png" alt="Hoogah">
+                <img src="logo-white.png" alt="Hoogah" class="logo-white">
+                <img src="logo.png" alt="Hoogah" class="logo-dark">
             </a>
             <nav class="topbar-links">
                 <a href="how-it-works.html">How It Works</a>
