@@ -151,7 +151,14 @@
             right: 0;
             z-index: 100;
             padding: 20px 0;
-            transition: transform 0.5s var(--ease-out), opacity 0.4s var(--ease-smooth);
+            transition: transform 0.5s var(--ease-out), opacity 0.4s var(--ease-smooth), background 0.4s var(--ease-smooth), box-shadow 0.4s var(--ease-smooth);
+        }
+        .topbar.scrolled {
+            background: rgba(17, 8, 64, 0.95);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            box-shadow: 0 2px 24px rgba(17, 8, 64, 0.15);
+            padding: 14px 0;
         }
         .topbar.hidden {
             transform: translateY(-100%);
@@ -163,12 +170,12 @@
             align-items: center;
             justify-content: space-between;
         }
-        .topbar-logo { display: flex; overflow: hidden; width: 130px; height: 38px; }
+        .topbar-logo { display: flex; align-items: center; width: 130px; height: 38px; }
         .topbar-logo img {
             width: 100%;
-            height: 550%;
-            object-fit: cover;
-            object-position: 50% 52%;
+            height: 100%;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
             transition: opacity 0.4s var(--ease-smooth);
         }
         .topbar-logo:hover img { opacity: 0.75; }
@@ -188,6 +195,66 @@
         }
         .topbar-links a:hover { color: var(--lime); }
         .topbar .btn { padding: 10px 24px; font-size: 0.82rem; letter-spacing: 0.01em; }
+
+        /* ========== MOBILE MENU ========== */
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            z-index: 110;
+        }
+        .mobile-toggle span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: var(--cream);
+            border-radius: 2px;
+            transition: transform 0.3s var(--ease-out), opacity 0.3s;
+        }
+        .mobile-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .mobile-toggle.active span:nth-child(2) { opacity: 0; }
+        .mobile-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 105;
+            background: var(--navy-deep);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s var(--ease-smooth);
+        }
+        .mobile-menu.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .mobile-menu a {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--cream);
+            text-decoration: none;
+            letter-spacing: -0.01em;
+            transition: color 0.3s;
+        }
+        .mobile-menu a:hover { color: var(--lime); }
+        .mobile-menu .btn {
+            margin-top: 12px;
+            padding: 16px 40px;
+            font-size: 1rem;
+        }
 
         /* ========== HERO ========== */
         .hero {
@@ -701,6 +768,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: center 20%;
         }
 
         .team-card h3 {
@@ -866,6 +934,8 @@
             .cta-image { max-width: 480px; }
 
             .topbar-links { display: none; }
+            .topbar-cta { display: none; }
+            .mobile-toggle { display: flex; }
         }
 
         @media (max-width: 768px) {
@@ -940,16 +1010,33 @@
     <header class="topbar" id="topbar">
         <div class="container">
             <a href="index.html" class="topbar-logo" aria-label="Hoogah Home">
-                <img src="logo-white.png" alt="Hoogah">
+                <img src="logo.png" alt="Hoogah">
             </a>
             <nav class="topbar-links">
                 <a href="how-it-works.html">How It Works</a>
+                <a href="our-belief.html">Our Belief</a>
                 <a href="use-cases.html">Use Cases</a>
                 <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
             </nav>
-            <a href="book-demo.html" class="btn btn-primary">Book a Demo</a>
+            <a href="book-demo.html" class="btn btn-primary topbar-cta">Book a Demo</a>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="how-it-works.html">How It Works</a>
+        <a href="our-belief.html">Our Belief</a>
+        <a href="use-cases.html">Use Cases</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="blog.html">Blog</a>
+        <a href="book-demo.html" class="btn btn-primary">Book a Demo</a>
+    </div>
 
     <!-- ========== 1. HERO ========== -->
     <section class="hero">
@@ -1111,7 +1198,6 @@
         </div>
     </section>
 
-    <!-- ========== 5. CTA ========== -->
     <!-- ========== 5. TEAM ========== -->
     <section class="team">
         <div class="container">
@@ -1268,8 +1354,11 @@
         // ---- Topbar ----
         var topbar = document.getElementById('topbar');
         var lastScrollY = 0;
+        var heroHeight = document.querySelector('.hero').offsetHeight;
         function handleTopbar() {
             var currentY = window.scrollY;
+            // Add dark bg when scrolled past hero
+            topbar.classList.toggle('scrolled', currentY > heroHeight * 0.5);
             if (currentY > 100 && currentY > lastScrollY) {
                 topbar.classList.add('hidden');
             } else {
@@ -1277,6 +1366,22 @@
             }
             lastScrollY = currentY;
         }
+
+        // ---- Mobile menu ----
+        var mobileToggle = document.getElementById('mobileToggle');
+        var mobileMenu = document.getElementById('mobileMenu');
+        mobileToggle.addEventListener('click', function() {
+            mobileToggle.classList.toggle('active');
+            mobileMenu.classList.toggle('open');
+            document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+        });
+        mobileMenu.querySelectorAll('a').forEach(function(a) {
+            a.addEventListener('click', function() {
+                mobileToggle.classList.remove('active');
+                mobileMenu.classList.remove('open');
+                document.body.style.overflow = '';
+            });
+        });
 
         // ---- Sticky mobile CTA ----
         var stickyCta = document.getElementById('stickyCta');
