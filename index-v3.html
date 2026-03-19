@@ -163,13 +163,15 @@
             align-items: center;
             justify-content: space-between;
         }
-        .topbar-logo { position: relative; display: flex; }
-        .topbar-logo img {
-            height: 36px;
-            border-radius: 8px;
-            transition: all 0.4s var(--ease-smooth);
+        .topbar-logo { display: flex; }
+        .topbar-logo-mark {
+            display: block;
+            width: 130px;
+            height: 38px;
+            background: url(logo-white.png) 50% 52% / auto 550% no-repeat;
+            transition: opacity 0.4s var(--ease-smooth);
         }
-        .topbar-logo:hover img { opacity: 0.8; }
+        .topbar-logo:hover .topbar-logo-mark { opacity: 0.75; }
         .topbar-links {
             display: flex;
             align-items: center;
@@ -846,8 +848,8 @@
     <!-- ========== TOPBAR ========== -->
     <header class="topbar" id="topbar">
         <div class="container">
-            <a href="index.html" class="topbar-logo">
-                <img src="logo.png" alt="Hoogah">
+            <a href="index.html" class="topbar-logo" aria-label="Hoogah Home">
+                <span class="topbar-logo-mark"></span>
             </a>
             <nav class="topbar-links">
                 <a href="how-it-works.html">How It Works</a>
