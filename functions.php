@@ -16,6 +16,7 @@ function hoogah_rewrite_rules() {
     add_rewrite_rule( '^homepage-v2/?$',  'index.php?hoogah_page=homepage-v2',  'top' );
     add_rewrite_rule( '^thank-you/?$',   'index.php?hoogah_page=thank-you',   'top' );
     add_rewrite_rule( '^event-organizers/?$', 'index.php?hoogah_page=event-organizers', 'top' );
+    add_rewrite_rule( '^homepage-v3/?$',  'index.php?hoogah_page=homepage-v3',  'top' );
 }
 add_action( 'init', 'hoogah_rewrite_rules' );
 
