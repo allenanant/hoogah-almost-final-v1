@@ -150,29 +150,13 @@
             left: 0;
             right: 0;
             z-index: 100;
-            padding: 18px 0;
-            transition: all 0.5s var(--ease-smooth);
+            padding: 20px 0;
+            transition: transform 0.5s var(--ease-out), opacity 0.4s var(--ease-smooth);
         }
-        /* Subtle dark gradient when over hero (before scrolled state kicks in) */
-        .topbar::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, rgba(17, 8, 64, 0.5) 0%, rgba(17, 8, 64, 0) 100%);
-            opacity: 1;
-            transition: opacity 0.5s var(--ease-smooth);
-            pointer-events: none;
-            z-index: -1;
-        }
-        .topbar.scrolled::before {
+        .topbar.hidden {
+            transform: translateY(-100%);
             opacity: 0;
-        }
-        .topbar.scrolled {
-            padding: 12px 0;
-            background: rgba(250, 248, 245, 0.88);
-            backdrop-filter: blur(24px) saturate(180%);
-            -webkit-backdrop-filter: blur(24px) saturate(180%);
-            box-shadow: 0 1px 0 var(--border-subtle);
+            pointer-events: none;
         }
         .topbar .container {
             display: flex;
@@ -201,8 +185,6 @@
             transition: color 0.4s;
         }
         .topbar-links a:hover { color: var(--lime); }
-        .topbar.scrolled .topbar-links a { color: var(--text); }
-        .topbar.scrolled .topbar-links a:hover { color: var(--magenta); }
         .topbar .btn { padding: 10px 24px; font-size: 0.82rem; letter-spacing: 0.01em; }
 
         /* ========== HERO ========== */
@@ -231,7 +213,7 @@
             inset: 0;
             background:
                 linear-gradient(180deg,
-                    rgba(17, 8, 64, 0.7) 0%,
+                    rgba(17, 8, 64, 0.82) 0%,
                     rgba(17, 8, 64, 0.55) 30%,
                     rgba(17, 8, 64, 0.6) 60%,
                     rgba(17, 8, 64, 0.85) 100%
@@ -1163,8 +1145,15 @@
 
         // ---- Topbar ----
         var topbar = document.getElementById('topbar');
+        var lastScrollY = 0;
         function handleTopbar() {
-            topbar.classList.toggle('scrolled', window.scrollY > 60);
+            var currentY = window.scrollY;
+            if (currentY > 100 && currentY > lastScrollY) {
+                topbar.classList.add('hidden');
+            } else {
+                topbar.classList.remove('hidden');
+            }
+            lastScrollY = currentY;
         }
 
         // ---- Sticky mobile CTA ----
