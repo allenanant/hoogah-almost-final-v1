@@ -194,7 +194,7 @@
         .hero {
             min-height: 100dvh;
             display: grid;
-            align-items: end;
+            align-items: center;
             position: relative;
             overflow: hidden;
         }
@@ -216,10 +216,10 @@
             inset: 0;
             background:
                 linear-gradient(180deg,
-                    rgba(17, 8, 64, 0.45) 0%,
-                    rgba(17, 8, 64, 0.25) 35%,
-                    rgba(17, 8, 64, 0.55) 70%,
-                    rgba(17, 8, 64, 0.88) 100%
+                    rgba(17, 8, 64, 0.7) 0%,
+                    rgba(17, 8, 64, 0.55) 30%,
+                    rgba(17, 8, 64, 0.6) 60%,
+                    rgba(17, 8, 64, 0.85) 100%
                 );
         }
 
@@ -227,7 +227,7 @@
             position: relative;
             z-index: 2;
             max-width: 720px;
-            padding: 0 32px 100px;
+            padding: 140px 32px 80px;
             color: var(--cream);
         }
 
@@ -263,7 +263,7 @@
 
         /* ========== PROBLEM ========== */
         .problem {
-            padding: 140px 0 160px;
+            padding: 100px 0 120px;
             background: var(--cream);
             position: relative;
         }
@@ -361,7 +361,7 @@
 
         /* ========== SOLUTION ========== */
         .solution {
-            padding: 140px 0;
+            padding: 100px 0;
             background: var(--navy-deep);
             color: var(--cream);
             border-radius: var(--radius-xl) var(--radius-xl) 0 0;
@@ -510,7 +510,7 @@
             font-family: var(--font-heading);
             font-size: clamp(1.15rem, 1.8vw, 1.4rem);
             line-height: 1.45;
-            color: var(--cream);
+            color: rgba(250, 248, 245, 0.95);
             font-weight: 500;
             font-style: normal;
             margin-bottom: 32px;
@@ -534,7 +534,7 @@
 
         /* ========== FINAL CTA ========== */
         .final-cta {
-            padding: 160px 0 140px;
+            padding: 100px 0;
             background: var(--cream);
             position: relative;
         }
@@ -631,27 +631,18 @@
         }
 
         /* ========== GSAP INITIAL STATES ========== */
-        .gs-hero-lead,
-        .gs-hero-h1,
-        .gs-hero-desc,
-        .gs-hero-btns {
+        /* Only hide when GSAP is loaded - prevents blank page if JS fails */
+        .gsap-ready .gs-hero-lead,
+        .gsap-ready .gs-hero-h1,
+        .gsap-ready .gs-hero-desc,
+        .gsap-ready .gs-hero-btns {
             opacity: 0;
             transform: translateY(40px);
         }
 
-        .gs-reveal {
+        .gsap-ready .gs-reveal {
             opacity: 0;
             transform: translateY(48px);
-        }
-
-        .gs-reveal-left {
-            opacity: 0;
-            transform: translateX(-48px);
-        }
-
-        .gs-reveal-right {
-            opacity: 0;
-            transform: translateX(48px);
         }
 
         /* ========== RESPONSIVE ========== */
@@ -915,6 +906,7 @@
 
     <script>
         gsap.registerPlugin(ScrollTrigger);
+        document.body.classList.add('gsap-ready');
 
         // ---- Hero staggered entrance ----
         const heroTl = gsap.timeline({ defaults: { duration: 1, ease: 'power4.out' } });
@@ -937,15 +929,16 @@
         });
 
         // ---- Scroll reveals ----
-        gsap.utils.toArray('.gs-reveal').forEach((el, i) => {
+        gsap.utils.toArray('.gs-reveal').forEach((el) => {
             gsap.to(el, {
                 opacity: 1,
                 y: 0,
-                duration: 0.9,
+                x: 0,
+                duration: 0.85,
                 ease: 'power3.out',
                 scrollTrigger: {
                     trigger: el,
-                    start: 'top 88%',
+                    start: 'top 92%',
                     once: true
                 }
             });
