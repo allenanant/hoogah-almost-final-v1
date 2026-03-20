@@ -324,10 +324,10 @@
         }
 
         .hero-desc {
-            font-size: clamp(1rem, 1.4vw, 1.1rem);
-            color: rgba(250, 248, 245, 0.65);
-            line-height: 1.75;
-            max-width: 500px;
+            font-size: clamp(1.15rem, 1.8vw, 1.4rem);
+            color: rgba(250, 248, 245, 0.75);
+            line-height: 1.65;
+            max-width: 540px;
             margin-bottom: 44px;
         }
 
@@ -337,107 +337,47 @@
             flex-wrap: wrap;
         }
 
-        /* ========== PROBLEM (single column, centered) ========== */
+        /* ========== PROBLEM (flowing text) ========== */
         .problem {
             padding: 120px 0 100px;
             background: var(--cream);
             position: relative;
         }
 
-        .problem-header {
-            text-align: center;
-            max-width: 640px;
-            margin: 0 auto 64px;
-        }
-
-        .problem-label {
-            font-family: var(--font-heading);
-            font-size: 0.75rem;
-            font-weight: 600;
-            letter-spacing: 0.14em;
-            text-transform: uppercase;
-            color: var(--magenta);
-            margin-bottom: 20px;
-            display: block;
+        .problem-flow {
+            max-width: 680px;
+            margin: 0 auto;
         }
 
         .problem h2 {
             font-size: clamp(2.25rem, 4vw, 3.25rem);
             line-height: 1.1;
+            margin-bottom: 48px;
         }
 
-        .problem-cards {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            max-width: 1080px;
-            margin: 0 auto 56px;
-        }
-
-        .problem-card {
-            padding: 36px 32px;
-            border-radius: var(--radius-lg);
-            background: white;
-            border: 1px solid rgba(26, 10, 94, 0.05);
+        .problem-body {
             display: flex;
             flex-direction: column;
-            gap: 20px;
-            transition: transform 0.5s var(--ease-out), border-color 0.4s var(--ease-smooth);
+            gap: 24px;
+            margin-bottom: 40px;
         }
 
-        .problem-card:hover {
-            transform: translateY(-4px);
-            border-color: rgba(168, 25, 139, 0.15);
-        }
-
-        .problem-icon {
-            width: 52px;
-            height: 52px;
-            border-radius: 16px;
-            background: rgba(168, 25, 139, 0.06);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .problem-icon svg {
-            width: 22px;
-            height: 22px;
-            stroke: var(--magenta);
-            stroke-width: 2;
-            fill: none;
-        }
-
-        .problem-card p {
-            font-size: 1.05rem;
-            line-height: 1.65;
-            color: var(--text);
+        .problem-body p {
+            font-size: clamp(1.1rem, 1.6vw, 1.25rem);
+            line-height: 1.7;
+            color: var(--text-muted);
             max-width: none;
-            font-weight: 500;
         }
 
-        .problem-result {
-            max-width: 720px;
-            margin: 0 auto;
-            padding: 44px 52px;
-            border-radius: var(--radius-lg);
-            background: var(--navy);
-            color: var(--cream);
-            text-align: center;
-        }
-
-        .problem-result p {
+        .problem-takeaway p {
             font-family: var(--font-heading);
-            font-size: clamp(1.15rem, 1.8vw, 1.35rem);
-            line-height: 1.55;
-            color: rgba(250,248,245,0.85);
+            font-size: clamp(1.2rem, 2vw, 1.5rem);
+            line-height: 1.45;
+            color: var(--navy);
             max-width: none;
-            font-weight: 500;
         }
 
-        .problem-result strong {
-            color: var(--lime);
+        .problem-takeaway strong {
             font-weight: 700;
         }
 
@@ -648,8 +588,8 @@
 
         .proof-primary blockquote {
             font-family: var(--font-heading);
-            font-size: clamp(1.6rem, 2.8vw, 2.2rem);
-            line-height: 1.35;
+            font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+            line-height: 1.3;
             color: var(--cream);
             font-weight: 600;
             font-style: normal;
@@ -912,13 +852,6 @@
         @media (max-width: 1024px) {
             .container { padding: 0 24px; }
 
-            .problem-cards {
-                grid-template-columns: 1fr;
-                max-width: 520px;
-                margin-left: auto;
-                margin-right: auto;
-            }
-
             .solution-step {
                 grid-template-columns: 1fr;
             }
@@ -951,13 +884,12 @@
             .problem { padding: 72px 0; }
             .problem h2 { font-size: 1.75rem; line-height: 1.15; }
             .problem-header { margin-bottom: 36px; }
-            .problem-cards { gap: 12px; }
-            .problem-card { padding: 24px 20px; gap: 14px; }
-            .problem-card p { font-size: 0.95rem; }
+            .problem { padding: 72px 0; }
+            .problem h2 { margin-bottom: 32px; }
             .problem-icon { width: 44px; height: 44px; border-radius: 12px; }
             .problem-icon svg { width: 20px; height: 20px; }
-            .problem-result { padding: 28px 24px; margin-top: 4px; border-radius: var(--radius); }
-            .problem-result p { font-size: 1rem; }
+            .problem-body p { font-size: 1.05rem; }
+            .problem-takeaway p { font-size: 1.15rem; }
 
             .marquee-track { padding: 24px 0 28px; }
             .marquee-item { font-size: 0.85rem; padding: 0 16px; }
@@ -1014,8 +946,7 @@
             .hero-buttons .btn { padding: 15px 24px; font-size: 0.92rem; }
 
             .problem { padding: 56px 0; }
-            .problem-result { padding: 24px 20px; }
-            .problem-card { padding: 20px 18px; }
+            .problem { padding: 56px 0; }
 
             .solution { padding: 56px 0; }
             .step-text { padding: 24px 20px; }
@@ -1078,13 +1009,9 @@
             <img src="images/hero-crowd-networking.png" alt="Event attendees networking at a conference">
         </div>
         <div class="hero-content">
-            <p class="hero-lead gs-hero-lead">
-                You brought hundreds of interesting people together.<br>
-                Most never met each other.
-            </p>
             <h1 class="gs-hero-h1">Great events don't leave networking to chance.</h1>
             <p class="hero-desc gs-hero-desc">
-                Hoogah helps event organizers create intentional introductions so attendees actually meet the right people.
+                Hoogah helps event organizers make it easier for everyone to connect.
             </p>
             <div class="hero-buttons gs-hero-btns">
                 <a href="book-demo.html" class="btn btn-primary">Book a Demo</a>
@@ -1096,32 +1023,16 @@
     <!-- ========== 2. PROBLEM ========== -->
     <section class="problem">
         <div class="container">
-            <div class="problem-header">
-                <span class="problem-label gs-reveal">The reality</span>
+            <div class="problem-flow">
                 <h2 class="gs-reveal">What actually happens at most events</h2>
-            </div>
-            <div class="problem-cards">
-                <div class="problem-card gs-reveal">
-                    <div class="problem-icon">
-                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                    </div>
-                    <p>Attendees talk to people they already know</p>
+                <div class="problem-body gs-reveal">
+                    <p>People scan the room and stick with who they already know.</p>
+                    <p>Some attendees circle for a few minutes but never quite find a way in.</p>
+                    <p>Most conversations stay at "so what do you do?"</p>
                 </div>
-                <div class="problem-card gs-reveal">
-                    <div class="problem-icon">
-                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-                    </div>
-                    <p>Most don't know who to approach</p>
+                <div class="problem-takeaway gs-reveal">
+                    <p><strong>Most attendees meet one or two people.<br>They miss the conversations that matter.</strong></p>
                 </div>
-                <div class="problem-card gs-reveal">
-                    <div class="problem-icon">
-                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-                    </div>
-                    <p>Conversations stay at the "so what do you do?" level</p>
-                </div>
-            </div>
-            <div class="problem-result gs-reveal">
-                <p>Most attendees meet one or two people. <strong>They miss the conversations that matter.</strong></p>
             </div>
         </div>
     </section>
@@ -1172,42 +1083,34 @@
     <section class="solution" id="solution">
         <div class="container">
             <div class="solution-header">
-                <span class="solution-label gs-reveal">How Hoogah works</span>
-                <h2 class="gs-reveal">People want to connect. They just don't know how to start.</h2>
-                <p class="subtitle gs-reveal">Hoogah makes networking easier.</p>
+                <h2 class="gs-reveal">A simple way to help the right people meet</h2>
             </div>
             <div class="solution-steps">
-                <!-- Step 1 -->
                 <div class="solution-step gs-reveal">
                     <div class="step-text">
-                        <div class="step-num">Step 1</div>
                         <h3>Attendees answer a few quick questions</h3>
-                        <p>You decide what to ask based on your event goals. Attendees scan a QR code and answer in 90 seconds.</p>
+                        <p>You choose what matters for your event.</p>
                     </div>
                     <div class="step-image">
-                        <img src="images/phone-scan-qr.png" alt="Attendee scanning QR code at event" class="step-parallax-img">
+                        <img src="images/phone-scan-qr.png" alt="Attendee answering questions on phone" class="step-parallax-img">
                     </div>
                 </div>
-                <!-- Step 2 -->
                 <div class="solution-step reverse gs-reveal">
                     <div class="step-text">
-                        <div class="step-num">Step 2</div>
-                        <h3>They're introduced to the right people</h3>
-                        <p>Matched based on shared interests, goals, or mindset. Each pair gets a personalized conversation starter so they can skip the small talk.</p>
+                        <h3>They're matched with the right people</h3>
+                        <p>Based on shared interests, goals, or mindset.</p>
                     </div>
                     <div class="step-image">
-                        <img src="images/pair-deep-conversation.png" alt="Two people having a meaningful conversation at an event" class="step-parallax-img">
+                        <img src="images/pair-deep-conversation.png" alt="Two people in a meaningful conversation" class="step-parallax-img">
                     </div>
                 </div>
-                <!-- Step 3 -->
                 <div class="solution-step gs-reveal">
                     <div class="step-text">
-                        <div class="step-num">Step 3</div>
-                        <h3>You get insight into your event</h3>
-                        <p>See what matters to attendees, what conversations are happening, and how engaged people are.</p>
+                        <h3>You see what actually happened</h3>
+                        <p>Who connected and what resonated.</p>
                     </div>
                     <div class="step-image">
-                        <img src="images/organizer-watching-connections.png" alt="Event organizer watching attendees connect" class="step-parallax-img">
+                        <img src="images/organizer-watching-connections.png" alt="Event organizer reviewing connections" class="step-parallax-img">
                     </div>
                 </div>
             </div>
@@ -1265,8 +1168,7 @@
         <div class="container">
             <div class="cta-layout">
                 <div class="cta-text">
-                    <h2 class="gs-reveal">Stop leaving networking to chance.</h2>
-                    <p class="cta-desc gs-reveal">Book a demo and see how Hoogah changes your event.</p>
+                    <h2 class="gs-reveal">Help your attendees meet the right people.</h2>
                     <div class="gs-reveal">
                         <a href="book-demo.html" class="btn btn-primary">Book a Demo</a>
                     </div>
