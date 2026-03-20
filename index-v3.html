@@ -623,8 +623,18 @@
         /* Secondary (smaller) testimonial */
         .proof-secondary {
             text-align: center;
-            padding: 0 48px;
+            position: relative;
+            padding: 48px 48px 40px;
+            border-radius: var(--radius-xl);
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.04);
             max-width: 600px;
+            width: 100%;
+            transition: border-color 0.4s;
+        }
+
+        .proof-secondary:hover {
+            border-color: rgba(255,255,255,0.08);
         }
 
         .proof-secondary blockquote {
@@ -635,6 +645,20 @@
             font-weight: 500;
             font-style: normal;
             margin-bottom: 16px;
+        }
+
+        .proof-secondary .author-block {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .proof-secondary .author-dash {
+            width: 20px;
+            height: 2px;
+            background: var(--lime);
+            opacity: 0.35;
         }
 
         .proof-secondary .author {
@@ -1121,7 +1145,6 @@
     <section class="proof">
         <div class="proof-inner">
             <div class="proof-primary gs-reveal">
-                <div class="proof-quote-mark">"</div>
                 <blockquote>"People met others they never would have connected with."</blockquote>
                 <div class="author-block">
                     <span class="author-dash"></span>
@@ -1130,7 +1153,10 @@
             </div>
             <div class="proof-secondary gs-reveal">
                 <blockquote>"For once, networking didn't feel random."</blockquote>
-                <span class="author">Event Strategist</span>
+                <div class="author-block">
+                    <span class="author-dash"></span>
+                    <span class="author">Event Strategist</span>
+                </div>
             </div>
         </div>
     </section>
