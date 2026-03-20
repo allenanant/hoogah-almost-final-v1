@@ -221,22 +221,15 @@
             color: rgba(250, 248, 245, 0.45);
         }
 
-        /* ========== VSL VIDEO ========== */
-        .vsl-section {
-            padding: 0 24px 100px;
-            background: var(--navy-deep);
-            position: relative;
-        }
-        .vsl-wrap {
-            max-width: 860px;
-            margin: -60px auto 0;
-            position: relative;
-            z-index: 3;
+        /* ========== HERO VSL VIDEO ========== */
+        .hero-vsl {
+            max-width: 760px;
+            margin: 28px auto 32px;
             border-radius: var(--radius-lg);
             overflow: hidden;
-            box-shadow: 0 24px 80px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.06);
+            box-shadow: 0 16px 60px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.08);
         }
-        .vsl-wrap video {
+        .hero-vsl video {
             width: 100%;
             display: block;
             background: #000;
@@ -800,8 +793,7 @@
         @media (max-width: 768px) {
             .hero { padding: 120px 20px 60px; min-height: auto; }
             .hero h1 { font-size: clamp(2rem, 7vw, 2.8rem); }
-            .vsl-wrap { margin-top: -40px; border-radius: var(--radius); }
-            .vsl-section { padding-bottom: 60px; }
+            .hero-vsl { border-radius: var(--radius); margin: 20px auto 24px; }
 
             .problem-cards { grid-template-columns: 1fr; gap: 16px; }
             .problem-section { padding: 72px 20px; }
@@ -863,22 +855,18 @@
                 For Event Organizers
             </div>
             <h1 class="reveal">Your Attendees Are Leaving Without <span class="accent">Meeting Anyone</span></h1>
+            <div class="hero-vsl reveal">
+                <video controls autoplay muted playsinline preload="auto">
+                    <source src="https://assets.cdn.filesafe.space/76oL0AnJq8m4KRtvkuy4/media/69bd99bfb5ee802c8312c4e5.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
             <p class="hero-desc reveal">Most events have great speakers and great venues. But networking? It's a mess. People wander, stick to who they know, and leave disappointed. Hoogah fixes that.</p>
             <a href="#book" class="hero-cta scroll-to-form reveal">
                 See How It Works
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
             </a>
             <p class="hero-trust reveal">Free 15-min call. No credit card. No commitment.</p>
-        </div>
-    </section>
-
-    <!-- VSL VIDEO -->
-    <section class="vsl-section">
-        <div class="vsl-wrap reveal">
-            <video controls preload="metadata" poster="" playsinline>
-                <source src="https://assets.cdn.filesafe.space/76oL0AnJq8m4KRtvkuy4/media/69bd99bfb5ee802c8312c4e5.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
         </div>
     </section>
 
