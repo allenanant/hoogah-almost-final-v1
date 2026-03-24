@@ -12,8 +12,8 @@
     <link rel="icon" href="../logo.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Inter:wght@300..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/styles.css?v=2">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/v3.css?v=1">
     <!-- Meta Pixel Code -->
     <script>
     !function(f,b,e,v,n,t,s)
@@ -31,253 +31,82 @@
     src="https://www.facebook.com/tr?id=2407352259709613&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Meta Pixel Code -->
-    <style>
-        .blog-post-hero {
-            padding: 120px 0 40px;
-        }
-        .blog-post-hero .tag {
-            margin-bottom: 16px;
-        }
-        .blog-post-hero h1 {
-            font-size: clamp(2rem, 4vw, 3rem);
-            margin-bottom: 16px;
-            max-width: 800px;
-        }
-        .blog-post-hero .subtitle {
-            font-size: 1.15rem;
-            color: var(--gray-600);
-            max-width: 700px;
-            margin-bottom: 24px;
-        }
-        .blog-meta {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            font-size: 0.9rem;
-            color: var(--gray-600);
-            padding-bottom: 32px;
-            border-bottom: 2px solid var(--black);
-        }
-        .blog-meta .author {
-            font-weight: 600;
-            color: var(--black);
-        }
-        .blog-meta .separator {
-            width: 4px;
-            height: 4px;
-            border-radius: 50%;
-            background: var(--gray-400);
-        }
-        .blog-cover {
-            width: 100%;
-            margin: 40px 0;
-            border: var(--border);
-            box-shadow: var(--shadow);
-        }
-        .blog-cover img {
-            width: 100%;
-            display: block;
-        }
-        .blog-content {
-            max-width: 720px;
-            margin: 0 auto;
-            padding: 40px 24px 80px;
-        }
-        .blog-content p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 24px;
-            color: var(--black);
-        }
-        .blog-content h2 {
-            font-size: 1.6rem;
-            margin: 48px 0 16px;
-        }
-        .blog-content h3 {
-            font-size: 1.3rem;
-            margin: 36px 0 12px;
-        }
-        .blog-content h4 {
-            font-size: 1.1rem;
-            margin: 28px 0 10px;
-        }
-        .blog-content strong {
-            font-weight: 700;
-        }
-        .blog-content em {
-            font-style: italic;
-        }
-        .blog-content blockquote {
-            border-left: 4px solid var(--magenta);
-            padding: 16px 24px;
-            margin: 32px 0;
-            background: var(--gray-100);
-            font-style: italic;
-            font-size: 1.15rem;
-        }
-        .blog-content ul, .blog-content ol {
-            margin: 16px 0 24px 24px;
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-        .blog-content li {
-            margin-bottom: 8px;
-        }
-        .blog-content a {
-            color: var(--magenta);
-            text-decoration: underline;
-            text-underline-offset: 3px;
-        }
-        .blog-content a:hover {
-            color: var(--navy);
-        }
-        .blog-figure {
-            margin: 32px 0;
-        }
-        .blog-figure img, .blog-content img {
-            width: 100%;
-            border: var(--border);
-            box-shadow: var(--shadow-sm);
-        }
-        .blog-back {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            color: var(--black);
-            margin-bottom: 24px;
-            transition: color 0.2s;
-        }
-        .blog-back:hover {
-            color: var(--magenta);
-        }
-        .blog-bottom-cta {
-            text-align: center;
-            padding: 60px 0;
-            border-top: 2px solid var(--black);
-        }
-        .blog-bottom-cta h3 {
-            font-size: 1.8rem;
-            margin-bottom: 12px;
-        }
-        .blog-bottom-cta p {
-            color: var(--gray-600);
-            margin-bottom: 24px;
-            font-size: 1.05rem;
-        }
-        .blog-content .subscription-widget-wrap {
-            display: none;
-        }
-        .blog-content .button-wrapper {
-            display: none;
-        }
-        .blog-content .subscribe-widget {
-            display: none;
-        }
-    </style>
 </head>
 <body>
 
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="navbar-inner">
-                <a href="../index.html" class="navbar-logo"><img src="../logo.png" alt="Hoogah"></a>
-                <div class="navbar-links">
-                    <a href="../how-it-works.html">How It Works</a>
-                    <a href="../our-belief.html">Our Belief</a>
-                    <a href="../use-cases.html">Use Cases</a>
-                    <a href="../pricing.html">Pricing</a>
-                    <a href="../blog.html">Blog</a>
-                    <a href="../book-demo.html" class="navbar-cta">Book a Demo &rarr;</a>
-                </div>
-                <button class="mobile-toggle" aria-label="Menu" onclick="toggleMobileMenu()">
-                    <span></span><span></span><span></span>
-                </button>
-            </div>
-        </div>
-        <div class="mobile-menu" id="mobileMenu">
-            <a href="../how-it-works.html" onclick="closeMobileMenu()">How It Works</a>
-            <a href="../our-belief.html" onclick="closeMobileMenu()">Our Belief</a>
-            <a href="../use-cases.html" onclick="closeMobileMenu()">Use Cases</a>
-            <a href="../pricing.html" onclick="closeMobileMenu()">Pricing</a>
-            <a href="../blog.html" onclick="closeMobileMenu()">Blog</a>
-            <a href="../book-demo.html" class="navbar-cta" onclick="closeMobileMenu()">Book a Demo &rarr;</a>
-        </div>
-    </nav>
+<header class="topbar" id="topbar">
+    <div class="container">
+        <a href="../index.html" class="topbar-logo" aria-label="Hoogah Home">
+            <img src="../images/logo-white-cropped.png" alt="Hoogah">
+        </a>
+        <nav class="topbar-links">
+            <a href="../how-it-works.html">How It Works</a>
+            <a href="../our-belief.html">Our Belief</a>
+            <a href="../use-cases.html">Use Cases</a>
+            <a href="../pricing.html">Pricing</a>
+            <a href="../blog.html" class="active">Blog</a>
+        </nav>
+        <a href="../book-demo.html" class="btn btn-primary topbar-cta">Book a Demo</a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+    <a href="../how-it-works.html">How It Works</a>
+    <a href="../our-belief.html">Our Belief</a>
+    <a href="../use-cases.html">Use Cases</a>
+    <a href="../pricing.html">Pricing</a>
+    <a href="../blog.html">Blog</a>
+    <a href="../book-demo.html" class="btn btn-primary">Book a Demo</a>
+</div>
 
-    <section class="blog-post-hero">
-        <div class="container">
-            <a href="../blog.html" class="blog-back">&larr; Back to Blog</a>
-            <h1>The Room I Couldn&#x27;t Own Anymore</h1>
-            <p class='subtitle'>When even the most social among us start to hesitate, it’s time to rethink how we build belonging.</p>
-            <div class="blog-meta">
-                <span class="author">Joe Lovett</span>
-                <span class="separator"></span>
-                <span>October 09, 2025</span>
-            </div>
+<section class="blog-post-hero">
+    <div class="container">
+        <a href="../blog.html" class="blog-back">&larr; Back to Blog</a>
+        <h1>The Room I Couldn&#x27;t Own Anymore</h1>
+        <p class="subtitle">When even the most social among us start to hesitate, it’s time to rethink how we build belonging.</p>
+        <div class="blog-meta">
+            <span class="author">Joe Lovett</span>
+            <span class="separator"></span>
+            <span>October 09, 2025</span>
         </div>
-    </section>
+    </div>
+</section>
 
-    <div class="container"><div class="blog-cover"><img src="https://substackcdn.com/image/fetch/$s_!2XTg!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe2adaa21-c95c-4970-bdc0-50856bef271e_1536x1024.png" alt="The Room I Couldn&#x27;t Own Anymore" loading="eager"></div></div>
+<div class="blog-cover"><img src="https://substackcdn.com/image/fetch/$s_!2XTg!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe2adaa21-c95c-4970-bdc0-50856bef271e_1536x1024.png" alt="The Room I Couldn&#x27;t Own Anymore" loading="eager"></div>
 
-    <article class="blog-content container">
+<article class="blog-content container">
         <p>I come from a highly social family. My siblings affectionately call our extended family “aggressively social.” I was one of the most social. As they say the apple doesn’t fall far from the tree. Our family get-togethers could probably be heard from outer space. We filled rooms with conversation, laughter, and competing stories. Yes, we had a few in-laws who were more reserved, maybe even introverted, but the dominant energy was loud and lively.</p><p>Fast forward to COVID, and something shifted in me.</p><p>I first noticed it on a vacation in the spring of 2021, just after our family was fully vaccinated. We went to a ranch in Tucson, Arizona, one of those communal experiences where everyone eats together, watches evening shows, and rides horses side by side. Normally, that would have been my element. I would’ve made a few new friends before the first cattle wrangling.</p><p>But this time, I didn’t.</p><p>I smiled, nodded, exchanged small talk. But I didn’t lean in. I didn’t go deep. It wasn’t nerves. It wasn’t disinterest. It was more like a softness, a hesitance I hadn’t known before.</p><p>And I realized, something had changed.</p><h3><strong>When Connection Starts to Feel Harder</strong></h3><p>The truth is, even people who once thrived on connection are finding it harder. The world feels noisier, and yet personal connection feels thinner. COVID didn’t just distance us physically, it rewired how many of us show up.</p><p>We got used to fewer interactions. More boundaries.<br>And slowly, without noticing, many of us lost the ease we once had.</p><p>I used to think of connection as something that just <em>happens</em>. Now I see it as something we have to <em>design for</em>. Because if connection is harder for people like me,  people who once owned the room, imagine how it feels for those who never felt at home in one to begin with.</p><h3><strong>The Case for Designed Connection</strong></h3><p>Whether it’s at a conference, in a company, club or community, the room has changed. People arrive carrying more than their lanyards and badges. They carry exhaustion, uncertainty, a quiet hope that maybe this time they’ll meet someone who they feel at ease with. Someone who ‘gets it.’</p><p>If we want to rebuild belonging, we can’t leave it to chance.<br>We have to design moments that make connection feel natural again.</p><p>Moments that say, “You’re welcome here.”<br>Moments that help people find their way in.</p><p>That’s what I’ve learned, not as a founder, but as someone still figuring out how to reconnect, too.</p><h3><strong>Let’s make connection effortless again.</strong></h3><p>At Hoogah, we make one-to-one connection effortless. Our pairing platform takes the guesswork out of networking and turns introductions into meaningful conversations. Let’s design your next event so everyone, not just the extroverts finds their way in. Visit <a href="https://hoogah.co/">hoogah.co</a> to start planning.</p>
     </article>
 
-    <section class="blog-bottom-cta">
-        <div class="container">
-            <h3>Design Events People Come Back To</h3>
-            <p>See how Hoogah helps create intentional connection at scale.</p>
-            <a href="../book-demo.html" class="btn btn-primary">Book a Free Demo &rarr;</a>
-        </div>
-    </section>
+<section class="blog-bottom-cta">
+    <div class="container">
+        <h3>Design Events People Come Back To</h3>
+        <p>See how Hoogah helps create intentional connection at scale.</p>
+        <a href="../book-demo.html" class="btn btn-primary">Book a Free Demo</a>
+    </div>
+</section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <img src="../logo-white.png" alt="Hoogah" style="height: 44px;">
-                    <p>Intentional networking designed for belonging. Because connection isn't a perk. It's infrastructure. Built for people who bring people together.</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Product</h4>
-                    <a href="../how-it-works.html">How It Works</a>
-                    <a href="../our-belief.html">Our Belief</a>
-                    <a href="../use-cases.html">Use Cases</a>
-                    <a href="../pricing.html">Pricing</a>
-                    <a href="../blog.html">Blog</a>
-                </div>
-                <div class="footer-col">
-                    <h4>Company</h4>
-                    <a href="#">About Us</a>
-                    <a href="../blog.html">Blog</a>
-                    <a href="#">Careers</a>
-                    <a href="#">Contact</a>
-                </div>
-                <div class="footer-col">
-                    <h4>Resources</h4>
-                    <a href="#">Case Studies</a>
-                    <a href="#">Documentation</a>
-                    <a href="#">Help Center</a>
-                    <a href="../privacy-policy.html">Privacy Policy</a>
-                    <a href="../terms-and-conditions.html">Terms &amp; Conditions</a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Hoogah. All rights reserved.</p>
-                <div class="footer-socials">
-                    <a href="#" aria-label="LinkedIn">in</a>
-                    <a href="#" aria-label="Twitter">&#x1D54F;</a>
-                    <a href="#" aria-label="Instagram">ig</a>
-                </div>
-            </div>
+<footer class="v3-footer">
+    <div class="container">
+        <p>&copy; 2026 Hoogah. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="../index.html">Home</a>
+            <a href="../pricing.html">Pricing</a>
+            <a href="../privacy-policy.html">Privacy Policy</a>
+            <a href="../terms-and-conditions.html">Terms &amp; Conditions</a>
+            <a href="mailto:hello@hoogah.com">Contact</a>
         </div>
-    </footer>
+    </div>
+</footer>
 
-    <script src="../js/main.js"></script>
+<div class="sticky-cta" id="stickyCta">
+    <a href="../book-demo.html" class="btn btn-primary">Book a Demo</a>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="../js/v3.js"></script>
 
 </body>
 </html>

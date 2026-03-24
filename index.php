@@ -5,7 +5,7 @@ $template_dir = get_template_directory();
 $template_uri = get_template_directory_uri();
 
 $file_map = [
-    ''             => 'index.html',
+    ''             => 'index-v3.html',
     'how-it-works' => 'how-it-works.html',
     'our-belief'   => 'our-belief.html',
     'use-cases'    => 'use-cases.html',
@@ -16,6 +16,7 @@ $file_map = [
     'thank-you'    => 'thank-you.html',
     'event-organizers' => 'lp-event-organizers.html',
     'homepage-v3'  => 'index-v3.html',
+    'homepage-v1'  => 'index.html',
     'lp-ads-organizers' => 'lp-ads-organizers.html',
     'privacy-policy' => 'privacy-policy.html',
     'terms-and-conditions' => 'terms-and-conditions.html',

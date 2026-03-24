@@ -7,9 +7,8 @@
     <link rel="icon" type="image/png" href="logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lucide-static@latest/font/lucide.min.css">
-    <link rel="stylesheet" href="css/styles.css?v=2">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/v3.css?v=1">
     <!-- Meta Pixel Code -->
     <script>
     !function(f,b,e,v,n,t,s)
@@ -27,92 +26,48 @@
     src="https://www.facebook.com/tr?id=2407352259709613&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Meta Pixel Code -->
-    <style>
-        .legal-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .legal-content h2 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(22px, 2.5vw, 28px);
-            margin-top: 48px;
-            margin-bottom: 16px;
-            color: var(--navy);
-        }
-        .legal-content h3 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 18px;
-            margin-top: 32px;
-            margin-bottom: 12px;
-            color: var(--black);
-        }
-        .legal-content p,
-        .legal-content li {
-            font-size: 16px;
-            color: var(--gray-600);
-            line-height: 1.8;
-            margin-bottom: 12px;
-        }
-        .legal-content ul {
-            list-style: disc;
-            padding-left: 24px;
-            margin-bottom: 16px;
-        }
-        .legal-content ul li {
-            margin-bottom: 8px;
-        }
-        .legal-content a {
-            color: var(--magenta);
-            text-decoration: underline;
-        }
-        .legal-content .effective-date {
-            font-size: 14px;
-            color: var(--gray-400);
-            margin-bottom: 32px;
-        }
-    </style>
 </head>
 <body>
 
-    <!-- ========== NAVBAR ========== -->
-    <nav class="navbar">
+    <!-- ========== TOPBAR ========== -->
+    <header class="topbar" id="topbar">
         <div class="container">
-            <div class="navbar-inner">
-                <a href="index.html" class="navbar-logo"><img src="logo.png" alt="Hoogah"></a>
-                <div class="navbar-links">
-                    <a href="how-it-works.html">How It Works</a>
-                    <a href="our-belief.html">Our Belief</a>
-                    <a href="use-cases.html">Use Cases</a>
-                    <a href="pricing.html">Pricing</a>
-                    <a href="blog.html">Blog</a>
-                    <a href="book-demo.html" class="navbar-cta">Book a Demo &rarr;</a>
-                </div>
-                <button class="mobile-toggle" aria-label="Menu" onclick="toggleMobileMenu()">
-                    <span></span><span></span><span></span>
-                </button>
-            </div>
+            <a href="index.html" class="topbar-logo" aria-label="Hoogah Home">
+                <img src="images/logo-white-cropped.png" alt="Hoogah">
+            </a>
+            <nav class="topbar-links">
+                <a href="how-it-works.html">How It Works</a>
+                <a href="our-belief.html">Our Belief</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+            </nav>
+            <a href="book-demo.html" class="btn btn-primary topbar-cta">Book a Demo</a>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
         </div>
-        <div class="mobile-menu" id="mobileMenu">
-            <a href="how-it-works.html" onclick="closeMobileMenu()">How It Works</a>
-            <a href="our-belief.html" onclick="closeMobileMenu()">Our Belief</a>
-            <a href="use-cases.html" onclick="closeMobileMenu()">Use Cases</a>
-            <a href="pricing.html" onclick="closeMobileMenu()">Pricing</a>
-            <a href="blog.html" onclick="closeMobileMenu()">Blog</a>
-            <a href="book-demo.html" class="navbar-cta" onclick="closeMobileMenu()">Book a Demo &rarr;</a>
-        </div>
-    </nav>
+    </header>
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="how-it-works.html">How It Works</a>
+        <a href="our-belief.html">Our Belief</a>
+        <a href="use-cases.html">Use Cases</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="blog.html">Blog</a>
+        <a href="book-demo.html" class="btn btn-primary">Book a Demo</a>
+    </div>
 
     <!-- ========== PAGE HERO ========== -->
     <section class="page-hero">
         <div class="container">
-            <div class="section-label">Legal</div>
+            <span class="section-label">Legal</span>
             <h1>Terms &amp; Conditions</h1>
             <p>The rules and guidelines for using the Hoogah platform and services.</p>
         </div>
     </section>
 
     <!-- ========== TERMS CONTENT ========== -->
-    <section class="content-section bg-white" style="border-bottom: none;">
+    <section class="content-section bg-cream gs-reveal">
         <div class="container">
             <div class="legal-content">
                 <p class="effective-date">Effective Date: March 24, 2026</p>
@@ -234,48 +189,26 @@
     </section>
 
     <!-- ========== FOOTER ========== -->
-    <footer class="footer">
+    <footer class="v3-footer">
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <img src="logo-white.png" alt="Hoogah" style="height: 44px;">
-                    <p>Intentional networking designed for belonging. Because connection isn't a perk. It's infrastructure. Built for people who bring people together.</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Product</h4>
-                    <a href="how-it-works.html">How It Works</a>
-                    <a href="our-belief.html">Our Belief</a>
-                    <a href="use-cases.html">Use Cases</a>
-                    <a href="pricing.html">Pricing</a>
-                    <a href="blog.html">Blog</a>
-                </div>
-                <div class="footer-col">
-                    <h4>Company</h4>
-                    <a href="#">About Us</a>
-                    <a href="blog.html">Blog</a>
-                    <a href="#">Careers</a>
-                    <a href="#">Contact</a>
-                </div>
-                <div class="footer-col">
-                    <h4>Resources</h4>
-                    <a href="#">Case Studies</a>
-                    <a href="#">Documentation</a>
-                    <a href="#">Help Center</a>
-                    <a href="privacy-policy.html">Privacy Policy</a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Hoogah. All rights reserved.</p>
-                <div class="footer-socials">
-                    <a href="#" aria-label="LinkedIn">in</a>
-                    <a href="#" aria-label="Twitter">&#x1D54F;</a>
-                    <a href="#" aria-label="Instagram">ig</a>
-                </div>
+            <p>&copy; 2026 Hoogah. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+                <a href="mailto:hello@hoogah.com">Contact</a>
             </div>
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <!-- ========== STICKY CTA + SCRIPTS ========== -->
+    <div class="sticky-cta" id="stickyCta">
+        <a href="book-demo.html" class="btn btn-primary">Book a Demo</a>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="js/v3.js"></script>
 
 </body>
 </html>

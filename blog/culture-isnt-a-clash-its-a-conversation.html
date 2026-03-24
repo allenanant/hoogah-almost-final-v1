@@ -12,8 +12,8 @@
     <link rel="icon" href="../logo.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Inter:wght@300..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/styles.css?v=2">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/v3.css?v=1">
     <!-- Meta Pixel Code -->
     <script>
     !function(f,b,e,v,n,t,s)
@@ -31,253 +31,82 @@
     src="https://www.facebook.com/tr?id=2407352259709613&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Meta Pixel Code -->
-    <style>
-        .blog-post-hero {
-            padding: 120px 0 40px;
-        }
-        .blog-post-hero .tag {
-            margin-bottom: 16px;
-        }
-        .blog-post-hero h1 {
-            font-size: clamp(2rem, 4vw, 3rem);
-            margin-bottom: 16px;
-            max-width: 800px;
-        }
-        .blog-post-hero .subtitle {
-            font-size: 1.15rem;
-            color: var(--gray-600);
-            max-width: 700px;
-            margin-bottom: 24px;
-        }
-        .blog-meta {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            font-size: 0.9rem;
-            color: var(--gray-600);
-            padding-bottom: 32px;
-            border-bottom: 2px solid var(--black);
-        }
-        .blog-meta .author {
-            font-weight: 600;
-            color: var(--black);
-        }
-        .blog-meta .separator {
-            width: 4px;
-            height: 4px;
-            border-radius: 50%;
-            background: var(--gray-400);
-        }
-        .blog-cover {
-            width: 100%;
-            margin: 40px 0;
-            border: var(--border);
-            box-shadow: var(--shadow);
-        }
-        .blog-cover img {
-            width: 100%;
-            display: block;
-        }
-        .blog-content {
-            max-width: 720px;
-            margin: 0 auto;
-            padding: 40px 24px 80px;
-        }
-        .blog-content p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 24px;
-            color: var(--black);
-        }
-        .blog-content h2 {
-            font-size: 1.6rem;
-            margin: 48px 0 16px;
-        }
-        .blog-content h3 {
-            font-size: 1.3rem;
-            margin: 36px 0 12px;
-        }
-        .blog-content h4 {
-            font-size: 1.1rem;
-            margin: 28px 0 10px;
-        }
-        .blog-content strong {
-            font-weight: 700;
-        }
-        .blog-content em {
-            font-style: italic;
-        }
-        .blog-content blockquote {
-            border-left: 4px solid var(--magenta);
-            padding: 16px 24px;
-            margin: 32px 0;
-            background: var(--gray-100);
-            font-style: italic;
-            font-size: 1.15rem;
-        }
-        .blog-content ul, .blog-content ol {
-            margin: 16px 0 24px 24px;
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-        .blog-content li {
-            margin-bottom: 8px;
-        }
-        .blog-content a {
-            color: var(--magenta);
-            text-decoration: underline;
-            text-underline-offset: 3px;
-        }
-        .blog-content a:hover {
-            color: var(--navy);
-        }
-        .blog-figure {
-            margin: 32px 0;
-        }
-        .blog-figure img, .blog-content img {
-            width: 100%;
-            border: var(--border);
-            box-shadow: var(--shadow-sm);
-        }
-        .blog-back {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            color: var(--black);
-            margin-bottom: 24px;
-            transition: color 0.2s;
-        }
-        .blog-back:hover {
-            color: var(--magenta);
-        }
-        .blog-bottom-cta {
-            text-align: center;
-            padding: 60px 0;
-            border-top: 2px solid var(--black);
-        }
-        .blog-bottom-cta h3 {
-            font-size: 1.8rem;
-            margin-bottom: 12px;
-        }
-        .blog-bottom-cta p {
-            color: var(--gray-600);
-            margin-bottom: 24px;
-            font-size: 1.05rem;
-        }
-        .blog-content .subscription-widget-wrap {
-            display: none;
-        }
-        .blog-content .button-wrapper {
-            display: none;
-        }
-        .blog-content .subscribe-widget {
-            display: none;
-        }
-    </style>
 </head>
 <body>
 
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="navbar-inner">
-                <a href="../index.html" class="navbar-logo"><img src="../logo.png" alt="Hoogah"></a>
-                <div class="navbar-links">
-                    <a href="../how-it-works.html">How It Works</a>
-                    <a href="../our-belief.html">Our Belief</a>
-                    <a href="../use-cases.html">Use Cases</a>
-                    <a href="../pricing.html">Pricing</a>
-                    <a href="../blog.html">Blog</a>
-                    <a href="../book-demo.html" class="navbar-cta">Book a Demo &rarr;</a>
-                </div>
-                <button class="mobile-toggle" aria-label="Menu" onclick="toggleMobileMenu()">
-                    <span></span><span></span><span></span>
-                </button>
-            </div>
-        </div>
-        <div class="mobile-menu" id="mobileMenu">
-            <a href="../how-it-works.html" onclick="closeMobileMenu()">How It Works</a>
-            <a href="../our-belief.html" onclick="closeMobileMenu()">Our Belief</a>
-            <a href="../use-cases.html" onclick="closeMobileMenu()">Use Cases</a>
-            <a href="../pricing.html" onclick="closeMobileMenu()">Pricing</a>
-            <a href="../blog.html" onclick="closeMobileMenu()">Blog</a>
-            <a href="../book-demo.html" class="navbar-cta" onclick="closeMobileMenu()">Book a Demo &rarr;</a>
-        </div>
-    </nav>
+<header class="topbar" id="topbar">
+    <div class="container">
+        <a href="../index.html" class="topbar-logo" aria-label="Hoogah Home">
+            <img src="../images/logo-white-cropped.png" alt="Hoogah">
+        </a>
+        <nav class="topbar-links">
+            <a href="../how-it-works.html">How It Works</a>
+            <a href="../our-belief.html">Our Belief</a>
+            <a href="../use-cases.html">Use Cases</a>
+            <a href="../pricing.html">Pricing</a>
+            <a href="../blog.html" class="active">Blog</a>
+        </nav>
+        <a href="../book-demo.html" class="btn btn-primary topbar-cta">Book a Demo</a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+    <a href="../how-it-works.html">How It Works</a>
+    <a href="../our-belief.html">Our Belief</a>
+    <a href="../use-cases.html">Use Cases</a>
+    <a href="../pricing.html">Pricing</a>
+    <a href="../blog.html">Blog</a>
+    <a href="../book-demo.html" class="btn btn-primary">Book a Demo</a>
+</div>
 
-    <section class="blog-post-hero">
-        <div class="container">
-            <a href="../blog.html" class="blog-back">&larr; Back to Blog</a>
-            <h1>Culture Isn’t a Clash. It’s a Conversation.</h1>
-            <p class='subtitle'>Why Gen Z’s “values mismatch” isn’t the problem. It’s the opportunity.</p>
-            <div class="blog-meta">
-                <span class="author">Joe Lovett & Khushi Yadav</span>
-                <span class="separator"></span>
-                <span>October 29, 2025</span>
-            </div>
+<section class="blog-post-hero">
+    <div class="container">
+        <a href="../blog.html" class="blog-back">&larr; Back to Blog</a>
+        <h1>Culture Isn’t a Clash. It’s a Conversation.</h1>
+        <p class="subtitle">Why Gen Z’s “values mismatch” isn’t the problem. It’s the opportunity.</p>
+        <div class="blog-meta">
+            <span class="author">Joe Lovett & Khushi Yadav</span>
+            <span class="separator"></span>
+            <span>October 29, 2025</span>
         </div>
-    </section>
+    </div>
+</section>
 
-    <div class="container"><div class="blog-cover"><img src="https://substackcdn.com/image/fetch/$s_!ivew!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fae09342e-f5ff-4ed0-9e3a-872f9634604a_1536x1024.png" alt="Culture Isn’t a Clash. It’s a Conversation." loading="eager"></div></div>
+<div class="blog-cover"><img src="https://substackcdn.com/image/fetch/$s_!ivew!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fae09342e-f5ff-4ed0-9e3a-872f9634604a_1536x1024.png" alt="Culture Isn’t a Clash. It’s a Conversation." loading="eager"></div>
 
-    <article class="blog-content container">
+<article class="blog-content container">
         <h4>But first… Hoogah In Action<br>Where we’re currently building connection</h4><h5>Events: 5<br>Communities: 2<br>Employers: 0<br></h5><p>A recent <em>Business Insider</em> article explored the huge gap between Gen Z and hiring managers.</p><p>The research behind it, led by NYU professor Suzy Welch, revealed something striking. Employers value recognition, ambition, and work-centrism. Gen Z values authenticity, self-care, and helping others.</p><p>Two very different playbooks for what “success” means.</p><p>At first glance, it looks like a clash of priorities. But really, it’s a clash of connection, a gap in how we see and understand each other. Few organizations have created the space to actually talk about those differences.</p><p>The study found that only 2% of values overlapped between hiring managers and Gen Z employees.</p><p>Gen Z isn’t rejecting work. They’re redefining it.<br>They’re asking, <strong>“</strong><em><strong>Can I succeed here without losing myself?”</strong></em><br>Meanwhile, many managers are asking, <strong>“</strong><em><strong>Can I count on this person to commit?”</strong></em></p><p>Both are fair questions. But they’re being asked in isolation.</p><p>We’ve designed workplaces that prioritize efficiency and performance, but not conversation. We optimize workflows, automate communication, and measure everything except how well people understand one another.</p><p>And when understanding goes missing, culture starts to fracture.</p><h4><strong>Culture Isn’t a Clash. It’s a Conversation.</strong></h4><p>Different values aren’t a threat. They’re opportunities. Different perspectives are essential to problem solving and innovation. If we know how to surface them with curiosity instead of judgment.</p><p>When companies intentionally design space for honest, curiosity-driven dialog between management and employees, something powerful happens: shared meaning.</p><p>That’s what culture really is, the ongoing dialog (and, gasp, the evolution) between what the company values and what its people value.</p><h4><strong>The Hidden Cost of Silence</strong></h4><p>When that dialog doesn’t happen, connection breaks down.</p><p>Employees start to feel misunderstood. Leaders start to feel frustrated.<br>What was once curiosity turns into judgment.</p><p>We see it in hiring interviews that feel like mismatched dates.<br>In onboarding that talks about perks but not purpose.<br>In cultures where people quietly adapt their values to fit in, or quietly plan their exit.</p><p>As Welch put it, “You don’t want to hire the 98% and then slap your values on them and wonder why everybody’s miserable.”<br>In other words, you can’t build belonging on forced alignment. You have to start with understanding. After all, belonging isn’t built by compliance. It’s built by connection.</p><h4><strong>Where Hoogah Fits In</strong></h4><p>At Hoogah, we believe culture isn’t defined by slogans or policies. It’s defined by conversations that help people get to know each other on a personal level, the kind that lead to belonging.</p><p>Hoogah helps organizations create purposeful 1:1 pairings that bring those conversations to life.<br>New hires connecting with mentors. Cross-functional peers sharing challenges. Managers learning what motivates their teams and what their people value.</p><p>It’s a simple idea with a big outcome: when people understand each other, they work better together.</p><p>We help companies move from culture <em>statements</em> to culture <em>signals</em>. Those small, human moments that say:<br>“You belong here.”<br>“You’re heard.”<br>“You matter.”</p><h4><strong>The Takeaway</strong></h4><p>The Gen Z “values gap” isn’t a generational divide. It’s a communication divide.</p><p>Work has changed, but the human need for connection hasn’t.<br>And the companies that treat culture as an ongoing conversation, not a one-time alignment workshop, will be the ones people want to stay with and grow in.</p><p>If you work at or want to build an organization where both performance and belonging matter, let’s build it together. We’d love to connect.</p><p>👉 <a href="https://hoogah.co">hoogah.co</a></p>
     </article>
 
-    <section class="blog-bottom-cta">
-        <div class="container">
-            <h3>Design Events People Come Back To</h3>
-            <p>See how Hoogah helps create intentional connection at scale.</p>
-            <a href="../book-demo.html" class="btn btn-primary">Book a Free Demo &rarr;</a>
-        </div>
-    </section>
+<section class="blog-bottom-cta">
+    <div class="container">
+        <h3>Design Events People Come Back To</h3>
+        <p>See how Hoogah helps create intentional connection at scale.</p>
+        <a href="../book-demo.html" class="btn btn-primary">Book a Free Demo</a>
+    </div>
+</section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <img src="../logo-white.png" alt="Hoogah" style="height: 44px;">
-                    <p>Intentional networking designed for belonging. Because connection isn't a perk. It's infrastructure. Built for people who bring people together.</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Product</h4>
-                    <a href="../how-it-works.html">How It Works</a>
-                    <a href="../our-belief.html">Our Belief</a>
-                    <a href="../use-cases.html">Use Cases</a>
-                    <a href="../pricing.html">Pricing</a>
-                    <a href="../blog.html">Blog</a>
-                </div>
-                <div class="footer-col">
-                    <h4>Company</h4>
-                    <a href="#">About Us</a>
-                    <a href="../blog.html">Blog</a>
-                    <a href="#">Careers</a>
-                    <a href="#">Contact</a>
-                </div>
-                <div class="footer-col">
-                    <h4>Resources</h4>
-                    <a href="#">Case Studies</a>
-                    <a href="#">Documentation</a>
-                    <a href="#">Help Center</a>
-                    <a href="../privacy-policy.html">Privacy Policy</a>
-                    <a href="../terms-and-conditions.html">Terms &amp; Conditions</a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Hoogah. All rights reserved.</p>
-                <div class="footer-socials">
-                    <a href="#" aria-label="LinkedIn">in</a>
-                    <a href="#" aria-label="Twitter">&#x1D54F;</a>
-                    <a href="#" aria-label="Instagram">ig</a>
-                </div>
-            </div>
+<footer class="v3-footer">
+    <div class="container">
+        <p>&copy; 2026 Hoogah. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="../index.html">Home</a>
+            <a href="../pricing.html">Pricing</a>
+            <a href="../privacy-policy.html">Privacy Policy</a>
+            <a href="../terms-and-conditions.html">Terms &amp; Conditions</a>
+            <a href="mailto:hello@hoogah.com">Contact</a>
         </div>
-    </footer>
+    </div>
+</footer>
 
-    <script src="../js/main.js"></script>
+<div class="sticky-cta" id="stickyCta">
+    <a href="../book-demo.html" class="btn btn-primary">Book a Demo</a>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="../js/v3.js"></script>
 
 </body>
 </html>
