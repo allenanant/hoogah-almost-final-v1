@@ -17,6 +17,8 @@ $file_map = [
     'event-organizers' => 'lp-event-organizers.html',
     'homepage-v3'  => 'index-v3.html',
     'lp-ads-organizers' => 'lp-ads-organizers.html',
+    'privacy-policy' => 'privacy-policy.html',
+    'terms-and-conditions' => 'terms-and-conditions.html',
 ];
 
 // Handle blog post routes: /blog/{slug}
@@ -69,6 +71,10 @@ $content = str_replace( 'href="../blog.html"',         'href="/blog"',         $
 $content = str_replace( 'href="blog.html"',            'href="/blog"',         $content );
 $content = str_replace( 'href="../thank-you.html"',    'href="/thank-you"',    $content );
 $content = str_replace( 'href="thank-you.html"',       'href="/thank-you"',    $content );
+$content = str_replace( 'href="../privacy-policy.html"', 'href="/privacy-policy"', $content );
+$content = str_replace( 'href="privacy-policy.html"',    'href="/privacy-policy"', $content );
+$content = str_replace( 'href="../terms-and-conditions.html"', 'href="/terms-and-conditions"', $content );
+$content = str_replace( 'href="terms-and-conditions.html"',    'href="/terms-and-conditions"', $content );
 
 // Rewrite blog post links from listing page: blog/slug.html -> /blog/slug
 $content = preg_replace( '/href="blog\/([^"]+)\.html"/', 'href="/blog/$1"', $content );
