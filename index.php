@@ -20,6 +20,12 @@ $file_map = [
     'lp-ads-organizers' => 'lp-ads-organizers.html',
     'privacy-policy' => 'privacy-policy.html',
     'terms-and-conditions' => 'terms-and-conditions.html',
+    'new-index'        => 'new-index.html',
+    'new-how-it-works' => 'new-how-it-works.html',
+    'new-our-belief'   => 'new-our-belief.html',
+    'new-use-cases'    => 'new-use-cases.html',
+    'new-pricing'      => 'new-pricing.html',
+    'new-faq'          => 'new-faq.html',
 ];
 
 // Handle blog post routes: /blog/{slug}
@@ -76,6 +82,18 @@ $content = str_replace( 'href="../privacy-policy.html"', 'href="/privacy-policy"
 $content = str_replace( 'href="privacy-policy.html"',    'href="/privacy-policy"', $content );
 $content = str_replace( 'href="../terms-and-conditions.html"', 'href="/terms-and-conditions"', $content );
 $content = str_replace( 'href="terms-and-conditions.html"',    'href="/terms-and-conditions"', $content );
+$content = str_replace( 'href="../new-index.html"',         'href="/new-index"',         $content );
+$content = str_replace( 'href="new-index.html"',            'href="/new-index"',         $content );
+$content = str_replace( 'href="../new-how-it-works.html"',  'href="/new-how-it-works"',  $content );
+$content = str_replace( 'href="new-how-it-works.html"',     'href="/new-how-it-works"',  $content );
+$content = str_replace( 'href="../new-our-belief.html"',    'href="/new-our-belief"',    $content );
+$content = str_replace( 'href="new-our-belief.html"',       'href="/new-our-belief"',    $content );
+$content = str_replace( 'href="../new-use-cases.html"',     'href="/new-use-cases"',     $content );
+$content = str_replace( 'href="new-use-cases.html"',        'href="/new-use-cases"',     $content );
+$content = str_replace( 'href="../new-pricing.html"',       'href="/new-pricing"',       $content );
+$content = str_replace( 'href="new-pricing.html"',          'href="/new-pricing"',       $content );
+$content = str_replace( 'href="../new-faq.html"',           'href="/new-faq"',           $content );
+$content = str_replace( 'href="new-faq.html"',              'href="/new-faq"',           $content );
 
 // Rewrite blog post links from listing page: blog/slug.html -> /blog/slug
 $content = preg_replace( '/href="blog\/([^"]+)\.html"/', 'href="/blog/$1"', $content );
