@@ -510,6 +510,18 @@
         <a href="book-demo.html" class="btn btn-primary">Book a Demo</a>
     </div>
 
+    <!-- GSAP load fallback: force-reveal hero after 3s if GSAP fails to load -->
+    <script>
+        setTimeout(function() {
+            document.querySelectorAll('.gs-hero-kicker, .gs-hero-h1, .gs-hero-desc, .gs-hero-btns').forEach(function(el) {
+                if (parseFloat(getComputedStyle(el).opacity) < 0.1) {
+                    el.style.opacity = '1';
+                    el.style.transform = 'none';
+                }
+            });
+        }, 3000);
+    </script>
+
     <!-- GSAP -->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
