@@ -21,6 +21,12 @@ function hoogah_rewrite_rules() {
     add_rewrite_rule( '^lp-ads-organizers/?$', 'index.php?hoogah_page=lp-ads-organizers', 'top' );
     add_rewrite_rule( '^privacy-policy/?$', 'index.php?hoogah_page=privacy-policy', 'top' );
     add_rewrite_rule( '^terms-and-conditions/?$', 'index.php?hoogah_page=terms-and-conditions', 'top' );
+    add_rewrite_rule( '^new-index/?$',         'index.php?hoogah_page=new-index',         'top' );
+    add_rewrite_rule( '^new-how-it-works/?$',  'index.php?hoogah_page=new-how-it-works',  'top' );
+    add_rewrite_rule( '^new-our-belief/?$',    'index.php?hoogah_page=new-our-belief',    'top' );
+    add_rewrite_rule( '^new-use-cases/?$',     'index.php?hoogah_page=new-use-cases',     'top' );
+    add_rewrite_rule( '^new-pricing/?$',       'index.php?hoogah_page=new-pricing',       'top' );
+    add_rewrite_rule( '^new-faq/?$',           'index.php?hoogah_page=new-faq',           'top' );
 }
 add_action( 'init', 'hoogah_rewrite_rules' );
 
