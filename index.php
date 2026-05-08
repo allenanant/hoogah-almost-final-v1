@@ -4,6 +4,15 @@ $slug         = get_query_var( 'hoogah_slug', '' );
 $template_dir = get_template_directory();
 $template_uri = get_template_directory_uri();
 
+// 301 redirects for renamed pages
+$redirects = [
+    'redirect-for-event-organizers' => '/for-event-organizers/',
+];
+if ( isset( $redirects[ $page ] ) ) {
+    wp_redirect( $redirects[ $page ], 301 );
+    exit;
+}
+
 $file_map = [
     ''             => 'index-v3.html',
     'how-it-works' => 'how-it-works.html',
