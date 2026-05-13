@@ -20,6 +20,7 @@ $file_map = [
     'use-cases'    => 'use-cases.html',
     'pricing'      => 'pricing.html',
     'book-demo'    => 'book-demo.html',
+    'contact'      => 'contact.html',
     'blog'         => 'blog.html',
     'homepage-v2'  => 'index-v2.html',
     'thank-you'    => 'thank-you.html',
@@ -83,6 +84,8 @@ $content = str_replace( 'href="../pricing.html"',      'href="/pricing"',      $
 $content = str_replace( 'href="pricing.html"',         'href="/pricing"',      $content );
 $content = str_replace( 'href="../book-demo.html"',    'href="/book-demo"',    $content );
 $content = str_replace( 'href="book-demo.html"',       'href="/book-demo"',    $content );
+$content = str_replace( 'href="../contact.html"',      'href="/contact"',      $content );
+$content = str_replace( 'href="contact.html"',         'href="/contact"',      $content );
 $content = str_replace( 'href="../blog.html"',         'href="/blog"',         $content );
 $content = str_replace( 'href="blog.html"',            'href="/blog"',         $content );
 $content = str_replace( 'href="../thank-you.html"',    'href="/thank-you"',    $content );
